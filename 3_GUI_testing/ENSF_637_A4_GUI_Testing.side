@@ -1,0 +1,106 @@
+{
+  "id": "ddb23f1d-51c8-42a7-8197-a0ce5eda1e9f",
+  "version": "2.0",
+  "name": "ENSF_637_A4_GUI_Testing",
+  "url": "https://www.amazon.ca",
+  "tests": [{
+    "id": "02bacd0e-8892-4434-b676-af253c9c3a92",
+    "name": "product_search",
+    "commands": [{
+      "id": "d6237f8a-70a0-444b-9545-f4d938788393",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2798d7e8-dd49-47b0-badd-83e89c28fef7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1721x1033",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3fb6df62-f2f9-47cc-8bbc-418c7fac3ae0",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Sports & Outdoors",
+      "targets": [
+        ["linkText=Sports & Outdoors", "linkText"],
+        ["css=.nav-li:nth-child(12) > .nav-a", "css:finder"],
+        ["xpath=//a[contains(text(),'Sports & Outdoors')]", "xpath:link"],
+        ["xpath=//div[@id='nav-xshop']/ul/li[12]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/sporting-goods/b/?ie=UTF8&node=2242989011&ref_=nav_cs_sports')]", "xpath:href"],
+        ["xpath=//div[5]/div[2]/div/div/ul/li[12]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sports & Outdoors')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9522c04a-d163-4491-be14-fca9620d3dee",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=Sports & Outdoors",
+      "targets": [
+        ["linkText=Sports & Outdoors", "linkText"],
+        ["css=.nav-li:nth-child(12) > .nav-a", "css:finder"],
+        ["xpath=//a[contains(text(),'Sports & Outdoors')]", "xpath:link"],
+        ["xpath=//div[@id='nav-xshop']/ul/li[12]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/sporting-goods/b/?ie=UTF8&node=2242989011&ref_=nav_cs_sports')]", "xpath:href"],
+        ["xpath=//div[5]/div[2]/div/div/ul/li[12]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sports & Outdoors')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb06b3f5-3079-4555-97ac-faa3645fad9f",
+      "comment": "",
+      "command": "click",
+      "target": "id=twotabsearchtextbox",
+      "targets": [
+        ["id=twotabsearchtextbox", "id"],
+        ["name=field-keywords", "name"],
+        ["css=#twotabsearchtextbox", "css:finder"],
+        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
+        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f1a1178-3b5e-4bbf-bff1-bcc700353d49",
+      "comment": "",
+      "command": "type",
+      "target": "id=twotabsearchtextbox",
+      "targets": [
+        ["id=twotabsearchtextbox", "id"],
+        ["name=field-keywords", "name"],
+        ["css=#twotabsearchtextbox", "css:finder"],
+        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
+        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "clothes"
+    }, {
+      "id": "f294e327-3dcc-4f13-9125-776ad323fcc7",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-search-submit-button",
+      "targets": [
+        ["id=nav-search-submit-button", "id"],
+        ["css=#nav-search-submit-button", "css:finder"],
+        ["xpath=//input[@id='nav-search-submit-button']", "xpath:attributes"],
+        ["xpath=//span[@id='nav-search-submit-text']/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1b7bc798-9dab-42ff-8b7f-da69ca69535d",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["02bacd0e-8892-4434-b676-af253c9c3a92"]
+  }],
+  "urls": ["https://www.amazon.ca/"],
+  "plugins": []
+}
