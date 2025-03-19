@@ -357,8 +357,6 @@ public class RangeTest {
 	@Test
 	public void testShift_VeryLargeDoubles() {
 		Range shiftedRange = Range.shift(exampleRange25, Double.MAX_VALUE / 2, true);
-		
-		// Check if the shifted range is as expected
 		assertEquals("The shifted range of (Double.MAX_VALUE / 2, Double.MAX_VALUE) with delta Double.MAX_VALUE / 2 should be (Double.MAX_VALUE, Double.MAX_VALUE + Double.MAX_VALUE / 2)",
 				exampleRange26, shiftedRange);
 	}
@@ -367,8 +365,6 @@ public class RangeTest {
 	@Test
 	public void testShift_VerySmallDoubles() {
 		Range shiftedRange = Range.shift(exampleRange27, Double.MIN_VALUE, true);
-		
-		// Check if the shifted range is as expected
 		assertEquals("The shifted range of (Double.MIN_VALUE, Double.MIN_VALUE * 2) with delta Double.MIN_VALUE should be (Double.MIN_VALUE + Double.MIN_VALUE, Double.MIN_VALUE * 2 + Double.MIN_VALUE)",
 				exampleRange28, shiftedRange);
 	}
@@ -500,8 +496,8 @@ public class RangeTest {
 	// This tests the boundary condition where lower must be <= upper, and an exception is expected
 	@Test(expected = IllegalArgumentException.class)
 	public void testIntersects_RangeArgument_LowerGreaterThanUpper() {
-	    Range invalidRange = new Range(5.0, 3.0); // Invalid range where lower > upper
-	    exampleRange9.intersects(invalidRange); // This should throw IllegalArgumentException
+	    Range invalidRange = new Range(5.0, 3.0); 
+	    exampleRange9.intersects(invalidRange); 
 	}
     
 	 // Test Case 81: Test method intersects(Range range) for the partition where there is full overlap
