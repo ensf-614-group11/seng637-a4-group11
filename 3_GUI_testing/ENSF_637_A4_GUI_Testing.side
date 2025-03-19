@@ -4,54 +4,24 @@
   "name": "ENSF_637_A4_GUI_Testing",
   "url": "https://www.amazon.ca",
   "tests": [{
-    "id": "02bacd0e-8892-4434-b676-af253c9c3a92",
-    "name": "product_search",
+    "id": "2889866a-df23-441c-966c-9b91a4462e8a",
+    "name": "product_search_shirt",
     "commands": [{
-      "id": "d6237f8a-70a0-444b-9545-f4d938788393",
+      "id": "287e58a7-f814-4b2c-b6c2-cfae728355ed",
       "comment": "",
       "command": "open",
       "target": "/",
       "targets": [],
       "value": ""
     }, {
-      "id": "2798d7e8-dd49-47b0-badd-83e89c28fef7",
+      "id": "9c7c8818-9832-4408-88e4-6896d01ec1e9",
       "comment": "",
       "command": "setWindowSize",
       "target": "1721x1033",
       "targets": [],
       "value": ""
     }, {
-      "id": "3fb6df62-f2f9-47cc-8bbc-418c7fac3ae0",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "linkText=Sports & Outdoors",
-      "targets": [
-        ["linkText=Sports & Outdoors", "linkText"],
-        ["css=.nav-li:nth-child(12) > .nav-a", "css:finder"],
-        ["xpath=//a[contains(text(),'Sports & Outdoors')]", "xpath:link"],
-        ["xpath=//div[@id='nav-xshop']/ul/li[12]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/sporting-goods/b/?ie=UTF8&node=2242989011&ref_=nav_cs_sports')]", "xpath:href"],
-        ["xpath=//div[5]/div[2]/div/div/ul/li[12]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Sports & Outdoors')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "9522c04a-d163-4491-be14-fca9620d3dee",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "linkText=Sports & Outdoors",
-      "targets": [
-        ["linkText=Sports & Outdoors", "linkText"],
-        ["css=.nav-li:nth-child(12) > .nav-a", "css:finder"],
-        ["xpath=//a[contains(text(),'Sports & Outdoors')]", "xpath:link"],
-        ["xpath=//div[@id='nav-xshop']/ul/li[12]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/sporting-goods/b/?ie=UTF8&node=2242989011&ref_=nav_cs_sports')]", "xpath:href"],
-        ["xpath=//div[5]/div[2]/div/div/ul/li[12]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Sports & Outdoors')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "cb06b3f5-3079-4555-97ac-faa3645fad9f",
+      "id": "e2075b16-fc32-4244-8eb6-1253225a6649",
       "comment": "",
       "command": "click",
       "target": "id=twotabsearchtextbox",
@@ -65,7 +35,7 @@
       ],
       "value": ""
     }, {
-      "id": "9f1a1178-3b5e-4bbf-bff1-bcc700353d49",
+      "id": "50bf3e54-20ee-4934-83e9-42048d7d4ae7",
       "comment": "",
       "command": "type",
       "target": "id=twotabsearchtextbox",
@@ -77,9 +47,9 @@
         ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/input", "xpath:position"]
       ],
-      "value": "clothes"
+      "value": "shirt"
     }, {
-      "id": "f294e327-3dcc-4f13-9125-776ad323fcc7",
+      "id": "275cd51c-ff7f-4604-9e16-7b0957a077d0",
       "comment": "",
       "command": "click",
       "target": "id=nav-search-submit-button",
@@ -91,6 +61,149 @@
         ["xpath=//span/input", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "46a4efc9-c164-4127-9340-daaefdea295f",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Amazon.ca : shirt",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0690591-c58a-4542-828e-2932eec6912a",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//span[@class='a-color-state a-text-bold']",
+      "targets": [],
+      "value": "\"shirt\""
+    }, {
+      "id": "a2ee2858-b0d1-4745-a488-c593a280a55d",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=div.s-main-slot.s-result-list",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f2d4b483-4322-4f18-a6fa-b34a93c0afd7",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=div.s-main-slot div[data-component-type='s-search-result']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "09e7dbda-1c60-43cc-b1e2-c5a5fe81e447",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@data-cy=\"title-recipe\"]//h2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8a9705f7-11c1-4485-a26c-b5c084f1a872",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "4de476ef-a3b4-4e88-af00-737c6dfab700",
+    "name": "product_search_laptop",
+    "commands": [{
+      "id": "a50c6eb6-fad1-42b0-8744-0d6f89a55c4c",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fed82ddb-4509-4d8b-8144-afeb01e71650",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1721x1033",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "abe0b01c-0cd7-47c3-91e2-9e15af7544a6",
+      "comment": "",
+      "command": "click",
+      "target": "id=twotabsearchtextbox",
+      "targets": [
+        ["id=twotabsearchtextbox", "id"],
+        ["name=field-keywords", "name"],
+        ["css=#twotabsearchtextbox", "css:finder"],
+        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
+        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4c663f9-1230-4c54-90d1-816233d9fc33",
+      "comment": "",
+      "command": "type",
+      "target": "id=twotabsearchtextbox",
+      "targets": [
+        ["id=twotabsearchtextbox", "id"],
+        ["name=field-keywords", "name"],
+        ["css=#twotabsearchtextbox", "css:finder"],
+        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
+        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "laptop"
+    }, {
+      "id": "1e1b2c05-f39d-40db-99a2-3acaba390a45",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-search-submit-button",
+      "targets": [
+        ["id=nav-search-submit-button", "id"],
+        ["css=#nav-search-submit-button", "css:finder"],
+        ["xpath=//input[@id='nav-search-submit-button']", "xpath:attributes"],
+        ["xpath=//span[@id='nav-search-submit-text']/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e36647ba-91ab-4b18-a829-94635bfa9c4f",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Amazon.ca : laptop",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1a9b3539-6de5-41db-bf4c-28ce112b5453",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//span[@class='a-color-state a-text-bold']",
+      "targets": [],
+      "value": "\"laptop\""
+    }, {
+      "id": "8d1abca6-0f9e-489a-b9e3-0ff383af8214",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=div.s-main-slot.s-result-list",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a56f2489-821f-4d69-8c44-31ec748dd616",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=div.s-main-slot div[data-component-type='s-search-result']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9f2d3fd2-22c7-4cad-914a-c83b38742bf2",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@data-cy=\"title-recipe\"]//h2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fd6c3940-9533-470b-bc55-530f9c381f7f",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }],
   "suites": [{
@@ -99,7 +212,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["02bacd0e-8892-4434-b676-af253c9c3a92"]
+    "tests": []
   }],
   "urls": ["https://www.amazon.ca/"],
   "plugins": []
