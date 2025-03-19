@@ -293,6 +293,86 @@
       "targets": [],
       "value": ""
     }]
+  }, {
+    "id": "9a223c01-56e0-40b4-b5da-714cca625ed7",
+    "name": "product_search_gibberish",
+    "commands": [{
+      "id": "1cf54809-3f01-42f3-8291-2760976a90c8",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d97b16c4-5579-461f-b5fe-db32e79eb0dc",
+      "comment": "",
+      "command": "click",
+      "target": "id=twotabsearchtextbox",
+      "targets": [
+        ["id=twotabsearchtextbox", "id"],
+        ["name=field-keywords", "name"],
+        ["css=#twotabsearchtextbox", "css:finder"],
+        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
+        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff150f1c-ba0b-4606-8f23-3d2a2225b561",
+      "comment": "",
+      "command": "type",
+      "target": "id=twotabsearchtextbox",
+      "targets": [
+        ["id=twotabsearchtextbox", "id"],
+        ["name=field-keywords", "name"],
+        ["css=#twotabsearchtextbox", "css:finder"],
+        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
+        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "jaskdashfjkdash"
+    }, {
+      "id": "66fa1cfc-ad0a-4fd5-92f1-29d1b68068ca",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-search-submit-button",
+      "targets": [
+        ["id=nav-search-submit-button", "id"],
+        ["css=#nav-search-submit-button", "css:finder"],
+        ["xpath=//input[@id='nav-search-submit-button']", "xpath:attributes"],
+        ["xpath=//span[@id='nav-search-submit-text']/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58eb4226-a460-4168-b1fb-b999675da373",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=div.s-main-slot.s-result-list",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6b4a3ea7-2d7d-4fde-9102-f8687b4f6c9d",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=div.s-main-slot div[data-component-type='s-search-result']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb7ea6bc-3d43-4843-a061-f39ed5bc86fd",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@data-cy=\"title-recipe\"]//h2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8431f30c-d784-468a-80dd-e7236e2df30d",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "1b7bc798-9dab-42ff-8b7f-da69ca69535d",
