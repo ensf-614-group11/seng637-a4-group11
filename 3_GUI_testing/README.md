@@ -38,8 +38,4 @@ Follow these steps to set up and run the Selenium test suite in Firefox:
 - Ensure you have a **stable internet connection** since the test runs on [Amazon.ca](https://www.amazon.ca/).
 - If a test fails, check for **UI changes** on Amazon's website, as elements may have been updated.
 
----
-**Author:** Rhys Wickens  
-**Course:** ENSF 637  
-
 
