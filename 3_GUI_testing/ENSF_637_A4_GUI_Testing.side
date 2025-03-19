@@ -97,6 +97,20 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "3f91f58b-115c-4996-9e0b-f9a42bd7b099",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=//h2[contains(., 'shirt')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "56cfd305-f65d-4b9e-b419-34a93bdc0de7",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=(//div[@data-component-type='s-search-result'])[2]",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "8a9705f7-11c1-4485-a26c-b5c084f1a872",
       "comment": "",
       "command": "close",
@@ -198,7 +212,81 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "3374b407-b8aa-4603-bdcd-4b46a633c659",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=//h2[contains(., 'Laptop')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bba5d4c7-de8f-4c73-b09f-04a10e97c8e5",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=(//div[@data-component-type='s-search-result'])[2]",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "fd6c3940-9533-470b-bc55-530f9c381f7f",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "3a2c5781-4a8f-4a81-877d-5fc715ae744d",
+    "name": "product_search_misspelled",
+    "commands": [{
+      "id": "f20dea68-e863-4406-8389-eb8c9d513328",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5562b691-9c4b-4429-9618-e0083c9010ab",
+      "comment": "",
+      "command": "click",
+      "target": "id=twotabsearchtextbox",
+      "targets": [
+        ["id=twotabsearchtextbox", "id"],
+        ["name=field-keywords", "name"],
+        ["css=#twotabsearchtextbox", "css:finder"],
+        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
+        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b382658e-c727-4640-884d-b1c11a171bd7",
+      "comment": "",
+      "command": "type",
+      "target": "id=twotabsearchtextbox",
+      "targets": [
+        ["id=twotabsearchtextbox", "id"],
+        ["name=field-keywords", "name"],
+        ["css=#twotabsearchtextbox", "css:finder"],
+        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
+        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "lapt"
+    }, {
+      "id": "b9aea7de-446f-4f4b-af89-b35f77ed4f52",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-search-submit-button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f3e406bf-8102-4ab1-af0b-42acee8824f5",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=//h2[contains(., 'Laptop')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c20aefa-1d26-41a6-984d-f9cf0f6e987a",
       "comment": "",
       "command": "close",
       "target": "",
