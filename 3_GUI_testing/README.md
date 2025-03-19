@@ -13,7 +13,7 @@ Follow these steps to set up and run the Selenium test suite in Firefox:
      - [Selenium IDE Add-on](https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/)
   2. Click **"Add to Firefox"** and wait for the download to complete.
   3. Click **"Add"** to install the extension.
-  4. Once installed, click on the **Selenium IDE** icon in the Firefox toolbar to open it.
+  4. Once installed, click on the **Selenium IDE** icon in the Firefox extensions to open it.
 
 ### Running the Tests
 1. **Clone this GitHub repository** or download the `ENSF_637_A4_GUI_Testing.side` file to your local computer.
