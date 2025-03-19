@@ -148,18 +148,24 @@ public strictfp class Range implements Serializable {
      * Returns <code>true</code> if the range intersects with the specified
      * range, and <code>false</code> otherwise.
      *
-     * @param b0  the lower bound (should be &lt;= b1).
-     * @param b1  the upper bound (should be &gt;= b0).
+     * @param b0  the lower bound (should be <= b1).
+     * @param b1  the upper bound (should be >= b0).
      *
-     * @return A boolean.
+     * @return A boolean indicating whether the ranges intersect.
+     *
+     * @throws IllegalArgumentException if the lower bound is greater than the upper bound.
      */
     public boolean intersects(double b0, double b1) {
-        if (b0 <= this.lower) {
-            return (b1 > this.lower);
+        // Validate input bounds
+        if (b0 > b1) {
+            throw new IllegalArgumentException("Lower bound must be less than or equal to upper bound.");
         }
-        else {
-            return (b0 < this.upper && b1 >= b0);
-        }
+
+        // Check for intersection
+        boolean isDisjoint = b1 < this.lower || b0 > this.upper;
+        boolean isTouchingBoundary = b1 == this.lower || b0 == this.upper;
+
+        return !isDisjoint || isTouchingBoundary;
     }
 
     /**
@@ -331,8 +337,9 @@ public strictfp class Range implements Serializable {
         double lower = range.getLowerBound() - length * lowerMargin;
         double upper = range.getUpperBound() + length * upperMargin;
         if (lower > upper) {
-            lower = lower / 2.0 + upper / 2.0;
-            upper = lower;
+            // If the bounds cross, adjust them to the nearest valid values
+            lower = Math.min(lower, range.getUpperBound());
+            upper = Math.max(upper, range.getLowerBound());
         }
         return new Range(lower, upper);
     }
@@ -373,7 +380,7 @@ public strictfp class Range implements Serializable {
                     delta));
         }
     }
-
+    
     /**
      * Returns the given <code>value</code> adjusted by <code>delta</code> but
      * with a check to prevent the result from crossing <code>0.0</code>.
@@ -423,17 +430,17 @@ public strictfp class Range implements Serializable {
      */
     @Override
     public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
         if (!(obj instanceof Range)) {
             return false;
         }
+
         Range range = (Range) obj;
-        if (!(this.lower == range.lower)) {
-            return false;
-        }
-        if (!(this.upper == range.upper)) {
-            return false;
-        }
-        return true;
+
+        return Double.compare(this.lower, range.lower) == 0 &&
+               Double.compare(this.upper, range.upper) == 0;
     }
 
     /**
