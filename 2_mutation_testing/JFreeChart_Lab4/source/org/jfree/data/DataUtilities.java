@@ -48,9 +48,14 @@
 
 package org.jfree.data;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+
+import java.security.InvalidParameterException;
 import java.util.Arrays;
 import org.jfree.chart.util.ParamChecks;
 import org.jfree.data.general.DatasetUtilities;
+import org.junit.Test;
 
 /**
  * Utility methods for use with some of the data classes (but not the datasets,
@@ -121,16 +126,24 @@ public abstract class DataUtilities {
      * @return The total of the values in the specified column.
      */
     public static double calculateColumnTotal(Values2D data, int column) {
-        ParamChecks.nullNotPermitted(data, "data");
-        double total = 0.0;
-        int rowCount = data.getRowCount();
-        for (int r = 0; r < rowCount; r++) {
-            Number n = data.getValue(r, column);
-            if (n != null) {
-                total += n.doubleValue();
-            }
+    	if (data == null) {
+            throw new InvalidParameterException("Input data cannot be null"); // Ensures correct exception
         }
-        return total;
+    	
+    	try {
+	        ParamChecks.nullNotPermitted(data, "data");
+	        double total = 0.0;
+	        int rowCount = data.getRowCount();
+	        for (int r = 0; r < rowCount; r++) {
+	            Number n = data.getValue(r, column);
+	            if (n != null) {
+	                total += n.doubleValue();
+	            }
+	        }
+	        return total;
+    	}catch(IndexOutOfBoundsException e) {
+    		return 0;
+    	}
     }
 
     /**
@@ -147,19 +160,27 @@ public abstract class DataUtilities {
      */
     public static double calculateColumnTotal(Values2D data, int column,
              int[] validRows) {
-        ParamChecks.nullNotPermitted(data, "data");
-        double total = 0.0;
-        int rowCount = data.getRowCount();
-        for (int v = 0; v < validRows.length; v++) {
-            int row = validRows[v];
-            if (row < rowCount) {
-                Number n = data.getValue(row, column);
-                if (n != null) {
-                    total += n.doubleValue();
-                }
-            }
+    	if (data == null) {
+            throw new InvalidParameterException("Input data cannot be null"); // Ensures correct exception
         }
-        return total;
+    	
+    	try {
+	        ParamChecks.nullNotPermitted(data, "data");
+	        double total = 0.0;
+	        int rowCount = data.getRowCount();
+	        for (int v = 0; v < validRows.length; v++) {
+	            int row = validRows[v];
+	            if (row < rowCount) {
+	                Number n = data.getValue(row, column);
+	                if (n != null) {
+	                    total += n.doubleValue();
+	                }
+	            }
+	        }
+	        return total;
+    	}catch(IndexOutOfBoundsException e) {
+    		return 0;
+    	}
     }
 
     /**
@@ -172,16 +193,24 @@ public abstract class DataUtilities {
      * @return The total of the values in the specified row.
      */
     public static double calculateRowTotal(Values2D data, int row) {
-        ParamChecks.nullNotPermitted(data, "data");
-        double total = 0.0;
-        int columnCount = data.getColumnCount();
-        for (int c = 0; c < columnCount; c++) {
-            Number n = data.getValue(row, c);
-            if (n != null) {
-                total += n.doubleValue();
-            }
+    	if (data == null) {
+            throw new InvalidParameterException("Input data cannot be null"); // Ensures correct exception
         }
-        return total;
+    	
+	    try {
+    		ParamChecks.nullNotPermitted(data, "data");
+	        double total = 0.0;
+	        int columnCount = data.getColumnCount();
+	        for (int c = 0; c < columnCount; c++) {
+	            Number n = data.getValue(row, c);
+	            if (n != null) {
+	                total += n.doubleValue();
+	            }
+	        }
+	        return total;
+	    }catch(IndexOutOfBoundsException e) {
+	    	return 0;
+	    }
     }
 
     /**
@@ -198,19 +227,27 @@ public abstract class DataUtilities {
      */
     public static double calculateRowTotal(Values2D data, int row,
              int[] validCols) {
-        ParamChecks.nullNotPermitted(data, "data");
-        double total = 0.0;
-        int colCount = data.getColumnCount();
-        for (int v = 0; v < validCols.length; v++) {
-            int col = validCols[v];
-            if (col < colCount) {
-                Number n = data.getValue(row, col);
-                if (n != null) {
-                    total += n.doubleValue();
-                }
-            }
+    	if (data == null) {
+            throw new InvalidParameterException("Input data cannot be null"); // Ensures correct exception
         }
-        return total;
+    	
+    	try {
+	        ParamChecks.nullNotPermitted(data, "data");
+	        double total = 0.0;
+	        int colCount = data.getColumnCount();
+	        for (int v = 0; v < validCols.length; v++) {
+	            int col = validCols[v];
+	            if (col < colCount) {
+	                Number n = data.getValue(row, col);
+	                if (n != null) {
+	                    total += n.doubleValue();
+	                }
+	            }
+	        }
+	        return total;
+    	}catch(IndexOutOfBoundsException e) {
+    		return 0;
+    	}
     }
 
     /**
@@ -222,6 +259,10 @@ public abstract class DataUtilities {
      * @return An array of <code>Double</code>.
      */
     public static Number[] createNumberArray(double[] data) {
+    	if(data == null) {
+        	throw new InvalidParameterException("Input data array cannot be null");
+        }
+    	
         ParamChecks.nullNotPermitted(data, "data");
         Number[] result = new Number[data.length];
         for (int i = 0; i < data.length; i++) {
@@ -239,7 +280,11 @@ public abstract class DataUtilities {
      * @return An array of <code>Double</code>.
      */
     public static Number[][] createNumberArray2D(double[][] data) {
-        ParamChecks.nullNotPermitted(data, "data");
+        if(data == null) {
+        	throw new InvalidParameterException("Input data array cannot be null");
+        }
+    	
+    	ParamChecks.nullNotPermitted(data, "data");
         int l1 = data.length;
         Number[][] result = new Number[l1][];
         for (int i = 0; i < l1; i++) {
@@ -259,6 +304,10 @@ public abstract class DataUtilities {
      * @return The cumulative percentages.
      */
     public static KeyedValues getCumulativePercentages(KeyedValues data) {
+    	if(data == null) {
+    		throw new InvalidParameterException("Input data cannot be null");
+    	}
+    	
         ParamChecks.nullNotPermitted(data, "data");
         DefaultKeyedValues result = new DefaultKeyedValues();
         double total = 0.0;

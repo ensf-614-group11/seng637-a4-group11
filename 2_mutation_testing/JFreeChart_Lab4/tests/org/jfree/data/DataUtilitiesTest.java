@@ -405,6 +405,7 @@ public class DataUtilitiesTest extends DataUtilities {
 			fail("Expected InvalidParameterException but no exception was thrown.");
 		} catch (InvalidParameterException e) {
 			// Test passes because the correct exception was thrown
+			assertEquals("Input data cannot be null", e.getMessage());
 		} catch (Exception e) {
 			// Test fails because the wrong exception was thrown
 			fail("Expected InvalidParameterException but got " + e.getClass().getSimpleName());
@@ -483,6 +484,7 @@ public class DataUtilitiesTest extends DataUtilities {
 			fail("Expected InvalidParameterException but no exception was thrown.");
 		} catch (InvalidParameterException e) {
 			// Test passes because the correct exception was thrown
+			assertEquals("Input data cannot be null", e.getMessage());
 		} catch (Exception e) {
 			// Test fails because the wrong exception was thrown
 			fail("Expected InvalidParameterException but got " + e.getClass().getSimpleName());
