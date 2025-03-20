@@ -24,6 +24,6 @@
 	<classpathentry exported="true" kind="lib" path="lib/Jmock/jmock-junit4-2.5.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/Jmock/jmock-legacy-2.5.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/Jmock/jmock-script-2.5.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Auste/OneDrive/Documents/SENG637/seng637-a4-group11/2_mutation_testing/JFreeChart_Lab4/lib/hamcrest-library-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/hamcrest-library-1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
