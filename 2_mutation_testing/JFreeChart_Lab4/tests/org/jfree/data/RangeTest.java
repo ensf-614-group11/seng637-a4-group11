@@ -93,7 +93,7 @@ public class RangeTest {
         exampleRange16 = new Range(-1.0, -1.0); // Range variable for test 20
         exampleRange17 = new Range(1.0, 5.0); // Range variable for tests 21, 23, 24, 124, 125, 126, 127, 128, 129
         exampleRange18 = new Range(3.0, 7.0); // Range variable for test 21
-        exampleRange19 = new Range(-7.0, -3.0); // Range variable for tests 22, 41, 45, 73, 77, 
+        exampleRange19 = new Range(-7.0, -3.0); // Range variable for tests 22, 41, 45, 73, 77, 146
         exampleRange20 = new Range(0.0, 3.9);  // Range variable for test 23
         exampleRange21 = new Range(-0.1, 3.9); // Range variable for test 24
         exampleRange22 = new Range(-3.9, 0.0); // Range variable for test 25
@@ -103,7 +103,7 @@ public class RangeTest {
         exampleRange26 = new Range(Double.MAX_VALUE, Double.MAX_VALUE + Double.MAX_VALUE / 2); // Range variable for test 27
         exampleRange27 = new Range(Double.MIN_VALUE, Double.MIN_VALUE * 2); // Range variable for test 28
         exampleRange28 = new Range(Double.MIN_VALUE + Double.MIN_VALUE, Double.MIN_VALUE * 2 + Double.MIN_VALUE); // Range variable for test 28
-        exampleRange29 = new Range(Double.NaN, Double.NaN); // Range variable for test 35, 97, 98, 99, 100, 101
+        exampleRange29 = new Range(Double.NaN, Double.NaN); // Range variable for test 35, 97, 98, 99, 100, 101, 145
 		exampleRange30 = new Range(-5.0, -1.0); // Range variable for test 22
 		exampleRange31 = new Range(3.0, 5.0); // Range variable for tests 81, 82
 		exampleRange32 = new Range(3.1, 5.0); // Range variable for test 83
@@ -111,12 +111,12 @@ public class RangeTest {
 		exampleRange34 = new Range(0.0, 1.0); // Range variable for test 85
 		exampleRange35 = new Range(3.0, 3.0); // Range variable for test 86, 105
 		exampleRange36 = new Range(5.5, 17.5); // Range variable for test 92
-		exampleRange37 = new Range(5.0, Double.NaN); // Range variable for test 95, 96
+		exampleRange37 = new Range(5.0, Double.NaN); // Range variable for test 95, 96, 144
 		exampleRange38 = new Range(5.0, 10.5); // Range variable for test 95, 96, 104, 119
-		exampleRange39 = new Range(Double.NaN, 10.5); // Range variable for test 96
+		exampleRange39 = new Range(Double.NaN, 10.5); // Range variable for test 96, 145
 		exampleRange40 = new Range(5.0, 10.0); // Range variable for test 107, 108, 109, 110, 111, 112, 113, 114, 115, 117, 118
 		exampleRange41 = new Range(0.0, 10.0); // Range variable for test 107
-		exampleRange42 = new Range(5.0, 15.0); // Range variable for test 108, 120
+		exampleRange42 = new Range(5.0, 15.0); // Range variable for test 108, 120, 142
 		exampleRange43 = new Range(2.5, 12.5); // Range variable for test 109
 		exampleRange44 = new Range(5.0, 7.5); //Range variable for test 110, 120
 		exampleRange45 = new Range(7.5, 15.0); //Range variable for test 112
@@ -859,6 +859,155 @@ public class RangeTest {
 		    assertTrue("Input range (4.0, 6.0) should intersect with (3.0, 5.0)",
 		    		exampleRange17.intersects(4.0, 6.0));
 		}
+		
+		// ================== Mutation Testing Additional Test Cases ==================
+		
+		// Test Case 133: test construction of a new invalid Range object where lower is greater than upper and verify that the exception message is as expected
+		// test to kill mutant: removed call to java/lang/StringBuilder::toString 
+		@Test 
+		public void testIllegalArgumentExceptionWithMessage_invalidRange() {
+			try {
+				new Range(10.0, 5.0); // lower is greater than upper
+				fail("Expected IllegalArgumentException to be thrown");
+			} catch (IllegalArgumentException e){
+				String message = e.getMessage();
+				assertTrue("Message should contain 'require lower'", message.contains("require lower"));
+				assertTrue("Message should contain 'upper'", message.contains("upper"));
+			
+			}
+		}
+		
+		// Test Case 134: test construction of a new invalid Range object where lower is greater than upper and verify that the exception message is as expected
+		// test to kill mutant: replaced call to StringBuilder::append with receiver 
+		@Test 
+		public void testIllegalArgumentExceptionWithMessageAfterAppendChange_invalidRange() {
+			try {
+				new Range(10.0, 5.0); // lower is greater than upper
+				fail("Expected IllegalArgumentException to be thrown");
+			} catch (IllegalArgumentException e){
+				String message = e.getMessage();
+				assertTrue("Message should contain 'Range(double, double): require lower'", message.contains("Range(double, double): require lower"));
+				assertTrue("Message should contain 'upper'", message.contains("upper"));
+				assertTrue(message.contains("10"));
+				assertTrue(message.contains("5"));
+			
+			}
+		}
+		
+		// Test Case 135: test construction of a new invalid Range object where lower is greater than upper and verify that the exception message is as expected
+		// test to kill mutant: replaced call to StringBuilder::append with receiver 
+		@Test 
+		public void testIllegalArgumentExceptionWithExactMessage_invalidRange() {
+			try {
+				new Range(10.0, 5.0); // lower is greater than upper
+				fail("Expected IllegalArgumentException to be thrown");
+			} catch (IllegalArgumentException e){
+				String expectedMessage = "Range(double, double): require lower (10.0) <= upper (5.0).";
+				assertEquals("Exception message does not match expected.", expectedMessage, e.getMessage());
+			
+			}
+		}
+		
+		// Test Case 136: test construction of a new valid Range object to ensure that exception is not thrown 
+		// test to kill mutant: Negated double local variable number 1 
+		@Test 
+		public void testValidRange() {
+			Range range = new Range(5.0, 10.0); 
+			assertNotNull(range); // no exception should be thrown 
+		}
+		
+		// Test Case 137: test construction of a new Range object with values close together 
+		// test to kill mutant: decremented double local variable number 1 
+		@Test
+		public void testDecrementedLowerBound() {
+			try {
+				new Range (9.5, 9.0); // if lower is decremented by mutant, then the range will be valid
+				fail("Expected Illegal Argument Exception to be thrown");
+				
+			} catch (IllegalArgumentException e) {
+				String message = e.getMessage();
+				assertTrue(message.contains("9.5"));
+				assertTrue(message.contains("9.0"));
+			}
+		}
+		
+		// Test Case 138: test construction of a new Range object with values close together
+		// test to kill mutant: decremented double local variable number 3 
+		
+		@Test
+		public void testDecrementedUpperBound() {
+				Range range = new Range (9.0, 9.5); // range should be valid, but if upper is decremented by mutator it would be invalid
+				assertNotNull(range);
+			
+		}
+		// Test Case 139: test construction of a new Range object with values close together
+		// test to kill mutant: incremented double local variable number 3 
+		  @Test
+		    public void testIncrementedUpperBound() {
+		        try {
+		           
+		            new Range(0.1, 0.0); // this range is invalid and should create an exception, if upper is incremented it will not create exception 
+		            fail("Expected IllegalArgumentException to be thrown");
+		        } catch (IllegalArgumentException e) {
+		            String message = e.getMessage();
+		            assertTrue(message.contains("0.1"));
+		            assertTrue(message.contains("0.0"));
+		        }
+		    }
+		  
+		  // Test Case 140: test construction of a new Range object with values close together
+		  // test to kill mutant: incremented double local variable number 1 
+		  @Test
+			public void testIncrementedLowerBound() {
+					Range range = new Range (0.0, 0.1); // range should be valid, but if lower is incremented by mutator it would be invalid
+					assertNotNull(range);
+				
+			}
+		  
+		  // Test Case 141: test getCentralValue on a Range where the central value is not 0 
+		  // test to kill mutants: replaced double return with 0.0d for getCentralValue and replaced double addition with modulus
+		  @Test
+		  public void testGetCentralValue_NormalCase() {
+			  Range range = new Range(10.0, 20.0); //will not result in central value of 0 and modulus is not equal to addition for these numbers
+			  double centralValue = range.getCentralValue();
+			  assertEquals(15.0, centralValue, 0.001);
+		  }
+	
+		  // Test Case 142: test isNaNRange with a valid positive range 
+		  // test to kill mutant: replaced equality check with true 
+		  @Test 
+		  public void testIsNaNRange_ValidRange() {
+			  assertFalse("Expected false, since lower and upper bound are not NaN", exampleRange42.isNaNRange());
+		  }
+		  
+		  // Test Case 143: test isNaNRange with lower NaN and upper valid 
+		  @Test
+		  public void testIsNaNRange_LowerNaNBound() {
+			  assertFalse("Expected false, since upper is not NaN", exampleRange39.isNaNRange());
+		  }
+		  
+		  // Test Case 144: test isNaNRange with lower valid and upper NaN
+		  @Test
+		  public void testIsNaNRange_UpperNaNBound() {
+			  assertFalse("Expected false, since lower is not NaN", exampleRange37.isNaNRange());
+		  }
+		  
+		  // Test Case 145: test isNaNRange with both NaN bounds
+		  @Test 
+		  public void testIsNaNRange_NaN() {
+			  assertTrue("Expected true, since both lower and upper are NaN", exampleRange29.isNaNRange()); 
+		  }
+		  
+		  // Test Case 146: test isNaNRange with a valid negative range 
+		  @Test
+		  public void testIsNaNRange_ValidNegativeRange() {
+			  assertFalse("Expected false, since both lower and upper are valid", exampleRange19.isNaNRange());
+		  }
+		  
+		
+		  
+	
+		
 	
 	
 	@After
