@@ -63,8 +63,11 @@ public class RangeTest {
 	private Range exampleRange46;
 	private Range exampleRange47;
 	private Range exampleRange48;
-	
-    
+	private Range exampleRange49;
+	private Range exampleRange50;
+	private Range exampleRange51;
+	private Range exampleRange52;
+	private Range exampleRange53;
     private Object exampleObject; 
    
 
@@ -115,7 +118,7 @@ public class RangeTest {
 		exampleRange38 = new Range(5.0, 10.5); // Range variable for test 95, 96, 104, 119
 		exampleRange39 = new Range(Double.NaN, 10.5); // Range variable for test 96, 145
 		exampleRange40 = new Range(5.0, 10.0); // Range variable for test 107, 108, 109, 110, 111, 112, 113, 114, 115, 117, 118
-		exampleRange41 = new Range(0.0, 10.0); // Range variable for test 107
+		exampleRange41 = new Range(0.0, 10.0); // Range variable for test 107, 153
 		exampleRange42 = new Range(5.0, 15.0); // Range variable for test 108, 120, 142
 		exampleRange43 = new Range(2.5, 12.5); // Range variable for test 109
 		exampleRange44 = new Range(5.0, 7.5); //Range variable for test 110, 120
@@ -123,6 +126,11 @@ public class RangeTest {
 		exampleRange46 = new Range(2.5, 5.0); //Range variable for test 115
 		exampleRange47 = new Range(5.0, 10.0); // Range variable for test 118
 		exampleRange48 = new Range(3.0, 5.0); // Range variable for test 131
+		exampleRange49 = new Range(-5.0, 5.0); // Range variable for test 154
+        exampleRange50 = new Range(1.0, 1.0); // Range variable for test 155
+        exampleRange51 = new Range(-20.0, -10.0);// range variable for test 157
+        exampleRange52 = new Range(1000000.0, 2000000.0); // range variable for test 158 
+        exampleRange53 = new Range(0.1, 0.3); // range variable for test 159 
         
         exampleObject = new Object();
     }
@@ -1004,9 +1012,136 @@ public class RangeTest {
 			  assertFalse("Expected false, since both lower and upper are valid", exampleRange19.isNaNRange());
 		  }
 		  
-		
+		  // Test Case 147: Test Range constructor for valid range partition 
+		  @Test 
+		  public void testRange_ValidRange() {
+			  Range range = new Range(0,10);
+			  assertNotNull(range);
+			  assertEquals(0, range.getLowerBound(), 0.001);
+			  assertEquals(10, range.getUpperBound(), 0.001);
+			  
+		  }
 		  
-	
+		  // Test Case 148: Test Range constructor for valid range partition with lower equal to upper
+		  @Test
+		  public void testRange_ValidRangeWithLowerEqualUpper() {
+			  Range range = new Range(10, 10);
+			  assertNotNull(range);
+			  assertEquals(10, range.getLowerBound(), 0.001);
+			  assertEquals(10, range.getUpperBound(), 0.001);
+		  }
+		  
+		  // Test Case 149: Test Range constructor for invalid range with positive upper and lower
+		  @Test(expected = IllegalArgumentException.class)
+		  public void testRange_InvalidRange() {
+			  new Range(10,9);
+		  }
+		  
+		  //Test case 150: Test Range constructor for invalid range with 0 lower and negative upper
+		  @Test(expected = IllegalArgumentException.class)
+		  public void testRange_InvalidRangeWithNegative() {
+			  new Range(0, -1);
+		  }
+		  
+		  // Test case 151: Test Range constructor for boundary case where lower is equal to upper
+		  @Test
+		  public void testRange_BoundaryValid() {
+			  Range range = new Range(0, 0);
+			  assertNotNull(range);
+			  assertEquals(0, range.getLowerBound(), 0.001);
+			  assertEquals(0, range.getUpperBound(), 0.001);
+			  }
+		  // Test case 152: Test Range constructor for boundary case where lower is 1 greater than upper
+		  @Test(expected = IllegalArgumentException.class)
+		  public void testRange_BoundaryInvalid() {
+			  new Range(1, 0);
+		  }
+		  
+		  // Test case 153: Test getCentralValue for valid positive range including 0 
+		  @Test
+		  public void testGetCentralValue_PositiveRange() {
+			  assertEquals(5.0, exampleRange41.getCentralValue(), 0.001);
+		  }
+		  
+		  // Test case 154: test getCentralValue for valid range that spans negative and positive 
+		@Test
+		public void testGetCentralValue_NegativeAndPositiveRange() {
+			assertEquals(0.0, exampleRange49.getCentralValue(), 0.001);
+		}
+		
+		// Test case 155: test getCentralValue for valid range where lower is equal to upper 
+		@Test
+		public void testGetCentralValue_LowerEqualUpper() {
+			assertEquals(1.0, exampleRange50.getCentralValue(), 0.001);
+		}
+		
+		// Test case 156: test getCentralValue for valid positive range that doesn't include 0 
+		@Test
+		public void testGetCentralValue_PositiveRangeNotIncludingZero() {
+			assertEquals(7.5, exampleRange47.getCentralValue(), 0.001);
+		}
+		
+		// Test case 157: test getCentralValue for valid negative range 
+		@Test
+		public void testGetCentralValue_NegativeRange() {
+			assertEquals(-15.0, exampleRange51.getCentralValue(), 0.001);
+		}
+		
+		// Test case 158: test getCentralValue for valid very large range
+		@Test
+		public void testGetCentralValue_LargeRange() {
+			assertEquals(1500000.0, exampleRange52.getCentralValue(), 0.001);
+		}
+		
+		// Test case 159: test getCentralValue for valid very small range 
+		@Test
+		public void testGetCentralValue_SmallRange() {
+			assertEquals(0.2, exampleRange53.getCentralValue(), 0.001);
+		}
+		
+		// Test case 160: test toString() for positive range including 0
+		@Test
+		public void testToString_PositiveRangeIncludingZero() {
+			assertEquals("Range[0.0,10.0]", exampleRange41.toString());
+		}
+		// Test case 161: test ToString() for negative and positive range
+		@Test
+		public void testToString_PositiveAndNegativeRange() {
+			assertEquals("Range[-5.0,5.0]", exampleRange49.toString());
+		}
+	// Test case 162: test toString() for range where lower equals upper
+		@Test
+		public void testToString_LowerEqualsUpper() {
+			assertEquals("Range[1.0,1.0]", exampleRange50.toString());
+		}
+		
+		// Test case 163: test toString() for positive range that doesn't include 0 
+		@Test
+		public void testToString_PositiveRangeNotIncludingZero() {
+			assertEquals("Range[5.0,10.0]", exampleRange47.toString());
+		}
+		// Test case 164: test toString() for negative range
+		@Test
+		public void testToString_NegativeRange() {
+			assertEquals("Range[-20.0,-10.0]", exampleRange51.toString());
+		}
+		
+		// Test case 165: test toString() for very large range
+		@Test
+		public void testToString_LargeRange() {
+			assertEquals("Range[1000000.0,2000000.0]", exampleRange52.toString());
+		}
+		// Test case 166: test toString() for small range
+		@Test
+		public void testToString_SmallRange() {
+			assertEquals("Range[0.1,0.3]", exampleRange53.toString());
+		}
+		
+		// Test case 167 test scale for case where factor is negative but greater than -1 
+		@Test(expected = IllegalArgumentException.class)
+		public void testScale_FactorBetweenNegativeOneAndZero() {
+			Range.scale(exampleRange40, -1); 
+		 }
 		
 	
 	
