@@ -859,6 +859,112 @@ public class RangeTest {
 		    assertTrue("Input range (4.0, 6.0) should intersect with (3.0, 5.0)",
 		    		exampleRange17.intersects(4.0, 6.0));
 		}
+		
+		// ================== Mutation Testing Additional Test Cases ==================
+		
+		// Test Case 133: test construction of a new invalid Range object where lower is greater than upper and verify that the exception message is as expected
+		// test to kill mutant: removed call to java/lang/StringBuilder::toString 
+		@Test 
+		public void testIllegalArgumentExceptionWithMessage_invalidRange() {
+			try {
+				new Range(10.0, 5.0); // lower is greater than upper
+				fail("Expected IllegalArgumentException to be thrown");
+			} catch (IllegalArgumentException e){
+				String message = e.getMessage();
+				assertTrue("Message should contain 'require lower'", message.contains("require lower"));
+				assertTrue("Message should contain 'upper'", message.contains("upper"));
+			
+			}
+		}
+		
+		// Test Case 134: test construction of a new invalid Range object where lower is greater than upper and verify that the exception message is as expected
+		// test to kill mutant: replaced call to StringBuilder::append with receiver 
+		@Test 
+		public void testIllegalArgumentExceptionWithMessageAfterAppendChange_invalidRange() {
+			try {
+				new Range(10.0, 5.0); // lower is greater than upper
+				fail("Expected IllegalArgumentException to be thrown");
+			} catch (IllegalArgumentException e){
+				String message = e.getMessage();
+				assertTrue("Message should contain 'Range(double, double): require lower'", message.contains("Range(double, double): require lower"));
+				assertTrue("Message should contain 'upper'", message.contains("upper"));
+				assertTrue(message.contains("10"));
+				assertTrue(message.contains("5"));
+			
+			}
+		}
+		
+		// Test Case 135: test construction of a new invalid Range object where lower is greater than upper and verify that the exception message is as expected
+		// test to kill mutant: replaced call to StringBuilder::append with receiver 
+		@Test 
+		public void testIllegalArgumentExceptionWithExactMessage_invalidRange() {
+			try {
+				new Range(10.0, 5.0); // lower is greater than upper
+				fail("Expected IllegalArgumentException to be thrown");
+			} catch (IllegalArgumentException e){
+				String expectedMessage = "Range(double, double): require lower (10.0) <= upper (5.0).";
+				assertEquals("Exception message does not match expected.", expectedMessage, e.getMessage());
+			
+			}
+		}
+		
+		// Test Case 136: test construction of a new valid Range object to ensure that exception is not thrown 
+		// test to kill mutant: Negated double local variable number 1 
+		@Test 
+		public void testValidRange() {
+			Range range = new Range(5.0, 10.0); 
+			assertNotNull(range); // no exception should be thrown 
+		}
+		
+		// Test Case 137: test construction of a new Range object with values close together 
+		// test to kill mutant: decremented double local variable number 1 
+		@Test
+		public void testDecrementedLowerBound() {
+			try {
+				new Range (9.5, 9.0); // if lower is decremented by mutant, then the range will be valid
+				fail("Expected Illegal Argument Exception to be thrown");
+				
+			} catch (IllegalArgumentException e) {
+				String message = e.getMessage();
+				assertTrue(message.contains("9.5"));
+				assertTrue(message.contains("9.0"));
+			}
+		}
+		
+		// Test Case 138: test construction of a new Range object with values close together
+		// test to kill mutant: decremented double local variable number 3 
+		
+		@Test
+		public void testDecrementedUpperBound() {
+				Range range = new Range (9.0, 9.5); // range should be valid, but if upper is decremented by mutator it would be invalid
+				assertNotNull(range);
+			
+		}
+		// Test Case 139: test construction of a new Range object with values close together
+		// test to kill mutant: incremented double local variable number 3 
+		  @Test
+		    public void testIncrementedUpperBound() {
+		        try {
+		           
+		            new Range(0.1, 0.0); // this range is invalid and should create an exception, if upper is incremented it will not create exception 
+		            fail("Expected IllegalArgumentException to be thrown");
+		        } catch (IllegalArgumentException e) {
+		            String message = e.getMessage();
+		            assertTrue(message.contains("0.1"));
+		            assertTrue(message.contains("0.0"));
+		        }
+		    }
+		  
+		  // Test Case 140: test construction of a new Range object with values close together
+		  // test to kill mutant: incremented double local variable number 1 
+		  @Test
+			public void testIncrementedLowerBound() {
+					Range range = new Range (0.0, 0.1); // range should be valid, but if lower is incremented by mutator it would be invalid
+					assertNotNull(range);
+				
+			}
+		
+		
 	
 	
 	@After
