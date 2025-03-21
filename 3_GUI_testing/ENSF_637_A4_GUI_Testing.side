@@ -2164,59 +2164,6 @@
       "value": ""
     }]
   }, {
-    "id": "a9149620-dcac-4d79-bfbc-35de7d542109",
-    "name": "account_creation_Base",
-    "commands": [{
-      "id": "5810d59a-6521-4231-b1ac-542701c7cb3a",
-      "comment": "",
-      "command": "executeScript",
-      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "5a1f58eb-f834-46dc-807a-f171018e2478",
-      "comment": "",
-      "command": "executeScript",
-      "target": "localStorage.clear()",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "17414eb4-3bc1-4d8e-8292-a20dd9fa38b2",
-      "comment": "",
-      "command": "executeScript",
-      "target": "sessionStorage.clear()",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "1e409d03-c142-4996-be9c-d10016439765",
-      "comment": "",
-      "command": "open",
-      "target": "/",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "dc9fba0e-57a6-460f-aae2-f2ecf4a8a84e",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1378x1110",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "4e8c8eab-b881-41b8-8de9-d1a9d830a85d",
-      "comment": "",
-      "command": "click",
-      "target": "linkText=Start here.",
-      "targets": [
-        ["linkText=Start here.", "linkText"],
-        ["css=.nav-signin-tooltip-footer > .nav-a", "css:finder"],
-        ["xpath=(//a[contains(text(),'Start here.')])[2]", "xpath:link"],
-        ["xpath=//div[@id='nav-signin-tooltip']/div/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, 'https://www.amazon.ca/ap/register?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.ca%2F%3F_encoding%3DUTF8%26ref_%3Dnav_custrec_newcust&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=caflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0')]", "xpath:href"],
-        ["xpath=//div[2]/div/a", "xpath:position"]
-      ],
-      "value": ""
-    }]
-  }, {
     "id": "895deda8-f03e-4d56-bac5-c48c34e954ea",
     "name": "account_creation_testValidNameInvalidEmailPasswordDoesNotMatch",
     "commands": [{
