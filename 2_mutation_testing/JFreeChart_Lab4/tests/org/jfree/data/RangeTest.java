@@ -1137,6 +1137,12 @@ public class RangeTest {
 			assertEquals("Range[0.1,0.3]", exampleRange53.toString());
 		}
 		
+		// Test case 167 test scale for case where factor is negative but greater than -1 
+		@Test(expected = IllegalArgumentException.class)
+		public void testScale_FactorBetweenNegativeOneAndZero() {
+			Range.scale(exampleRange40, -1); 
+		 }
+		
 	
 	
 	@After
