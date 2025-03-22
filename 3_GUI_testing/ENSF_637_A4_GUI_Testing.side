@@ -2,7 +2,7 @@
   "id": "ddb23f1d-51c8-42a7-8197-a0ce5eda1e9f",
   "version": "2.0",
   "name": "ENSF_637_A4_GUI_Testing",
-  "url": "https://www.amazon.ca",
+  "url": "https://www.amazon.ca/",
   "tests": [{
     "id": "2889866a-df23-441c-966c-9b91a4462e8a",
     "name": "product_search_testShirt",
@@ -6399,6 +6399,2754 @@
       "comment": "",
       "command": "executeScript",
       "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "0e1c29b5-d769-4b01-800a-450f1bdc348f",
+    "name": "gift_card_testGiftCardOptions",
+    "commands": [{
+      "id": "44f4fc7c-22b5-4c59-a6ba-5ec7132e3234",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c85abc8a-4896-4885-a43c-9df08ffe6487",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "988d9334-b214-40f6-8460-143db7361a5c",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2e8dd7c3-12bd-4523-b885-07f0e20400f7",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b2cad199-f298-45d8-9527-8a033eab8338",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.hm-icon",
+      "targets": [
+        ["css=.hm-icon", "css:finder"],
+        ["xpath=//a[@id='nav-hamburger-menu']/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02ae48a0-6d2f-4c1c-b1f6-b5703c33e3e0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.hm-icon",
+      "targets": [
+        ["css=.hm-icon", "css:finder"],
+        ["xpath=//a[@id='nav-hamburger-menu']/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4fb50669-9c86-4d23-b017-ad7912fe6070",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.hm-icon",
+      "targets": [
+        ["css=.hm-icon", "css:finder"],
+        ["xpath=//a[@id='nav-hamburger-menu']/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "82ed79f4-b9e3-4b35-af6e-34bbb6fb6a6a",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=li:nth-child(27) div",
+      "targets": [
+        ["css=li:nth-child(27) div", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a/div", "xpath:idRelative"],
+        ["xpath=//li[26]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b69f3e7-7c66-4152-8cd8-6eb061699ff6",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(27) div",
+      "targets": [
+        ["css=li:nth-child(27) div", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a/div", "xpath:idRelative"],
+        ["xpath=//li[26]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "22771f29-ee08-4ca5-b7e6-c994531842b5",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=All gift cards",
+      "targets": [
+        ["linkText=All gift cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(3) > .hmenu-item", "css:finder"],
+        ["xpath=//a[contains(text(),'All gift cards')]", "xpath:link"],
+        ["xpath=//div[@id='hmenu-content']/ul[25]/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gp/browse.html?node=9230166011&ref_=nav_em_ShopByDept_GC_Desktop_all_0_2_25_2')]", "xpath:href"],
+        ["xpath=//ul[25]/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All gift cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f92c95d1-44a1-4a3c-b63b-f10177a3df5e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=All gift cards",
+      "targets": [
+        ["linkText=All gift cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(3) > .hmenu-item", "css:finder"],
+        ["xpath=//a[contains(text(),'All gift cards')]", "xpath:link"],
+        ["xpath=//div[@id='hmenu-content']/ul[25]/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gp/browse.html?node=9230166011&ref_=nav_em_ShopByDept_GC_Desktop_all_0_2_25_2')]", "xpath:href"],
+        ["xpath=//ul[25]/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All gift cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6231294a-cf75-4132-a98f-5fd83063ec79",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Amazon Gift Cards",
+      "targets": [
+        ["linkText=Amazon Gift Cards", "linkText"],
+        ["css=.nav-type-main li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Amazon Gift Cards')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/b/ref=CA_GCLP_SUBNAV_AGC?ie=UTF8&node=121142959011')]", "xpath:href"],
+        ["xpath=//div/div/nav/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Amazon Gift Cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2096136b-9dbf-4d44-800c-73306d336516",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Specialty Gift Cards",
+      "targets": [
+        ["linkText=Specialty Gift Cards", "linkText"],
+        ["css=ul:nth-child(3) > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Specialty Gift Cards')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/b/ref=CA_GCLP_SUBNAV_BGC?ie=UTF8&node=19921261011')]", "xpath:href"],
+        ["xpath=//div/div/nav/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Specialty Gift Cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "584e84c7-f08f-449c-9471-f98012a88e4c",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Redeem Amazon gift card",
+      "targets": [
+        ["linkText=Redeem Amazon gift card", "linkText"],
+        ["css=.nav-type-main li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Redeem Amazon gift card')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/gc/redeem/?ie=UTF8&ref=CA_GCLP_SUBNAV_REDEEM')]", "xpath:href"],
+        ["xpath=//div/div/nav/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Redeem Amazon gift card')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "11897971-12ab-4f20-a58f-11c95c8465f2",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=View your balance",
+      "targets": [
+        ["linkText=View your balance", "linkText"],
+        ["css=ul:nth-child(3) > li:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'View your balance')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/gc/balance/?ie=UTF8&ref-CA_GCLP_SUBNAV_BALANCE')]", "xpath:href"],
+        ["xpath=//div/div/nav/ul/li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'View your balance')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "67f80959-54aa-4742-b4a8-f90084997a7b",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Amazon Reload",
+      "targets": [
+        ["linkText=Amazon Reload", "linkText"],
+        ["css=.nav-type-main li:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Amazon Reload')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/dp/B0CK1CQ4LB/ref=CA_GCLP_SUBNAV_RELOAD?th=1')]", "xpath:href"],
+        ["xpath=//nav/ul/li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Amazon Reload')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "33c42f8c-f828-4e41-8009-af7d90be61c8",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ebbc6615-e583-454a-b563-f7d79e23aab8",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "75a5abf5-b9cf-4e0c-afba-a567f72b1cf0",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b44ee519-6c24-4a43-82d6-1b912042dac1",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "1ab29d11-9760-4e3e-8ebf-cbf7cdf3cd49",
+    "name": "gift_card_testShopByOccasionBirthday",
+    "commands": [{
+      "id": "4417ea66-c9e6-44ff-8e46-20ea5810ce11",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2265feb-176a-4ed4-b75e-6d83d1ea79e9",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "653ab14c-b757-4837-84c5-67d0fe9b9956",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9e99a54-1e8c-4618-a5bc-0f689ea373ff",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f4f47528-7166-43d2-a80e-8123a8f55548",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.hm-icon",
+      "targets": [
+        ["css=.hm-icon", "css:finder"],
+        ["xpath=//a[@id='nav-hamburger-menu']/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "90bb1bfb-a429-446f-a5e8-e3f28dbce6f2",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-hamburger-menu",
+      "targets": [
+        ["id=nav-hamburger-menu", "id"],
+        ["linkText=All", "linkText"],
+        ["css=#nav-hamburger-menu", "css:finder"],
+        ["xpath=//a[@id='nav-hamburger-menu']", "xpath:attributes"],
+        ["xpath=//div[@id='nav-main']/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'javascript: void(0)')]", "xpath:href"],
+        ["xpath=//div[5]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e6c1cf82-15cd-446c-bd5f-30270a53e3c7",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "linkText=Amazon Prime",
+      "targets": [
+        ["linkText=Amazon Prime", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(25) > .hmenu-item", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[24]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '')])[387]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[24]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "24f34eda-74ab-4beb-b9db-251006fdf9eb",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=li:nth-child(27) div",
+      "targets": [
+        ["css=li:nth-child(27) div", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a/div", "xpath:idRelative"],
+        ["xpath=//li[26]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e0843e3c-7193-4139-b354-9b89bff26dd9",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Gift Cards",
+      "targets": [
+        ["linkText=Gift Cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(27) > .hmenu-item", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '')])[389]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[26]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b762f360-f2ac-4701-9cb0-8464188f3f8e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Gift Cards",
+      "targets": [
+        ["linkText=Gift Cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(27) > .hmenu-item", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '')])[389]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[26]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "014560b9-4ce4-433a-9d9a-84ad5e9c4569",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=All gift cards",
+      "targets": [
+        ["linkText=All gift cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(3) > .hmenu-item", "css:finder"],
+        ["xpath=//a[contains(text(),'All gift cards')]", "xpath:link"],
+        ["xpath=//div[@id='hmenu-content']/ul[25]/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gp/browse.html?node=9230166011&ref_=nav_em_ShopByDept_GC_Desktop_all_0_2_25_2')]", "xpath:href"],
+        ["xpath=//ul[25]/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All gift cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "34f0a6d9-c291-496c-942f-d8a6bda843bd",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=All gift cards",
+      "targets": [
+        ["linkText=All gift cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(3) > .hmenu-item", "css:finder"],
+        ["xpath=//a[contains(text(),'All gift cards')]", "xpath:link"],
+        ["xpath=//div[@id='hmenu-content']/ul[25]/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gp/browse.html?node=9230166011&ref_=nav_em_ShopByDept_GC_Desktop_all_0_2_25_2')]", "xpath:href"],
+        ["xpath=//ul[25]/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All gift cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6222a454-ae84-436b-bcde-2dbc27d46628",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "52d6e3bf-c748-45d7-b329-b8292b3385d9",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Amazon Gift Cards",
+      "targets": [
+        ["linkText=Amazon Gift Cards", "linkText"],
+        ["css=.nav-type-main li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Amazon Gift Cards')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/b/ref=CA_GCLP_SUBNAV_AGC?ie=UTF8&node=121142959011')]", "xpath:href"],
+        ["xpath=//div/div/nav/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Amazon Gift Cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "48df04ce-7319-4e82-b91a-0af15b33b928",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Amazon Gift Cards",
+      "targets": [
+        ["linkText=Amazon Gift Cards", "linkText"],
+        ["css=.nav-type-main li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Amazon Gift Cards')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/b/ref=CA_GCLP_SUBNAV_AGC?ie=UTF8&node=121142959011')]", "xpath:href"],
+        ["xpath=//div/div/nav/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Amazon Gift Cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4eae3c2a-0a66-4141-8a58-0463b9235cef",
+      "comment": "",
+      "command": "click",
+      "target": "css=.\\_Y29ud_bxcGridText_3AiaV > h2",
+      "targets": [
+        ["css=.\\_Y29ud_bxcGridText_3AiaV > h2", "css:finder"],
+        ["xpath=//div[@id='0']/div/div/h2", "xpath:idRelative"],
+        ["xpath=//div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Shop By Occasion')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "430a6200-0c7b-4bba-b03f-43df6f678262",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.\\_Y29ud_bxcGridText_3AiaV > h2 > span",
+      "targets": [
+        ["css=.\\_Y29ud_bxcGridText_3AiaV > h2 > span", "css:finder"],
+        ["xpath=//div[@id='0']/div/div/h2/span", "xpath:idRelative"],
+        ["xpath=//h2/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Shop By Occasion')]", "xpath:innerText"]
+      ],
+      "value": "Shop By Occasion"
+    }, {
+      "id": "53f7a832-f4ec-4534-a4d2-9412fb437c22",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='1']/div/div/p",
+      "targets": [
+        ["xpath=//div[@id='1']/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Birthday')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "945a902c-0766-4560-a081-96fb698c050d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.\\_Y29ud_bxcGridRow_Zu5i8:nth-child(4) > #\\31",
+      "targets": [
+        ["css=.\\_Y29ud_bxcGridRow_Zu5i8:nth-child(4) > #\\31", "css:finder"],
+        ["xpath=(//div[@id='1'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='CardInstancer5l5OpnfDpHo79Q2su8vjA']/div/div/div[4]/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div/div[4]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "63ec3bba-5d27-4e46-9902-18e7fcfffd0c",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=//div[@id='1']/div/div/p/a/span",
+      "targets": [
+        ["xpath=//div[@id='1']/div/div/p/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/p/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d2032d1-d7a5-4f30-b492-1f401678f643",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=//div[@id='1']/div/div/p/a/span",
+      "targets": [
+        ["xpath=//div[@id='1']/div/div/p/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/p/a/span", "xpath:position"]
+      ],
+      "value": "Birthday"
+    }, {
+      "id": "ae8c575e-3ffe-4a93-9703-c77e14a0e00a",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='1']/div/div/p/a/span",
+      "targets": [
+        ["xpath=//div[@id='1']/div/div/p/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/p/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "528ed374-a50f-400b-a2fa-a7d39b3d7102",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "287c5be8-6d6c-4029-bab8-d2ba369c8c65",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7342cbba-d4cd-4d0d-8f2a-a7930782ead6",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9f2e8ea1-d1e3-40f5-9494-51449b08b65b",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f21bb25e-8b86-4ad7-bbe2-2f0f66d672a4",
+    "name": "gift_card_testShopBySpecialityGiftCardByBrandApple",
+    "commands": [{
+      "id": "1a333207-79c6-4c60-bb2f-f02bde83f601",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6ffc2819-896b-4981-aadd-718146383ae9",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d941a831-35f4-4811-b952-3a45c42db06f",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca04c0f7-fdbd-42ba-95c4-0c775727b92d",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cf9cae24-f0ac-47ac-87ea-f0bf1d3fcaf5",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.hm-icon",
+      "targets": [
+        ["css=.hm-icon", "css:finder"],
+        ["xpath=//a[@id='nav-hamburger-menu']/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "77c9e4ae-7347-4adc-bb51-a4eb19ee1ce6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.hm-icon",
+      "targets": [
+        ["css=.hm-icon", "css:finder"],
+        ["xpath=//a[@id='nav-hamburger-menu']/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ad22f72-bde1-4e3b-b2d6-5816ef18ff62",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.hm-icon",
+      "targets": [
+        ["css=.hm-icon", "css:finder"],
+        ["xpath=//a[@id='nav-hamburger-menu']/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0eaf2c3-7a79-4182-9e20-e5a5c1f80321",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=li:nth-child(27) div",
+      "targets": [
+        ["css=li:nth-child(27) div", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a/div", "xpath:idRelative"],
+        ["xpath=//li[26]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7c6a265-24e4-4941-8c21-be042ecb9f49",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(27) div",
+      "targets": [
+        ["css=li:nth-child(27) div", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a/div", "xpath:idRelative"],
+        ["xpath=//li[26]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87c19785-616a-4718-9ac8-a9c8e118844c",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=All gift cards",
+      "targets": [
+        ["linkText=All gift cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(3) > .hmenu-item", "css:finder"],
+        ["xpath=//a[contains(text(),'All gift cards')]", "xpath:link"],
+        ["xpath=//div[@id='hmenu-content']/ul[25]/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gp/browse.html?node=9230166011&ref_=nav_em_ShopByDept_GC_Desktop_all_0_2_25_2')]", "xpath:href"],
+        ["xpath=//ul[25]/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All gift cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "18432281-10f4-438a-81b0-2fb4c2da13a7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=All gift cards",
+      "targets": [
+        ["linkText=All gift cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(3) > .hmenu-item", "css:finder"],
+        ["xpath=//a[contains(text(),'All gift cards')]", "xpath:link"],
+        ["xpath=//div[@id='hmenu-content']/ul[25]/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gp/browse.html?node=9230166011&ref_=nav_em_ShopByDept_GC_Desktop_all_0_2_25_2')]", "xpath:href"],
+        ["xpath=//ul[25]/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All gift cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa1f2263-54da-45ea-8a6a-5df421b70430",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Specialty Gift Cards",
+      "targets": [
+        ["linkText=Specialty Gift Cards", "linkText"],
+        ["css=ul:nth-child(3) > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Specialty Gift Cards')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/b/ref=CA_GCLP_SUBNAV_BGC?ie=UTF8&node=19921261011')]", "xpath:href"],
+        ["xpath=//div/div/nav/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Specialty Gift Cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "666fe0dc-d841-4a36-8d55-189a4ea512b0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Specialty Gift Cards",
+      "targets": [
+        ["linkText=Specialty Gift Cards", "linkText"],
+        ["css=ul:nth-child(3) > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Specialty Gift Cards')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/b/ref=CA_GCLP_SUBNAV_BGC?ie=UTF8&node=19921261011')]", "xpath:href"],
+        ["xpath=//div/div/nav/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Specialty Gift Cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2266559-2fc8-4486-8bec-5da8cfb24aa1",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "947b282a-d82f-4d93-b181-7e5fba3e263c",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=(//div[@id='0']/div/div/h2/span)[2]",
+      "targets": [
+        ["xpath=(//div[@id='0']/div/div/h2/span)[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/div/div/div/div/div/h2/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Top Brands')]", "xpath:innerText"]
+      ],
+      "value": "Top Brands"
+    }, {
+      "id": "aa9171b1-7849-4fa9-8309-a218500b45e2",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//div[@id='0']/div/div/h2)[2]",
+      "targets": [
+        ["xpath=(//div[@id='0']/div/div/h2)[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/div/div/div/div/div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Top Brands')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3035193-21a5-4231-b329-08bf0d591cd2",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=(//img[@alt='Apple'])[3]",
+      "targets": [
+        ["xpath=(//img[@alt='Apple'])[3]", "xpath:img"],
+        ["xpath=(//div[@id='0']/div/div/a/img)[3]", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/div/div[2]/div/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a504d89c-12a9-4b8a-8e59-4093b51c0fd9",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//img[@alt='Apple'])[3]",
+      "targets": [
+        ["xpath=(//img[@alt='Apple'])[3]", "xpath:img"],
+        ["xpath=(//div[@id='0']/div/div/a/img)[3]", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/div/div[2]/div/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ff62b6e-b3bb-436e-9597-221498e4a8fe",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "97e170a6-bda2-4aca-9e96-d80102f26de7",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d1d5665c-52e8-4694-b9ff-c26278a8c984",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "84992dd1-f15e-42dc-a9de-1686c0888809",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "9c484fea-fdef-443e-adc0-0c31145b6db5",
+    "name": "gift_card_testShopByAmazonEGiftCard",
+    "commands": [{
+      "id": "c14be1e5-e4be-4b14-bd3a-69a2f420b7ef",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ef6d4abc-c987-44c4-bf14-8c37ce566781",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "196fdc75-ce2f-4db4-9cbc-3f7c01f5084b",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f2674289-749b-4faf-80ec-ead3d91276c7",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8ae9b3d0-d9c3-417c-8e54-5812ab4dbf0c",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.hm-icon",
+      "targets": [
+        ["css=.hm-icon", "css:finder"],
+        ["xpath=//a[@id='nav-hamburger-menu']/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "41dbe563-8a46-47f0-aa18-0ebb42a7fcc0",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-hamburger-menu",
+      "targets": [
+        ["id=nav-hamburger-menu", "id"],
+        ["linkText=All", "linkText"],
+        ["css=#nav-hamburger-menu", "css:finder"],
+        ["xpath=//a[@id='nav-hamburger-menu']", "xpath:attributes"],
+        ["xpath=//div[@id='nav-main']/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'javascript: void(0)')]", "xpath:href"],
+        ["xpath=//div[5]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "70d8c2d9-ca41-4401-9b7e-8a3e7a7b53d2",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "linkText=Amazon Prime",
+      "targets": [
+        ["linkText=Amazon Prime", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(25) > .hmenu-item", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[24]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '')])[387]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[24]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "671c67b7-c89a-461c-aa47-013e96b05a3b",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=li:nth-child(27) div",
+      "targets": [
+        ["css=li:nth-child(27) div", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a/div", "xpath:idRelative"],
+        ["xpath=//li[26]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d3de009f-b956-4cbd-bde8-acc3e7694229",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Gift Cards",
+      "targets": [
+        ["linkText=Gift Cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(27) > .hmenu-item", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '')])[389]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[26]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f671c5d-752c-40f9-b100-41c685bbbee7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Gift Cards",
+      "targets": [
+        ["linkText=Gift Cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(27) > .hmenu-item", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '')])[389]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[26]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5307e380-0bc2-4213-bc59-afe23922634b",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=All gift cards",
+      "targets": [
+        ["linkText=All gift cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(3) > .hmenu-item", "css:finder"],
+        ["xpath=//a[contains(text(),'All gift cards')]", "xpath:link"],
+        ["xpath=//div[@id='hmenu-content']/ul[25]/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gp/browse.html?node=9230166011&ref_=nav_em_ShopByDept_GC_Desktop_all_0_2_25_2')]", "xpath:href"],
+        ["xpath=//ul[25]/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All gift cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "88cfbf25-eefe-4ed8-8943-7448bc7b504e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=All gift cards",
+      "targets": [
+        ["linkText=All gift cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(3) > .hmenu-item", "css:finder"],
+        ["xpath=//a[contains(text(),'All gift cards')]", "xpath:link"],
+        ["xpath=//div[@id='hmenu-content']/ul[25]/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gp/browse.html?node=9230166011&ref_=nav_em_ShopByDept_GC_Desktop_all_0_2_25_2')]", "xpath:href"],
+        ["xpath=//ul[25]/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All gift cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5fd45198-c2b7-4174-be7b-13b8ba12f782",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4ac4785a-fb2d-4326-ab18-0e46f5b4df11",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Amazon Gift Cards",
+      "targets": [
+        ["linkText=Amazon Gift Cards", "linkText"],
+        ["css=.nav-type-main li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Amazon Gift Cards')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/b/ref=CA_GCLP_SUBNAV_AGC?ie=UTF8&node=121142959011')]", "xpath:href"],
+        ["xpath=//div/div/nav/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Amazon Gift Cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "989f3f50-966f-4ee5-bb5c-a5ff5db87e45",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Amazon Gift Cards",
+      "targets": [
+        ["linkText=Amazon Gift Cards", "linkText"],
+        ["css=.nav-type-main li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Amazon Gift Cards')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/b/ref=CA_GCLP_SUBNAV_AGC?ie=UTF8&node=121142959011')]", "xpath:href"],
+        ["xpath=//div/div/nav/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Amazon Gift Cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "13238eaf-5430-4939-a80e-3b9b472c47c0",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=//img[@alt='eGift Cards - No fees, no expiration, all fun. Send today or plan ahead.']",
+      "targets": [
+        ["xpath=//img[@alt='eGift Cards - No fees, no expiration, all fun. Send today or plan ahead.']", "xpath:img"],
+        ["xpath=//div[@id='0']/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9eae97f-ed6a-4bd7-afac-8782ed412d19",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//img[@alt='eGift Cards - No fees, no expiration, all fun. Send today or plan ahead.']",
+      "targets": [
+        ["xpath=//img[@alt='eGift Cards - No fees, no expiration, all fun. Send today or plan ahead.']", "xpath:img"],
+        ["xpath=//div[@id='0']/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "19818f3d-0d0f-4f1d-b763-7e9fc75f0610",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ffda26c-8622-47b4-b3d0-45a16b5394ba",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3118c081-8ae2-4c5d-bd83-682e6808fe31",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "204cb806-8bc3-450d-8dfe-ba82ff4ed0b1",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "ca14d7ed-31ff-49c4-a096-bc6ca11e193a",
+    "name": "gift_ideas_testGiftIdeasOptions",
+    "commands": [{
+      "id": "d4485f44-92ff-4d8b-8ef6-9824a41bbb1d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd8eb8da-32d9-4b42-b0b7-546e011335c1",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6b61d5cc-f5e6-44ec-8532-c59c21086664",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8ccce743-6668-41cf-bf9f-82aad6b5ed38",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "46ff1f41-8bc7-4eb3-bc50-e7ac82750aa6",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Gift Ideas",
+      "targets": [
+        ["linkText=Gift Ideas", "linkText"],
+        ["css=.nav-li:nth-child(10) > .nav-a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gift Ideas')]", "xpath:link"],
+        ["xpath=//div[@id='nav-xshop']/ul/li[10]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gcx/-/gfhz/?ref_=nav_cs_giftfinder')]", "xpath:href"],
+        ["xpath=//div[2]/div/ul/li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gift Ideas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "be97bac7-c306-466a-ae73-e7f159b77928",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Gift Ideas",
+      "targets": [
+        ["linkText=Gift Ideas", "linkText"],
+        ["css=.nav-li:nth-child(10) > .nav-a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gift Ideas')]", "xpath:link"],
+        ["xpath=//div[@id='nav-xshop']/ul/li[10]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gcx/-/gfhz/?ref_=nav_cs_giftfinder')]", "xpath:href"],
+        ["xpath=//div[2]/div/ul/li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gift Ideas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d0c143b-e217-4f44-b156-5fa45d1a432d",
+      "comment": "",
+      "command": "click",
+      "target": "id=reactApp",
+      "targets": [
+        ["id=reactApp", "id"],
+        ["css=#reactApp", "css:finder"],
+        ["xpath=//div[@id='reactApp']", "xpath:attributes"],
+        ["xpath=//div[@id='a-page']/div", "xpath:idRelative"],
+        ["xpath=//body/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "98abb3f3-56c6-4d61-bf1d-a241a5f8fdbd",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.sc-3ey1l1-0:nth-child(2) > .ktemvl-9",
+      "targets": [
+        ["css=.sc-3ey1l1-0:nth-child(2) > .ktemvl-9", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/h2", "xpath:idRelative"],
+        ["xpath=//div[2]/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Who are you shopping for?')]", "xpath:innerText"]
+      ],
+      "value": "Who are you shopping for?"
+    }, {
+      "id": "bc1fb8ac-84fb-418f-a9b8-cc1afc54387f",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.gs1jqp-0:nth-child(1) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(1) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/categories/day-dinner-circle._CB411396691_._SR80,80_.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "959ba018-2576-4a29-bcd1-305ff4c276d0",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.gs1jqp-0:nth-child(1) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(1) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/categories/day-dinner-circle._CB411396691_._SR80,80_.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "176d3117-1938-4701-92e7-aaa81c0778a5",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.gs1jqp-0:nth-child(1) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(1) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/categories/day-dinner-circle._CB411396691_._SR80,80_.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fedc7820-e06e-4e29-9d51-5bb955ac5eef",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.gs1jqp-0:nth-child(2) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(2) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/holiday18/women-blue._CB478654866_._SR80,80_.png')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a[2]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f406f1a-6ea5-4c9a-b3eb-9f659e86de1c",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.gs1jqp-0:nth-child(3) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(3) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/holiday18/men-blue._CB478654573_._SR80,80_.png')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a[3]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//a[3]/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "21d9a2ac-dfb8-4fef-9fa9-b4f23e614328",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.gs1jqp-0:nth-child(4) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(4) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/holiday18/teen-girl-blue._CB480594376_._SR80,80_.png')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a[4]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//a[4]/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e7dfcb09-b208-4965-b271-3ebd36896076",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.gs1jqp-0:nth-child(5) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(5) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/holiday18/kid8-boy-blue._CB480594377_._SR80,80_.png')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a[5]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//a[5]/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a21b088-8972-4ed8-a6c1-fe71a3adbf2a",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.gs1jqp-0:nth-child(6) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(6) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/holiday18/kid4-girl-blue._CB480594382_._SR80,80_.png')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a[6]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//a[6]/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6bbbf65d-cc66-4c04-aeab-0dc945e75ac2",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.gs1jqp-0:nth-child(7) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(7) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/holiday18/baby-boy-blue._CB480594383_._SR80,80_.png')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a[7]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//a[7]/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7852286-fb61-4ed3-8b2d-23c58c20b5af",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "52488033-931b-4756-8a70-971f073a0085",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a4a44a9c-ebd4-4c9e-81ee-278749059e19",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5b38bb21-b0c5-45a4-b4f3-78ee04cb700b",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "532f2ba5-37f4-4be8-9c29-efc8642b64ac",
+    "name": "gift_ideas_testGiftIdeasforWomenTravel",
+    "commands": [{
+      "id": "b9c9f2c2-e45d-4cbb-8df0-d82efbbc54b6",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b154014c-449a-46da-b6f6-ce36934248f6",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3aa8b857-a38a-4a13-902b-1d9f1758f052",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "146efe94-dc23-46cf-9f03-a7b8ed4439bf",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "225e7563-a6df-4411-b867-dbdb526f0079",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Gift Ideas",
+      "targets": [
+        ["linkText=Gift Ideas", "linkText"],
+        ["css=.nav-li:nth-child(10) > .nav-a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gift Ideas')]", "xpath:link"],
+        ["xpath=//div[@id='nav-xshop']/ul/li[10]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gcx/-/gfhz/?ref_=nav_cs_giftfinder')]", "xpath:href"],
+        ["xpath=//div[2]/div/ul/li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gift Ideas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2887ab05-acdf-4393-8d94-b76720f4a21d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Gift Ideas",
+      "targets": [
+        ["linkText=Gift Ideas", "linkText"],
+        ["css=.nav-li:nth-child(10) > .nav-a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gift Ideas')]", "xpath:link"],
+        ["xpath=//div[@id='nav-xshop']/ul/li[10]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gcx/-/gfhz/?ref_=nav_cs_giftfinder')]", "xpath:href"],
+        ["xpath=//div[2]/div/ul/li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gift Ideas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad8a5a23-5df0-47fa-b889-4f27068797cd",
+      "comment": "",
+      "command": "click",
+      "target": "id=reactApp",
+      "targets": [
+        ["id=reactApp", "id"],
+        ["css=#reactApp", "css:finder"],
+        ["xpath=//div[@id='reactApp']", "xpath:attributes"],
+        ["xpath=//div[@id='a-page']/div", "xpath:idRelative"],
+        ["xpath=//body/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f4d56e1-26d1-4615-bacb-d2eb06039236",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.sc-3ey1l1-0:nth-child(2) > .ktemvl-9",
+      "targets": [
+        ["css=.sc-3ey1l1-0:nth-child(2) > .ktemvl-9", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/h2", "xpath:idRelative"],
+        ["xpath=//div[2]/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Who are you shopping for?')]", "xpath:innerText"]
+      ],
+      "value": "Who are you shopping for?"
+    }, {
+      "id": "d12628d1-7e75-4b1f-9839-a077b9436d66",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.gs1jqp-0:nth-child(2) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(2) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/holiday18/women-blue._CB478654866_._SR160,160_.png')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a[2]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0255d5b6-9f50-47bf-ad73-aadd997280e0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gs1jqp-0:nth-child(2) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(2) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/holiday18/women-blue._CB478654866_._SR160,160_.png')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a[2]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f66bf38b-821a-453e-9aaa-0123dee94091",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=*[data-test=\"subcategory:adult-female:personalized\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-female:personalized\"]", "css:data-attr"],
+        ["css=li:nth-child(3) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[3]/button", "xpath:idRelative"],
+        ["xpath=//li[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Personalized')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "251ae435-b4b3-4b08-9349-cb3119916b8e",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=*[data-test=\"subcategory:adult-female:personalized\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-female:personalized\"]", "css:data-attr"],
+        ["css=li:nth-child(3) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[3]/button", "xpath:idRelative"],
+        ["xpath=//li[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Personalized')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c88d6bdb-84f9-4235-80e2-9fb7d8d0c3c6",
+      "comment": "",
+      "command": "click",
+      "target": "css=*[data-test=\"age-group-title\"]",
+      "targets": [
+        ["css=*[data-test=\"age-group-title\"]", "css:data-attr"],
+        ["css=.sc-167fkr-0-h1", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c57af7be-11d4-461c-845c-ee267d8d18c6",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=*[data-test=\"age-group-title\"]",
+      "targets": [
+        ["css=*[data-test=\"age-group-title\"]", "css:data-attr"],
+        ["css=.sc-167fkr-0-h1", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": "GIFTS FOR WOMEN"
+    }, {
+      "id": "b371e5fc-afb3-4362-97f3-4253dd638969",
+      "comment": "",
+      "command": "click",
+      "target": "css=.cAubQz",
+      "targets": [
+        ["css=.cAubQz", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d404b89-dc21-4d8f-91c6-6ac45e9de440",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=*[data-test=\"subcategory:adult-female:travel\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-female:travel\"]", "css:data-attr"],
+        ["css=li:nth-child(11) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[11]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[11]/button", "xpath:idRelative"],
+        ["xpath=//li[11]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Travel')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a601e03-2501-43ef-96ae-3eb4b90d72df",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=*[data-test=\"subcategory:adult-female:travel\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-female:travel\"]", "css:data-attr"],
+        ["css=li:nth-child(11) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[11]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[11]/button", "xpath:idRelative"],
+        ["xpath=//li[11]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Travel')]", "xpath:innerText"]
+      ],
+      "value": "Travel"
+    }, {
+      "id": "fefb4586-b0a5-4c38-9217-e75b0a629df5",
+      "comment": "",
+      "command": "click",
+      "target": "css=*[data-test=\"subcategory:adult-female:travel\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-female:travel\"]", "css:data-attr"],
+        ["css=li:nth-child(11) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[11]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[11]/button", "xpath:idRelative"],
+        ["xpath=//li[11]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Travel')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6da5485-8efc-4f70-8666-1752b778478b",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=nav-search-submit-button",
+      "targets": [
+        ["id=nav-search-submit-button", "id"],
+        ["css=#nav-search-submit-button", "css:finder"],
+        ["xpath=//input[@id='nav-search-submit-button']", "xpath:attributes"],
+        ["xpath=//span[@id='nav-search-submit-text']/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b064da6-f4e6-42ac-9dfb-baf42ba41694",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fd0de91f-4aba-45fb-8702-f75b32ff03d4",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0e2af75a-8507-4f43-b22d-bc4972cfb544",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2d2c9f4a-1baf-4cfe-9616-5bd29f120418",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "5834210e-fba2-4700-9b7a-ba4a13d52a35",
+    "name": "gift_ideas_testGiftIdeasforMenHomeAndGarden",
+    "commands": [{
+      "id": "e5cfd2b2-b6c3-4a14-b67d-7491c2f36791",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5db766cd-b9c9-40b1-ad80-72ec2998d60f",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d81bd54a-0c90-487c-8cd9-0fa49cb77f62",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dd89bab6-6362-4329-b282-1b05e028f5cd",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3e6b6370-10ab-4aa9-9d7c-4e847000f08f",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Gift Ideas",
+      "targets": [
+        ["linkText=Gift Ideas", "linkText"],
+        ["css=.nav-li:nth-child(10) > .nav-a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gift Ideas')]", "xpath:link"],
+        ["xpath=//div[@id='nav-xshop']/ul/li[10]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gcx/-/gfhz/?ref_=nav_cs_giftfinder')]", "xpath:href"],
+        ["xpath=//div[2]/div/ul/li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gift Ideas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea93cbe9-442f-4ce1-98d7-b4788a927854",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Gift Ideas",
+      "targets": [
+        ["linkText=Gift Ideas", "linkText"],
+        ["css=.nav-li:nth-child(10) > .nav-a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gift Ideas')]", "xpath:link"],
+        ["xpath=//div[@id='nav-xshop']/ul/li[10]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gcx/-/gfhz/?ref_=nav_cs_giftfinder')]", "xpath:href"],
+        ["xpath=//div[2]/div/ul/li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gift Ideas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "548b7b3c-a543-4fb3-afca-bdb5080b9e50",
+      "comment": "",
+      "command": "click",
+      "target": "id=reactApp",
+      "targets": [
+        ["id=reactApp", "id"],
+        ["css=#reactApp", "css:finder"],
+        ["xpath=//div[@id='reactApp']", "xpath:attributes"],
+        ["xpath=//div[@id='a-page']/div", "xpath:idRelative"],
+        ["xpath=//body/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18d4f1f8-cb32-4d4f-aed3-bacb44603d28",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.sc-3ey1l1-0:nth-child(2) > .ktemvl-9",
+      "targets": [
+        ["css=.sc-3ey1l1-0:nth-child(2) > .ktemvl-9", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/h2", "xpath:idRelative"],
+        ["xpath=//div[2]/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Who are you shopping for?')]", "xpath:innerText"]
+      ],
+      "value": "Who are you shopping for?"
+    }, {
+      "id": "3ef561fc-0315-422c-a15a-6a2a5c71e58f",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.gs1jqp-0:nth-child(3) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(3) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/holiday18/men-blue._CB478654573_._SR160,160_.png')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a[3]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//a[3]/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "016a1810-b17d-45f1-87cd-fa9e7d458622",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gs1jqp-0:nth-child(3) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(3) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/holiday18/men-blue._CB478654573_._SR160,160_.png')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a[3]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//a[3]/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "104eb3e6-a59e-4682-9a37-6672f7b30b5d",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=*[data-test=\"subcategory:adult-male:music\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-male:music\"]", "css:data-attr"],
+        ["css=li:nth-child(4) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[4]/button", "xpath:idRelative"],
+        ["xpath=//li[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Music')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b39f61d0-9030-49a7-aa42-a621b8bfa2fb",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=*[data-test=\"subcategory:adult-male:music\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-male:music\"]", "css:data-attr"],
+        ["css=li:nth-child(4) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[4]/button", "xpath:idRelative"],
+        ["xpath=//li[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Music')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf260c90-493c-4c58-bb51-08a2765f1604",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=*[data-test=\"subcategory:adult-male:home-improvement\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-male:home-improvement\"]", "css:data-attr"],
+        ["css=li:nth-child(8) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[8]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[8]/button", "xpath:idRelative"],
+        ["xpath=//li[8]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Home Improvement')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2a6066fe-1d37-4c93-b630-d9d64e57ec59",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=*[data-test=\"subcategory:adult-male:home-improvement\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-male:home-improvement\"]", "css:data-attr"],
+        ["css=li:nth-child(8) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[8]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[8]/button", "xpath:idRelative"],
+        ["xpath=//li[8]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Home Improvement')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cef67fa9-9c38-41dd-a3ed-74afb6118404",
+      "comment": "",
+      "command": "click",
+      "target": "css=.cAubQz",
+      "targets": [
+        ["css=.cAubQz", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5bc93092-449e-474e-9eb1-3eb02baf5fe0",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=*[data-test=\"age-group-title\"]",
+      "targets": [
+        ["css=*[data-test=\"age-group-title\"]", "css:data-attr"],
+        ["css=.sc-167fkr-0-h1", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": "GIFTS FOR MEN"
+    }, {
+      "id": "5db344f6-ee5c-4589-b6ea-53f197bb6e82",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=*[data-test=\"subcategory:adult-male:home-and-garden\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-male:home-and-garden\"]", "css:data-attr"],
+        ["css=li:nth-child(19) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[19]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[19]/button", "xpath:idRelative"],
+        ["xpath=//li[19]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Home & Garden')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "95a6e6bc-db5b-4a20-a987-2741f61c17e4",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=*[data-test=\"subcategory:adult-male:home-and-garden\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-male:home-and-garden\"]", "css:data-attr"],
+        ["css=li:nth-child(19) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[19]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[19]/button", "xpath:idRelative"],
+        ["xpath=//li[19]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Home & Garden')]", "xpath:innerText"]
+      ],
+      "value": "Home & Garden"
+    }, {
+      "id": "9e54dd0e-97df-41d1-ba3a-0dde85554d83",
+      "comment": "",
+      "command": "click",
+      "target": "css=*[data-test=\"subcategory:adult-male:home-and-garden\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-male:home-and-garden\"]", "css:data-attr"],
+        ["css=li:nth-child(19) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[19]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[19]/button", "xpath:idRelative"],
+        ["xpath=//li[19]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Home & Garden')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac07cf38-2d3d-4cdb-8a65-bbe45e3ff94e",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "032bd435-af75-4e53-a8fa-87ce6287e160",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e5f016e5-34b4-419f-826f-66a5e0a23b49",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "79ec019a-4a6a-47ee-9eef-3d54ad9c859f",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "11544e86-a99d-4f2a-837e-453c49f46ffd",
+    "name": "gift_ideas_testGiftIdeasChangeGenderSelection",
+    "commands": [{
+      "id": "f01f8785-a42d-4f62-97f6-c681ebc300a5",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1dd3d7ee-8670-4525-99ef-963624770828",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce5dece9-74ee-43e5-a8ff-2aad255fcf89",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "961ec9b3-d2b1-4ccd-b851-edb4f0266be8",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fd8cea98-9d56-44f0-b0fe-0c625719bfcc",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Gift Ideas",
+      "targets": [
+        ["linkText=Gift Ideas", "linkText"],
+        ["css=.nav-li:nth-child(10) > .nav-a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gift Ideas')]", "xpath:link"],
+        ["xpath=//div[@id='nav-xshop']/ul/li[10]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gcx/-/gfhz/?ref_=nav_cs_giftfinder')]", "xpath:href"],
+        ["xpath=//div[2]/div/ul/li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gift Ideas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8f82cf18-615a-4f45-8dd3-6b316454f015",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Gift Ideas",
+      "targets": [
+        ["linkText=Gift Ideas", "linkText"],
+        ["css=.nav-li:nth-child(10) > .nav-a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gift Ideas')]", "xpath:link"],
+        ["xpath=//div[@id='nav-xshop']/ul/li[10]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gcx/-/gfhz/?ref_=nav_cs_giftfinder')]", "xpath:href"],
+        ["xpath=//div[2]/div/ul/li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gift Ideas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "78d284ea-6278-4258-991a-f5eb679f7917",
+      "comment": "",
+      "command": "click",
+      "target": "id=reactApp",
+      "targets": [
+        ["id=reactApp", "id"],
+        ["css=#reactApp", "css:finder"],
+        ["xpath=//div[@id='reactApp']", "xpath:attributes"],
+        ["xpath=//div[@id='a-page']/div", "xpath:idRelative"],
+        ["xpath=//body/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9be6d0e-2938-4c58-815e-cdee987f9320",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.sc-3ey1l1-0:nth-child(2) > .ktemvl-9",
+      "targets": [
+        ["css=.sc-3ey1l1-0:nth-child(2) > .ktemvl-9", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/h2", "xpath:idRelative"],
+        ["xpath=//div[2]/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Who are you shopping for?')]", "xpath:innerText"]
+      ],
+      "value": "Who are you shopping for?"
+    }, {
+      "id": "9e7d72c3-b12f-4278-887e-42f0072b8647",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.gs1jqp-0:nth-child(2) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(2) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/holiday18/women-blue._CB478654866_._SR160,160_.png')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a[2]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c2281c9-9279-45b2-880b-15fd4a52eca9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gs1jqp-0:nth-child(2) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(2) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/holiday18/women-blue._CB478654866_._SR160,160_.png')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a[2]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a7445bd-2518-4bba-8622-e328b05c2d6b",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=*[data-test=\"subcategory:adult-female:personalized\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-female:personalized\"]", "css:data-attr"],
+        ["css=li:nth-child(3) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[3]/button", "xpath:idRelative"],
+        ["xpath=//li[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Personalized')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2634c5c6-e151-4f1f-9a78-b098de48bfb6",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=*[data-test=\"subcategory:adult-female:personalized\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-female:personalized\"]", "css:data-attr"],
+        ["css=li:nth-child(3) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[3]/button", "xpath:idRelative"],
+        ["xpath=//li[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Personalized')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c069685a-a3cb-433e-a563-6982db33e454",
+      "comment": "",
+      "command": "click",
+      "target": "css=*[data-test=\"age-group-title\"]",
+      "targets": [
+        ["css=*[data-test=\"age-group-title\"]", "css:data-attr"],
+        ["css=.sc-167fkr-0-h1", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb92b097-7e3d-4c37-9cee-7c4ade25da6d",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=*[data-test=\"age-group-title\"]",
+      "targets": [
+        ["css=*[data-test=\"age-group-title\"]", "css:data-attr"],
+        ["css=.sc-167fkr-0-h1", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": "GIFTS FOR WOMEN"
+    }, {
+      "id": "bee38d0b-79cc-40bd-9046-bd071c0ceb16",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.tether-target:nth-child(2) .dlTCzM",
+      "targets": [
+        ["css=.tether-target:nth-child(2) .dlTCzM", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Gender')]", "xpath:innerText"]
+      ],
+      "value": "Gender"
+    }, {
+      "id": "4afba7f3-94e2-4043-840d-535fc7669dbf",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.tether-target:nth-child(2) .iQjVjM",
+      "targets": [
+        ["css=.tether-target:nth-child(2) .iQjVjM", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/div/div[2]/div/span[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Woman')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb84763d-99bc-4add-b2e1-9b05e804da3d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tether-target:nth-child(2) .iQjVjM",
+      "targets": [
+        ["css=.tether-target:nth-child(2) .iQjVjM", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/div/div[2]/div/span[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Woman')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "97ff7091-6ce6-449f-96b9-b0b12072dc83",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.sc-8m37h7-0:nth-child(3)",
+      "targets": [
+        ["css=.sc-8m37h7-0:nth-child(3)", "css:finder"],
+        ["xpath=//div[4]/div/div/div[2]/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34d9ab72-1f4a-4524-90d6-cc726f3a4852",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-8m37h7-0:nth-child(3)",
+      "targets": [
+        ["css=.sc-8m37h7-0:nth-child(3)", "css:finder"],
+        ["xpath=//div[4]/div/div/div[2]/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a03392a6-b2f7-4082-b2d3-87c7a95e4ea7",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=*[data-test=\"subcategory:adult-neutral:anytime\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-neutral:anytime\"]", "css:data-attr"],
+        ["css=li:nth-child(5) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[5]/button", "xpath:idRelative"],
+        ["xpath=//div/ul/li[5]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Anytime')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "44927f91-1ff7-4b0d-bcad-37f9cb567e01",
+      "comment": "",
+      "command": "click",
+      "target": "css=.cAubQz",
+      "targets": [
+        ["css=.cAubQz", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "899c48cf-1201-47e0-a73e-f8209d91d77f",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=*[data-test=\"age-group-title\"]",
+      "targets": [
+        ["css=*[data-test=\"age-group-title\"]", "css:data-attr"],
+        ["css=.sc-167fkr-0-h1", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": "GIFTS FOR EVERYONE"
+    }, {
+      "id": "efc2a26d-1350-4501-b113-d238127dc72e",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a1b6cacf-a926-4cee-81f2-ffb25f2ab55c",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "03d4c0ec-0eba-459a-9f05-32027b4a552f",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "607fa4fd-e3e6-4d55-9a76-6a5c561eebf9",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "bb954108-bdd9-45f6-98e5-1334018b477c",
+    "name": "gift_ideas_testGiftIdeasChangeAgeSelection",
+    "commands": [{
+      "id": "4e3eea32-e4e2-4efe-9791-c5ce9ffab6d3",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d34795c4-aafa-4d13-9d98-1719216d0f44",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "27f0fc64-aec2-404d-a8b1-f959a340be54",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b9fc712-5dea-4694-b0cd-83f556474f2b",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0929039e-d76f-454a-ac62-bd88ef464cf1",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Gift Ideas",
+      "targets": [
+        ["linkText=Gift Ideas", "linkText"],
+        ["css=.nav-li:nth-child(10) > .nav-a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gift Ideas')]", "xpath:link"],
+        ["xpath=//div[@id='nav-xshop']/ul/li[10]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gcx/-/gfhz/?ref_=nav_cs_giftfinder')]", "xpath:href"],
+        ["xpath=//div[2]/div/ul/li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gift Ideas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8876863c-2620-4335-b393-51689f16319a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Gift Ideas",
+      "targets": [
+        ["linkText=Gift Ideas", "linkText"],
+        ["css=.nav-li:nth-child(10) > .nav-a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gift Ideas')]", "xpath:link"],
+        ["xpath=//div[@id='nav-xshop']/ul/li[10]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gcx/-/gfhz/?ref_=nav_cs_giftfinder')]", "xpath:href"],
+        ["xpath=//div[2]/div/ul/li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gift Ideas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "97713cb2-a8b5-467a-9988-25be42554a9e",
+      "comment": "",
+      "command": "click",
+      "target": "id=reactApp",
+      "targets": [
+        ["id=reactApp", "id"],
+        ["css=#reactApp", "css:finder"],
+        ["xpath=//div[@id='reactApp']", "xpath:attributes"],
+        ["xpath=//div[@id='a-page']/div", "xpath:idRelative"],
+        ["xpath=//body/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0689bd1b-8405-4f27-aad2-0ec66243b1e8",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.sc-3ey1l1-0:nth-child(2) > .ktemvl-9",
+      "targets": [
+        ["css=.sc-3ey1l1-0:nth-child(2) > .ktemvl-9", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/h2", "xpath:idRelative"],
+        ["xpath=//div[2]/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Who are you shopping for?')]", "xpath:innerText"]
+      ],
+      "value": "Who are you shopping for?"
+    }, {
+      "id": "b13c5850-976a-494f-862b-eabdb9eae744",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.gs1jqp-0:nth-child(2) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(2) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/holiday18/women-blue._CB478654866_._SR160,160_.png')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a[2]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e828d155-f4bd-42ff-81d2-4a135e3bd91e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gs1jqp-0:nth-child(2) .rsqc7f-0",
+      "targets": [
+        ["css=.gs1jqp-0:nth-child(2) .rsqc7f-0", "css:finder"],
+        ["xpath=//img[contains(@src,'https://m.media-amazon.com/images/G/01/gcx/gf/holiday18/women-blue._CB478654866_._SR160,160_.png')]", "xpath:img"],
+        ["xpath=//div[@id='reactApp']/div/div/div[2]/div/a[2]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d96afb9-64fc-44fb-96bc-3742264b823a",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=*[data-test=\"subcategory:adult-female:personalized\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-female:personalized\"]", "css:data-attr"],
+        ["css=li:nth-child(3) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[3]/button", "xpath:idRelative"],
+        ["xpath=//li[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Personalized')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ceab596-d190-4b53-a3f5-c78b45e2d915",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=*[data-test=\"subcategory:adult-female:personalized\"]",
+      "targets": [
+        ["css=*[data-test=\"subcategory:adult-female:personalized\"]", "css:data-attr"],
+        ["css=li:nth-child(3) > .sc-8nu4yh-0", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div[2]/div/div/ul/li[3]/button", "xpath:idRelative"],
+        ["xpath=//li[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Personalized')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "07aaa950-a66e-4df2-909c-3dbc1adadc1b",
+      "comment": "",
+      "command": "click",
+      "target": "css=*[data-test=\"age-group-title\"]",
+      "targets": [
+        ["css=*[data-test=\"age-group-title\"]", "css:data-attr"],
+        ["css=.sc-167fkr-0-h1", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ebb540f0-7319-4324-bf87-40e437ffbbbe",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=*[data-test=\"age-group-title\"]",
+      "targets": [
+        ["css=*[data-test=\"age-group-title\"]", "css:data-attr"],
+        ["css=.sc-167fkr-0-h1", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": "GIFTS FOR WOMEN"
+    }, {
+      "id": "db3413e5-e0c2-420d-862c-e22a59399918",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=*[data-test=\"select-from-list-filter-trigger\"]",
+      "targets": [
+        ["css=*[data-test=\"select-from-list-filter-trigger\"]", "css:data-attr"],
+        ["css=.tether-target:nth-child(1) .dlTCzM", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Age Group')]", "xpath:innerText"]
+      ],
+      "value": "Age Group"
+    }, {
+      "id": "06d263b9-bbd0-419a-b34a-c753690ff130",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.tether-target:nth-child(1) .iQjVjM",
+      "targets": [
+        ["css=.tether-target:nth-child(1) .iQjVjM", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/div/div/div/span[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Adult')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ab52f0d-526e-4567-a9d8-e6998a0db2c2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tether-target:nth-child(1) .iQjVjM",
+      "targets": [
+        ["css=.tether-target:nth-child(1) .iQjVjM", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/div/div/div/span[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Adult')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "75396956-b324-4cba-93c1-228e552f9dd8",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.sc-8m37h7-0:nth-child(4)",
+      "targets": [
+        ["css=.sc-8m37h7-0:nth-child(4)", "css:finder"],
+        ["xpath=//div[3]/div/div/div[2]/div[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c4efcc5-2a30-45bf-9840-04022616c242",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sc-8m37h7-0:nth-child(4)",
+      "targets": [
+        ["css=.sc-8m37h7-0:nth-child(4)", "css:finder"],
+        ["xpath=//div[3]/div/div/div[2]/div[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab6ea713-2eb4-422f-976e-2852906fb7c2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.cAubQz",
+      "targets": [
+        ["css=.cAubQz", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d7bd4988-db86-406f-a9e9-864e90232bb0",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=*[data-test=\"age-group-title\"]",
+      "targets": [
+        ["css=*[data-test=\"age-group-title\"]", "css:data-attr"],
+        ["css=.sc-167fkr-0-h1", "css:finder"],
+        ["xpath=//div[@id='reactApp']/div/div[2]/div/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": "GIFTS FOR GIRLS 8-12"
+    }, {
+      "id": "c8f7c6b5-4c2f-4a53-bb8b-a9fa5a393569",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4242ed8a-5ed2-4ce5-8441-7596e29a109f",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "741e2095-29f0-4d2d-9108-687b00aaa2a0",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4f3255d9-9dab-4e66-80b8-186a793c7bee",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d21e30a4-bacc-42dd-8bde-6828ee39b4c1",
+    "name": "gift_card_testShopByAmazonPhysicalGiftCard",
+    "commands": [{
+      "id": "81b8930c-9692-47b9-9ec6-6b11ce58e8f7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ac28065e-359b-41da-a847-e3ef100b0d55",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "65218fe8-41a2-4378-b4be-88ce56de318d",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9d28c137-8f33-4acd-85d0-ea23109a48bd",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b3c23c2c-1aa6-4707-9409-5b62c57f727e",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.hm-icon",
+      "targets": [
+        ["css=.hm-icon", "css:finder"],
+        ["xpath=//a[@id='nav-hamburger-menu']/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3592316-fc5c-40bc-a8ec-d5ac18e33849",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-hamburger-menu",
+      "targets": [
+        ["id=nav-hamburger-menu", "id"],
+        ["linkText=All", "linkText"],
+        ["css=#nav-hamburger-menu", "css:finder"],
+        ["xpath=//a[@id='nav-hamburger-menu']", "xpath:attributes"],
+        ["xpath=//div[@id='nav-main']/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'javascript: void(0)')]", "xpath:href"],
+        ["xpath=//div[5]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "18245a98-f9a4-4fd9-99d2-fd0d5aaded2d",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "linkText=Amazon Prime",
+      "targets": [
+        ["linkText=Amazon Prime", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(25) > .hmenu-item", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[24]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '')])[387]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[24]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b769d3bf-546b-4b5b-b396-1ecf94ee28d2",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=li:nth-child(27) div",
+      "targets": [
+        ["css=li:nth-child(27) div", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a/div", "xpath:idRelative"],
+        ["xpath=//li[26]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0cfe7fa-b235-4048-8dcd-f8a7886c85d8",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Gift Cards",
+      "targets": [
+        ["linkText=Gift Cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(27) > .hmenu-item", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '')])[389]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[26]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58306a1d-b1fb-4795-8e58-e6b809b63c63",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Gift Cards",
+      "targets": [
+        ["linkText=Gift Cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(27) > .hmenu-item", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '')])[389]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[26]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "97f3bc13-2df8-44d3-9e68-03b2ddb87f48",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=All gift cards",
+      "targets": [
+        ["linkText=All gift cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(3) > .hmenu-item", "css:finder"],
+        ["xpath=//a[contains(text(),'All gift cards')]", "xpath:link"],
+        ["xpath=//div[@id='hmenu-content']/ul[25]/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gp/browse.html?node=9230166011&ref_=nav_em_ShopByDept_GC_Desktop_all_0_2_25_2')]", "xpath:href"],
+        ["xpath=//ul[25]/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All gift cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4aa05d47-f716-4e30-b98c-3e106bcfa685",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=All gift cards",
+      "targets": [
+        ["linkText=All gift cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(3) > .hmenu-item", "css:finder"],
+        ["xpath=//a[contains(text(),'All gift cards')]", "xpath:link"],
+        ["xpath=//div[@id='hmenu-content']/ul[25]/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gp/browse.html?node=9230166011&ref_=nav_em_ShopByDept_GC_Desktop_all_0_2_25_2')]", "xpath:href"],
+        ["xpath=//ul[25]/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All gift cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ef26dd9-40c7-44da-b1a0-30b2f2110c9a",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3721a7d4-efb9-41e3-81ee-8f5c66b9c4a1",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Amazon Gift Cards",
+      "targets": [
+        ["linkText=Amazon Gift Cards", "linkText"],
+        ["css=.nav-type-main li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Amazon Gift Cards')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/b/ref=CA_GCLP_SUBNAV_AGC?ie=UTF8&node=121142959011')]", "xpath:href"],
+        ["xpath=//div/div/nav/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Amazon Gift Cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "49e231eb-0a2a-4950-9450-e7994d36352f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Amazon Gift Cards",
+      "targets": [
+        ["linkText=Amazon Gift Cards", "linkText"],
+        ["css=.nav-type-main li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Amazon Gift Cards')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/b/ref=CA_GCLP_SUBNAV_AGC?ie=UTF8&node=121142959011')]", "xpath:href"],
+        ["xpath=//div/div/nav/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Amazon Gift Cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b92c9f81-0fd2-4a36-85ed-ea2324915f4f",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=//img[@alt='Physical Gift Cards - Premium packaging and delivery are always included.']",
+      "targets": [
+        ["xpath=//img[@alt='Physical Gift Cards - Premium packaging and delivery are always included.']", "xpath:img"],
+        ["xpath=//div[@id='1']/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4cfdc7ba-10b4-444b-b729-9e2fddf62747",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//img[@alt='Physical Gift Cards - Premium packaging and delivery are always included.']",
+      "targets": [
+        ["xpath=//img[@alt='Physical Gift Cards - Premium packaging and delivery are always included.']", "xpath:img"],
+        ["xpath=//div[@id='1']/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4cd4940-15d5-4d5f-a478-6a2bbfc85480",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b10837d8-1f05-4ebf-9214-90aeb89a1bdd",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f6698aeb-5d98-429d-b42c-ea7521ef1a96",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "76ea3bef-20bf-4ec9-b188-50679bbda5c3",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "973be064-1c1c-454b-9ae2-dc428f449c28",
+    "name": "gift_card_testShopByOccasionCongratulations",
+    "commands": [{
+      "id": "a7cc477a-eb7c-43ac-b8b6-647f900efcdf",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4274cb90-ad0a-4345-ac4d-e8d28c14075d",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "25db6c73-2595-452d-ac39-cb55cdd5c338",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ad03bd9c-34cc-49ff-ac0b-27e3ffe6484c",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2f674b3-19a4-49c9-9ac9-931945fa6394",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.hm-icon",
+      "targets": [
+        ["css=.hm-icon", "css:finder"],
+        ["xpath=//a[@id='nav-hamburger-menu']/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "699ea9ca-5d37-4873-8ec2-e0fa2f84f937",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-hamburger-menu",
+      "targets": [
+        ["id=nav-hamburger-menu", "id"],
+        ["linkText=All", "linkText"],
+        ["css=#nav-hamburger-menu", "css:finder"],
+        ["xpath=//a[@id='nav-hamburger-menu']", "xpath:attributes"],
+        ["xpath=//div[@id='nav-main']/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'javascript: void(0)')]", "xpath:href"],
+        ["xpath=//div[5]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6e08a56f-3959-4f78-8f06-4079e006f7ca",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "linkText=Amazon Prime",
+      "targets": [
+        ["linkText=Amazon Prime", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(25) > .hmenu-item", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[24]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '')])[387]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[24]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd415da0-dd85-4935-8011-269ad482f976",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=li:nth-child(27) div",
+      "targets": [
+        ["css=li:nth-child(27) div", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a/div", "xpath:idRelative"],
+        ["xpath=//li[26]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb407324-4b5f-4491-9af8-10534b6c4988",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Gift Cards",
+      "targets": [
+        ["linkText=Gift Cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(27) > .hmenu-item", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '')])[389]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[26]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e5610c0-e987-4c60-a1f6-7b207a92f09e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Gift Cards",
+      "targets": [
+        ["linkText=Gift Cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(27) > .hmenu-item", "css:finder"],
+        ["xpath=//div[@id='hmenu-content']/ul/li[26]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '')])[389]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[26]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "73e3bc5a-890c-4eb9-af4b-37a6f6c373bb",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=All gift cards",
+      "targets": [
+        ["linkText=All gift cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(3) > .hmenu-item", "css:finder"],
+        ["xpath=//a[contains(text(),'All gift cards')]", "xpath:link"],
+        ["xpath=//div[@id='hmenu-content']/ul[25]/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gp/browse.html?node=9230166011&ref_=nav_em_ShopByDept_GC_Desktop_all_0_2_25_2')]", "xpath:href"],
+        ["xpath=//ul[25]/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All gift cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ddaf4433-55ac-4c31-ab54-c1dabc68d247",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=All gift cards",
+      "targets": [
+        ["linkText=All gift cards", "linkText"],
+        ["css=.hmenu-visible > li:nth-child(3) > .hmenu-item", "css:finder"],
+        ["xpath=//a[contains(text(),'All gift cards')]", "xpath:link"],
+        ["xpath=//div[@id='hmenu-content']/ul[25]/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gp/browse.html?node=9230166011&ref_=nav_em_ShopByDept_GC_Desktop_all_0_2_25_2')]", "xpath:href"],
+        ["xpath=//ul[25]/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'All gift cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f6d3bc9f-88fe-47bf-99db-c896a9719f8a",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9e934062-d505-4922-ae02-a674d10e0b0b",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "linkText=Amazon Gift Cards",
+      "targets": [
+        ["linkText=Amazon Gift Cards", "linkText"],
+        ["css=.nav-type-main li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Amazon Gift Cards')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/b/ref=CA_GCLP_SUBNAV_AGC?ie=UTF8&node=121142959011')]", "xpath:href"],
+        ["xpath=//div/div/nav/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Amazon Gift Cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "86060d48-7c78-4b35-bbd6-ed24e52fc6f4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Amazon Gift Cards",
+      "targets": [
+        ["linkText=Amazon Gift Cards", "linkText"],
+        ["css=.nav-type-main li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Amazon Gift Cards')]", "xpath:link"],
+        ["xpath=//div[@id='a-page']/div/div[2]/div/div[2]/div/div/div/div/nav/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.ca/b/ref=CA_GCLP_SUBNAV_AGC?ie=UTF8&node=121142959011')]", "xpath:href"],
+        ["xpath=//div/div/nav/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Amazon Gift Cards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "07625526-f094-45e0-bf6c-8ce2aad2f6d3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.\\_Y29ud_bxcGridText_3AiaV > h2",
+      "targets": [
+        ["css=.\\_Y29ud_bxcGridText_3AiaV > h2", "css:finder"],
+        ["xpath=//div[@id='0']/div/div/h2", "xpath:idRelative"],
+        ["xpath=//div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Shop By Occasion')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d65205a0-c19e-4a5f-a74e-3114a419c872",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.\\_Y29ud_bxcGridText_3AiaV > h2 > span",
+      "targets": [
+        ["css=.\\_Y29ud_bxcGridText_3AiaV > h2 > span", "css:finder"],
+        ["xpath=//div[@id='0']/div/div/h2/span", "xpath:idRelative"],
+        ["xpath=//h2/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Shop By Occasion')]", "xpath:innerText"]
+      ],
+      "value": "Shop By Occasion"
+    }, {
+      "id": "7772ce88-396d-4e6f-9af9-921dd7912511",
+      "comment": "",
+      "command": "click",
+      "target": "id=2",
+      "targets": [
+        ["id=2", "id"],
+        ["css=#\\32", "css:finder"],
+        ["xpath=//div[@id='2']", "xpath:attributes"],
+        ["xpath=//div[@id='CardInstancepic-IzTxqb_QInkbVXK26w']/div/div/div[4]/div[3]", "xpath:idRelative"],
+        ["xpath=//div/div/div/div[4]/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2a72df4c-da5b-4b8f-899f-0167ea86587f",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=//div[@id='2']/div/div/p/a/span",
+      "targets": [
+        ["xpath=//div[@id='2']/div/div/p/a/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/p/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Congratulations')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "65bcc479-3ec9-419f-a2ca-19efca6caa4b",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=//div[@id='2']/div/div/p/a/span",
+      "targets": [
+        ["xpath=//div[@id='2']/div/div/p/a/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/p/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Congratulations')]", "xpath:innerText"]
+      ],
+      "value": "Congratulations"
+    }, {
+      "id": "5fd474a0-95dd-4edd-abf9-c4575e639c90",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='2']/div/div/p/a/span",
+      "targets": [
+        ["xpath=//div[@id='2']/div/div/p/a/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/p/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Congratulations')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "815e286d-a6b4-4f7f-adca-419422f2ed03",
+      "comment": "",
+      "command": "executeScript",
+      "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bbd43c1c-8d31-4915-b4ef-010607484b96",
+      "comment": "",
+      "command": "executeScript",
+      "target": "localStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6aeb7f6-2a60-4861-8b47-d0f3eecbba23",
+      "comment": "",
+      "command": "executeScript",
+      "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0c64b7d8-0d9d-451e-85a0-a292bde44d17",
+      "comment": "",
+      "command": "close",
+      "target": "",
       "targets": [],
       "value": ""
     }]
