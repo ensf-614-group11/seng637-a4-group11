@@ -11,6 +11,7 @@
 |Austen Zhang    |     |
 
 # Introduction
+Rhys to fill in 
 
 # Analysis of 10 Mutants of the Range class 
 
@@ -63,25 +64,44 @@ Mutant: replaced double return with 0.0d for org/jfree/data/Range::getCentralVal
 Analysis: This mutant was not killed by the original test suite. This mutant would make 0 the result returned, not matter what the lower and upper values of the range the method was called on were. In this case, this mutant survived because we only had one test case for the getCentralValue method, which was the example given in Assignment 2. This method was not chosen for writing tests in Assignment 2 and more tests were not required for this method to increase coverage in Assignment 3. In the one test that our suite did have for getCentralValue, it tests on the range (-1, 1), which the central value is 0. Therefore, this one test does not kill this mutant. In order to kill this mutant, we need to add a test case for a range that does not have a central value of 0.  
 
 
+Steven to add 5 more  
 
 # Report all the statistics and the mutation score for each test class
 
+Laurel to fill in 
+
 # Analysis drawn on the effectiveness of each of the test classes
 
+Laurel to fill in 
+compare to results from original test suites (how good was mutation score with test suite from assignment 3) 
+
 # A discussion on the effect of equivalent mutants on mutation score accuracy
+Steven to fill in 
 
 # A discussion of what could have been done to improve the mutation score of the test suites
+Austen to fill in 
 
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
+Rhys to fill in 
 
 # Explain your SELENUIM test case design process
+Everyone to add a couple lines about your cases 
 
 # Explain the use of assertions and checkpoints
+Austen to fill in 
 
 # how did you test each functionaity with different test data
+Steven to fill in, Austen to add some 
 
 # How the team work/effort was divided and managed
+Laurel to fill in 
 
 # Difficulties encountered, challenges overcome, and lessons learned
+Rhys to fill in 
+
+- difficulties with GUI testing with different machines and browsers and website appears differently sometimes
+- mutation testing - identifying why a mutant was killed or not killed 
 
 # Comments/feedback on the assignment itself
+
+Rhys to fill in 
