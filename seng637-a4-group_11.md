@@ -134,43 +134,43 @@ Everyone to add a couple lines about your cases
 
 
 
-**Test Case Design for Gift Card Functionality**
+**Test Case Design for Gift Card Functionality**  
 There are several different types of gift cards available on amazon.ca and also several options of actions that can be completed related to gift cards. The following is a summary of the test cases created for this functionality and the design process. All test cases were automated using Selenium with verification and assertion check points added to the scripts. 
 
-1. gift_card_testGiftCardOptions  
+1. gift_card_testGiftCardOptions   
 This test case was designed to confirm the options available related to gift card functionality - including Amazon Gift Cards, Specialty Gift Cards, Redeem Amazon gift card, View your balance, and Amazon Reload. This test involves navigating to the Gift Card page through the main hamburger menu on the top left banner, with verifications along the way to confirm that the hamburger menu is present, and gift card is an option within the menu prior to clicking it. After navigating to the gift card page, this test includes assertions to confirm the presence of each of the options mentioned above that can be clicked by the customer depending on what they need to do related to gift cards. 
 
-2. gift_card_testShopByAmazonEGiftCard
+2. gift_card_testShopByAmazonEGiftCard   
 This test case was designed to try shopping for gift cards based on specific selection criteria. The test data for this test case is an Amazon EGift Card, therefore it involves going through the same initial steps as first test to confirm the customer can navigate to the gift card page and that the Amazon Gift Card option is present. Then within the Amazon Gift Card Option, this test asserts the presence of the eGift Card option, which brings the customer to the page showing all eGift cards. 
 
-3. gift_card_testShopByAmazonPhysicalGiftCard
+3. gift_card_testShopByAmazonPhysicalGiftCard   
 This test case was also designed to try shopping for gift cards based on specific selection criteria. The test data for this test case is an Amazon Physical Card, therefore it involves going through the same initial steps as first test to confirm the customer can navigate to the gift card page and that the Amazon Gift Card option is present. Then within the Amazon Gift Card Option, this test asserts the presence of the Physical Card option, which brings the customer to the page showing all Physical cards. 
 
-4. gift_card_testShopByOccasionBirthday 
+4. gift_card_testShopByOccasionBirthday    
 This test case was also designed to try shopping for gift cards based on specific selection criteria. The test data for this test case is a Birthday Amazon Gift Card, therefore it involves going through the same initial steps as first test to confirm the customer can navigate to the gift card page and that the Amazon Gift Card option is present. Then the test verifies that the Shop By Occasion section is present on the page for Amazon Gift Cards. Then within the Shop By Occassion section, this test asserts the presence of the Birthday option, which brings the customer to the page showing all Birthday cards. 
 
-5. gift_card_test_ShopByOccasionCongratulations  
+5. gift_card_test_ShopByOccasionCongratulations     
 This test case was also designed to try shopping for gift cards based on specific selection criteria. The test data for this test case is a Congratulations Amazon Gift Card, therefore it involves going through the same initial steps as first test to confirm the customer can navigate to the gift card page and that the Amazon Gift Card option is present. Then the test verifies that the Shop By Occasion section is present on the page for Amazon Gift Cards. Then within the Shop By Occassion section, this test asserts the presence of the Congratulations option, which brings the customer to the page showing all Birthday cards. 
 
-6. gift_card_test_ShopBySpecialtyGiftCardByBrandApple 
+6. gift_card_test_ShopBySpecialtyGiftCardByBrandApple    
 This test case was also designed to try shopping for gift cards based on specific selection criteria. The test data for this test case is a Specialty Gift Card for the Apple brand, therefore it involves going through the same initial steps as first test to confirm the customer can navigate to the gift card page and that the Specialty Gift Card option is present. Then the test verifies that the Top Brands section is present on the page for Specialty Gift Cards. Then within the Top Brands section, this test asserts the presence of the Apple option, which brings the customer to the page showing all Apple cards. 
 
-**Test Case Design for Gift Ideas Functionality**  
+**Test Case Design for Gift Ideas Functionality**     
 The gift ideas functionality on amazon.ca provides an option to search for gift ideas by filtering based on the characteristics of who the gift is meant to be for. It's possible to search based on gender and age ranges. The following is a summary of the test cases created for this functionality and the design process. All test cases were automated using Selenium with verification and assertion check points added to the scripts. 
 
-1. gift_ideas_testGiftIdeasOptions  
+1. gift_ideas_testGiftIdeasOptions     
 This test case was designed to confirm the options available related to gift ideas functionality - including Gift Cards, Women, Men, Teens, Kids 8-12, Kids 4-7 and Babies. The test involves navigating to the gift ideas page using the option on the main banner, verifying it is present prior to selecting it, and then also verifying the presence of the "Who are you shopping for" text at the top of the gift ideas page. The test then asserts the presence of each of the options listed above for searching for gift ideas. 
 
-2. gift_ideas_testGiftIdeasforMenHomeAndGarden  
+2. gift_ideas_testGiftIdeasforMenHomeAndGarden     
 This test case was designed to try shopping for gift ideas based on specific selection criteria. The test data for this test case is men and the home and garden category. Therefore, it involves going through the same initial steps to first confirm the customer can navigate to the gift ideas page, and verifying the presence of the men selection on the page. The test verifies that the text at the top of the page reads "Gifts for Men" after selecting men, and then asserts the presence of the Home & Garden option within the gifts for men. 
 
-3. gift_ideas_testGiftIdeasforWomenTravel  
+3. gift_ideas_testGiftIdeasforWomenTravel    
 This test case was designed to try shopping for gift ideas based on specific selection criteria. The test data for this test case is women and the travel category. Therefore, it involves going through the same initial steps to first confirm the customer can navigate to the gift ideas page, and verifying the presence of the women selection on the page. The test verifies that the text at the top of the page reads "Gifts for Women" after selecting women, and then asserts the presence of the travel option within the gifts for women. 
 
-4. gift_ideas_testGiftIdeasChangeAgeSelection  
+4. gift_ideas_testGiftIdeasChangeAgeSelection     
 This test case was designed to try changing the age selection after making an initial selection on the gifts page. The test data for this test case is women and girls 8-12. This test involves going through the same initial steps to first confirm the customer can navigate to the gift ideas page, the women selection on the page is present, and the text "Gifts for Women" appears on the page. Then this test verifies the presence of the Age Group menu, and verifies the presence of the age range 8-12 on this menu. After changing the age range to 8-12, the test asserts that the newly loaded page lists "Gifts for Girls 8-12" at the top. 
 
-5. gift_ideas_testGiftIdeasChangeGenderSelection 
+5. gift_ideas_testGiftIdeasChangeGenderSelection    
 This test case was designed to try changing the gender selection after making an initial selection on the gifts page. The test data for this test case is women and anyone. This test involves going through the same initial steps to first confirm the customer can navigate to the gift ideas page, the women selection on the page is present, and the text "Gifts for Women" appears on the page. Then this test verifies the presence of the Gender menu, and verifies the presence of Anyone on this menu. After changing the gender to Anyone, the test asserts that the newly loaded page lists "Gifts for Everyone" at the top. 
 
 
