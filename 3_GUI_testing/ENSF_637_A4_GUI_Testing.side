@@ -8014,8 +8014,7 @@
       "targets": [],
       "value": ""
     }]
-  },
-{
+  }, {
     "id": "0e1c29b5-d769-4b01-800a-450f1bdc348f",
     "name": "gift_card_testGiftCardOptions",
     "commands": [{
@@ -8134,7 +8133,7 @@
     }, {
       "id": "6231294a-cf75-4132-a98f-5fd83063ec79",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "linkText=Amazon Gift Cards",
       "targets": [
         ["linkText=Amazon Gift Cards", "linkText"],
@@ -8149,7 +8148,7 @@
     }, {
       "id": "2096136b-9dbf-4d44-800c-73306d336516",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "linkText=Specialty Gift Cards",
       "targets": [
         ["linkText=Specialty Gift Cards", "linkText"],
@@ -8164,7 +8163,7 @@
     }, {
       "id": "584e84c7-f08f-449c-9471-f98012a88e4c",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "linkText=Redeem Amazon gift card",
       "targets": [
         ["linkText=Redeem Amazon gift card", "linkText"],
@@ -8179,7 +8178,7 @@
     }, {
       "id": "11897971-12ab-4f20-a58f-11c95c8465f2",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "linkText=View your balance",
       "targets": [
         ["linkText=View your balance", "linkText"],
@@ -8194,7 +8193,7 @@
     }, {
       "id": "67f80959-54aa-4742-b4a8-f90084997a7b",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "linkText=Amazon Reload",
       "targets": [
         ["linkText=Amazon Reload", "linkText"],
@@ -8460,7 +8459,7 @@
     }, {
       "id": "63ec3bba-5d27-4e46-9902-18e7fcfffd0c",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=//div[@id='1']/div/div/p/a/span",
       "targets": [
         ["xpath=//div[@id='1']/div/div/p/a/span", "xpath:idRelative"],
@@ -8470,7 +8469,7 @@
     }, {
       "id": "8d2032d1-d7a5-4f30-b492-1f401678f643",
       "comment": "",
-      "command": "verifyText",
+      "command": "assertText",
       "target": "xpath=//div[@id='1']/div/div/p/a/span",
       "targets": [
         ["xpath=//div[@id='1']/div/div/p/a/span", "xpath:idRelative"],
@@ -8694,7 +8693,7 @@
     }, {
       "id": "f3035193-21a5-4231-b329-08bf0d591cd2",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=(//img[@alt='Apple'])[3]",
       "targets": [
         ["xpath=(//img[@alt='Apple'])[3]", "xpath:img"],
@@ -8920,7 +8919,7 @@
     }, {
       "id": "13238eaf-5430-4939-a80e-3b9b472c47c0",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=//img[@alt='eGift Cards - No fees, no expiration, all fun. Send today or plan ahead.']",
       "targets": [
         ["xpath=//img[@alt='eGift Cards - No fees, no expiration, all fun. Send today or plan ahead.']", "xpath:img"],
@@ -9081,7 +9080,7 @@
     }, {
       "id": "176d3117-1938-4701-92e7-aaa81c0778a5",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "css=.gs1jqp-0:nth-child(1) .rsqc7f-0",
       "targets": [
         ["css=.gs1jqp-0:nth-child(1) .rsqc7f-0", "css:finder"],
@@ -9093,7 +9092,7 @@
     }, {
       "id": "fedc7820-e06e-4e29-9d51-5bb955ac5eef",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "css=.gs1jqp-0:nth-child(2) .rsqc7f-0",
       "targets": [
         ["css=.gs1jqp-0:nth-child(2) .rsqc7f-0", "css:finder"],
@@ -9105,7 +9104,7 @@
     }, {
       "id": "0f406f1a-6ea5-4c9a-b3eb-9f659e86de1c",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "css=.gs1jqp-0:nth-child(3) .rsqc7f-0",
       "targets": [
         ["css=.gs1jqp-0:nth-child(3) .rsqc7f-0", "css:finder"],
@@ -9117,7 +9116,7 @@
     }, {
       "id": "21d9a2ac-dfb8-4fef-9fa9-b4f23e614328",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "css=.gs1jqp-0:nth-child(4) .rsqc7f-0",
       "targets": [
         ["css=.gs1jqp-0:nth-child(4) .rsqc7f-0", "css:finder"],
@@ -9129,7 +9128,7 @@
     }, {
       "id": "e7dfcb09-b208-4965-b271-3ebd36896076",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "css=.gs1jqp-0:nth-child(5) .rsqc7f-0",
       "targets": [
         ["css=.gs1jqp-0:nth-child(5) .rsqc7f-0", "css:finder"],
@@ -9141,7 +9140,7 @@
     }, {
       "id": "9a21b088-8972-4ed8-a6c1-fe71a3adbf2a",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "css=.gs1jqp-0:nth-child(6) .rsqc7f-0",
       "targets": [
         ["css=.gs1jqp-0:nth-child(6) .rsqc7f-0", "css:finder"],
@@ -9153,7 +9152,7 @@
     }, {
       "id": "6bbbf65d-cc66-4c04-aeab-0dc945e75ac2",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "css=.gs1jqp-0:nth-child(7) .rsqc7f-0",
       "targets": [
         ["css=.gs1jqp-0:nth-child(7) .rsqc7f-0", "css:finder"],
@@ -9367,7 +9366,7 @@
     }, {
       "id": "6d404b89-dc21-4d8f-91c6-6ac45e9de440",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "css=*[data-test=\"subcategory:adult-female:travel\"]",
       "targets": [
         ["css=*[data-test=\"subcategory:adult-female:travel\"]", "css:data-attr"],
@@ -9381,7 +9380,7 @@
     }, {
       "id": "4a601e03-2501-43ef-96ae-3eb4b90d72df",
       "comment": "",
-      "command": "verifyText",
+      "command": "assertText",
       "target": "css=*[data-test=\"subcategory:adult-female:travel\"]",
       "targets": [
         ["css=*[data-test=\"subcategory:adult-female:travel\"]", "css:data-attr"],
@@ -9640,7 +9639,7 @@
     }, {
       "id": "5db344f6-ee5c-4589-b6ea-53f197bb6e82",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "css=*[data-test=\"subcategory:adult-male:home-and-garden\"]",
       "targets": [
         ["css=*[data-test=\"subcategory:adult-male:home-and-garden\"]", "css:data-attr"],
@@ -9654,7 +9653,7 @@
     }, {
       "id": "95a6e6bc-db5b-4a20-a987-2741f61c17e4",
       "comment": "",
-      "command": "verifyText",
+      "command": "assertText",
       "target": "css=*[data-test=\"subcategory:adult-male:home-and-garden\"]",
       "targets": [
         ["css=*[data-test=\"subcategory:adult-male:home-and-garden\"]", "css:data-attr"],
@@ -9954,7 +9953,7 @@
     }, {
       "id": "899c48cf-1201-47e0-a73e-f8209d91d77f",
       "comment": "",
-      "command": "verifyText",
+      "command": "assertText",
       "target": "css=*[data-test=\"age-group-title\"]",
       "targets": [
         ["css=*[data-test=\"age-group-title\"]", "css:data-attr"],
@@ -10225,7 +10224,7 @@
     }, {
       "id": "d7bd4988-db86-406f-a9e9-864e90232bb0",
       "comment": "",
-      "command": "verifyText",
+      "command": "assertText",
       "target": "css=*[data-test=\"age-group-title\"]",
       "targets": [
         ["css=*[data-test=\"age-group-title\"]", "css:data-attr"],
@@ -10441,7 +10440,7 @@
     }, {
       "id": "b92c9f81-0fd2-4a36-85ed-ea2324915f4f",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=//img[@alt='Physical Gift Cards - Premium packaging and delivery are always included.']",
       "targets": [
         ["xpath=//img[@alt='Physical Gift Cards - Premium packaging and delivery are always included.']", "xpath:img"],
@@ -10704,7 +10703,7 @@
     }, {
       "id": "2a72df4c-da5b-4b8f-899f-0167ea86587f",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=//div[@id='2']/div/div/p/a/span",
       "targets": [
         ["xpath=//div[@id='2']/div/div/p/a/span", "xpath:idRelative"],
@@ -10715,7 +10714,7 @@
     }, {
       "id": "65bcc479-3ec9-419f-a2ca-19efca6caa4b",
       "comment": "",
-      "command": "verifyText",
+      "command": "assertText",
       "target": "xpath=//div[@id='2']/div/div/p/a/span",
       "targets": [
         ["xpath=//div[@id='2']/div/div/p/a/span", "xpath:idRelative"],
