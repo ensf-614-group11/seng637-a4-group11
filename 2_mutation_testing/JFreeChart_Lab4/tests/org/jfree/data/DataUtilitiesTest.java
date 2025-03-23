@@ -879,7 +879,7 @@ public class DataUtilitiesTest extends DataUtilities {
         context_keyed.checking(new Expectations() {{
             allowing(mockData_keyed).getItemCount(); will(returnValue(3));
             allowing(mockData_keyed).getValue(0); will(returnValue(5.0));
-            allowing(mockData_keyed).getValue(1); will(returnValue(null)); // 💥 mutation killer
+            allowing(mockData_keyed).getValue(1); will(returnValue(null));
             allowing(mockData_keyed).getValue(2); will(returnValue(5.0));
 
             allowing(mockData_keyed).getKey(0); will(returnValue("A"));
@@ -900,7 +900,7 @@ public class DataUtilitiesTest extends DataUtilities {
     public void testCalculateRowTotal_SkipsOutOfBoundsColumn() {
         context_values2d.checking(new Expectations() {{
             allowing(mockData_values2d).getColumnCount();
-            will(returnValue(2));  // So valid indices are 0 and 1
+            will(returnValue(2)); 
 
             allowing(mockData_values2d).getValue(0, 0);
             will(returnValue(2.0));
@@ -908,7 +908,7 @@ public class DataUtilitiesTest extends DataUtilities {
             will(returnValue(3.0));
         }});
 
-        int[] validCols = {0, 1, 2}; // ⚠️ col = 2 is out-of-bounds
+        int[] validCols = {0, 1, 2}; 
 
         double result = DataUtilities.calculateRowTotal(mockData_values2d, 0, validCols);
 
@@ -920,14 +920,13 @@ public class DataUtilitiesTest extends DataUtilities {
     public void testCalculateColumnTotal_SkipsOutOfBoundsRow() {
         context_values2d.checking(new Expectations() {{
             allowing(mockData_values2d).getRowCount();
-            will(returnValue(2)); // So valid row indices are 0 and 1
+            will(returnValue(2));
 
             allowing(mockData_values2d).getValue(0, 0);
             will(returnValue(1.0));
-            // No mocking for getValue(2, 0) — that's intentional!
         }});
 
-        int[] validRows = {0, 2}; // Row 2 is out-of-bounds
+        int[] validRows = {0, 2};
 
         double result = DataUtilities.calculateColumnTotal(mockData_values2d, 0, validRows);
 
@@ -947,6 +946,94 @@ public class DataUtilitiesTest extends DataUtilities {
         }
     }
 
+    //Killed 2 mutants
+    @Test
+    public void testCalculateColumnTotal_NullData_ThrowsException() {
+        try {
+            // Passing null as the data argument
+            DataUtilities.calculateColumnTotal(null, 0, new int[] {0, 1});
+            fail("Expected InvalidParameterException to be thrown");
+        } catch (InvalidParameterException e) {
+            assertEquals("Input data cannot be null", e.getMessage());
+        } catch (Exception e) {
+            fail("Unexpected exception: " + e.getClass().getSimpleName());
+        }
+    }
+    
+    @Test
+    public void testEqual_NullBothArrays_ShouldReturnTrue() {
+        double[][] a = null;
+        double[][] b = null;
+
+        boolean result = DataUtilities.equal(a, b);
+        assertTrue("Both arrays are null, should return true", result);
+    }
+
+    @Test
+    public void testEqual_OnlyFirstArrayNull_ShouldReturnFalse() {
+        double[][] a = null;
+        double[][] b = new double[1][1];
+
+        boolean result = DataUtilities.equal(a, b);
+        assertFalse("Only first array is null, should return false", result);
+    }
+    
+ // Test case 61: Test equals method for when a and b are different lengths
+ 	@Test
+ 	public void testEqualsMethod_A_and_B_different_lengths_swapA_B() {
+ 		boolean equal = DataUtilities.equal(input7, input6);
+
+ 		assertEquals(false, equal);
+ 	}
+
+ 	// Killed one mutant
+ 	@Test
+ 	public void testEqual_IndexSkipped_ShouldReturnFalse() {
+ 	    double[][] a = new double[][] {
+ 	        {1.0},
+ 	        {2.0}  // <- this row differs from b
+ 	    };
+
+ 	    double[][] b = new double[][] {
+ 	        {1.0},
+ 	        {99.0}  // <- not equal to 2.0
+ 	    };
+
+ 	    // If mutant skips the 2nd comparison, it might incorrectly return true.
+ 	    boolean result = DataUtilities.equal(a, b);
+
+ 	    assertFalse("Second row differs, should return false", result);
+ 	}
+ 	
+ 	@Test
+ 	public void testCalculateColumnTotal_AdditionIsCorrect() {
+ 	    Mockery context = new Mockery();
+ 	    final Values2D mockData = context.mock(Values2D.class);
+
+ 	    context.checking(new Expectations() {{
+ 	        allowing(mockData).getRowCount(); will(returnValue(3));
+ 	        allowing(mockData).getValue(0, 0); will(returnValue(2.0));
+ 	        allowing(mockData).getValue(1, 0); will(returnValue(3.0));
+ 	        allowing(mockData).getValue(2, 0); will(returnValue(5.0));
+ 	    }});
+
+ 	    double result = DataUtilities.calculateColumnTotal(mockData, 0);
+
+ 	    assertEquals("Should correctly add all values in column", 10.0, result, 0.0001);
+ 	}
+ 	
+ 	// Killed one mutant (removed call to org.jfree.chart.util.ParamChecks::nullNotPermitted)
+ 	@Test
+ 	public void testClone_NullInput_ThrowsException() {
+ 	    try {
+ 	        DataUtilities.clone(null);
+ 	        fail("Expected IllegalArgumentException to be thrown");
+ 	    } catch (IllegalArgumentException e) {
+ 	        assertTrue(e.getMessage().contains("source"));
+ 	    } catch (Exception e) {
+ 	        fail("Unexpected exception type: " + e.getClass().getName());
+ 	    }
+ 	}
 
 				
 
