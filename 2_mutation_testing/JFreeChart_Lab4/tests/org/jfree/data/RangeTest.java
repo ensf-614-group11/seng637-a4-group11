@@ -81,6 +81,7 @@ public class RangeTest {
 	private Range exampleRange63;
 	private Range exampleRange64;
 	private Range exampleRange65;
+	private Range exampleRange66;
 	
     private Object exampleObject; 
    
@@ -157,6 +158,7 @@ public class RangeTest {
 	    exampleRange63 = new Range(1.0, 2.0);
 	    exampleRange64 = new Range(Double.NaN, 1.3);
 	    exampleRange65 = new Range(1.7, Double.NaN);
+	    exampleRange66 = new Range(0.0, 3.0);
         
         exampleObject = new Object();
     }
@@ -286,21 +288,21 @@ public class RangeTest {
 	                 exampleRange11.intersects(3.1, 5.0));
 	 }
 	
-//	 // Test Case 15: Test method intersects(double lower, double upper) for the partition where the lower boundary touches
-//	 // This tests the boundary condition where the lower bound of the specified range touches the upper bound of the range object
-//	 @Test
-//	 public void testIntersects_TouchingLowerBoundary() {
-//	     assertTrue("The range (1.0, 4.0) should touch the lower boundary of (4.0, 6.0)",
-//	                exampleRange12.intersects(4.0, 6.0));
-//	 }
-//	
-//	 // Test Case 16: Test method intersects(double lower, double upper) for the partition where the upper boundary touches
-//	 // This tests the boundary condition where the upper bound of the specified range touches the lower bound of the range object
-//	 @Test
-//	 public void testIntersects_TouchingUpperBoundary() {
-//	     assertTrue("The range (1.0, 4.0) should touch the upper boundary of (0.0, 1.0)",
-//	                exampleRange12.intersects(0.0, 1.0));
-//	 }
+	 // Test Case 15: Test method intersects(double lower, double upper) for the partition where the lower boundary touches
+	 // This tests the boundary condition where the lower bound of the specified range touches the upper bound of the range object
+	 @Test
+	 public void testIntersects_TouchingLowerBoundary() {
+	     assertTrue("The range (1.0, 3.0) should touch the lower boundary of (1.0, 4.0)",
+	                exampleRange11.intersects(1.0, 4.0));
+	 }
+	
+	 // Test Case 16: Test method intersects(double lower, double upper) for the partition where the upper boundary touches
+	 // This tests the boundary condition where the upper bound of the specified range touches the lower bound of the range object
+	 @Test
+	 public void testIntersects_TouchingUpperBoundary() {
+	     assertTrue("The range (1.0, 3.0) should touch the upper boundary of (0.0, 3.0)",
+	    		 exampleRange11.intersects(0.0, 3.0));
+	 }
 	
 //	 // Test Case 17: Test method intersects(double lower, double upper) for the partition where both ranges are a single point
 //	 // This tests the condition where both the range object and the specified range are single-point ranges
@@ -536,21 +538,21 @@ public class RangeTest {
 //	    exampleRange9.intersects(invalidRange); 
 //	}
     
-//	 // Test Case 81: Test method intersects(Range range) for the partition where there is full overlap
-//	 // This tests the condition where the specified range fully overlaps with the range object
-//	 @Test
-//	 public void testIntersects_RangeArgument_FullOverlap() {
-//	     assertTrue("The range (2.9, 5.1) should fully overlap with (3.0, 5.0)",
-//	                exampleRange10.intersects(exampleRange31));
-//	 }
-//	
-//	 // Test Case 82: Test method intersects(Range range) for the partition where there is partial overlap
-//	 // This tests the condition where the specified range partially overlaps with the range object
-//	 @Test
-//	 public void testIntersects_RangeArgument_PartialOverlap() {
-//	     assertTrue("The range (2.9, 5.1) should partially overlap with (3.0, 5.0)",
-//	                exampleRange10.intersects(exampleRange31));
-//	 }
+	 // Test Case 81: Test method intersects(Range range) for the partition where there is full overlap
+	 // This tests the condition where the specified range fully overlaps with the range object
+	 @Test
+	 public void testIntersects_RangeArgument_FullOverlap() {
+	     assertTrue("The range (2.9, 5.1) should fully overlap with (3.0, 5.0)",
+	                exampleRange10.intersects(exampleRange31));
+	 }
+	
+	 // Test Case 82: Test method intersects(Range range) for the partition where there is partial overlap
+	 // This tests the condition where the specified range partially overlaps with the range object
+	 @Test
+	 public void testIntersects_RangeArgument_PartialOverlap() {
+	     assertTrue("The range (2.9, 5.1) should partially overlap with (3.0, 5.0)",
+	                exampleRange10.intersects(exampleRange31));
+	 }
 	
 	 // Test Case 83: Test method intersects(Range range) for the partition where there is no overlap
 	 // This tests the condition where the specified range does not overlap with the range object
@@ -560,29 +562,29 @@ public class RangeTest {
 	                 exampleRange11.intersects(exampleRange32));
 	 }
 	
-//	 // Test Case 84: Test method intersects(Range range) for the partition where the lower boundary touches
-//	 // This tests the boundary condition where the lower bound of the specified range touches the upper bound of the range object
-//	 @Test
-//	 public void testIntersects_RangeArgument_TouchingLowerBoundary() {
-//	     assertTrue("The range (1.0, 4.0) should touch the lower boundary of (4.0, 6.0)",
-//	                exampleRange12.intersects(exampleRange33));
-//	 }
-//	
-//	 // Test Case 85: Test method intersects(Range range) for the partition where the upper boundary touches
-//	 // This tests the boundary condition where the upper bound of the specified range touches the lower bound of the range object
-//	 @Test
-//	 public void testIntersects_RangeArgument_TouchingUpperBoundary() {
-//	     assertTrue("The range (1.0, 4.0) should touch the upper boundary of (0.0, 1.0)",
-//	                exampleRange12.intersects(exampleRange34));
-//	 }
+	 // Test Case 84: Test method intersects(Range range) for the partition where the lower boundary touches
+	 // This tests the boundary condition where the lower bound of the specified range touches the upper bound of the range object
+	 @Test
+	 public void testIntersects_RangeArgument_TouchingLowerBoundary() {
+	     assertTrue("The range (1.0, 3.0) should touch the lower boundary of (4.0, 6.0)",
+	                exampleRange11.intersects(exampleRange12));
+	 }
 	
-//	 // Test Case 86: Test method intersects(Range range) for the partition where both ranges are a single point
-//	 // This tests the condition where both the range object and the specified range are single-point ranges
-//	 @Test
-//	 public void testIntersects_RangeArgument_RangeEqualToPoint() {
-//	     assertTrue("The range (3.0, 3.0) should intersect with (3.0, 3.0)",
-//	                exampleRange13.intersects(exampleRange35));
-//	 }
+	 // Test Case 85: Test method intersects(Range range) for the partition where the upper boundary touches
+	 // This tests the boundary condition where the upper bound of the specified range touches the lower bound of the range object
+	 @Test
+	 public void testIntersects_RangeArgument_TouchingUpperBoundary() {
+	     assertTrue("The range (1.0, 3.0) should touch the upper boundary of (0.0, 3.0)",
+	                exampleRange11.intersects(exampleRange66));
+	 }
+	
+	 // Test Case 86: Test method intersects(Range range) for the partition where both ranges are a single point
+	 // This tests the condition where both the range object and the specified range are single-point ranges
+	 @Test
+	 public void testIntersects_RangeArgument_RangeEqualToPoint() {
+	     assertFalse("The range (3.0, 3.0) should not intersect with (3.0, 3.0)",
+	                exampleRange13.intersects(exampleRange35));
+	 }
 	 
 	 
 	 // ================== constrain Method Tests ==================
@@ -809,14 +811,14 @@ public class RangeTest {
 		}
 		
 		// ================== intersects Method Tests for mutation coverage ==================
-//		
-//		// Test Case 122: test method intersects for two points that are not equivalent
-//		@Test 
-//		public void testIntersects_SinglePointRange_NotEqual() {;
-//		    assertFalse("Single-point ranges (3.0, 3.0) should not intersect with (4.0, 4.0)",
-//		                exampleRange13.intersects(4.0, 4.0));
-//		}
-//		
+		
+		// Test Case 122: test method intersects for two points that are not equivalent
+		@Test 
+		public void testIntersects_SinglePointRange_NotEqual() {;
+		    assertFalse("Single-point ranges (3.0, 3.0) should not intersect with (4.0, 4.0)",
+		                exampleRange13.intersects(4.0, 4.0));
+		}
+		
 
 		// Test Case 128: tests the method intersects for the boundary condition for valid intersection with a range
 			// containing infinity on the upper boundary
@@ -834,26 +836,26 @@ public class RangeTest {
 		    		exampleRange17.intersects(Double.NEGATIVE_INFINITY, 2.0));
 		}
 		
-//		// Test Case 130: test the method intersects for the boundary condition when input range is entirely within the current range
-//		@Test
-//		public void testIntersects_InputRangeWithinCurrentRange() {
-//		    assertTrue("Input range (2.0, 4.0) should intersect with (1.0, 5.0)",
-//		    		exampleRange17.intersects(2.0, 4.0));
-//		}
-//
-//		// Test Case 131: test the method intersects for the boundary condition when input range overlaps on the lower boundary
-//		@Test
-//		public void testIntersects_InputRangeOverlapsLowerBoundary() {
-//		    assertTrue("Input range (2.0, 4.0) should intersect with (3.0, 5.0)",
-//		    		exampleRange48.intersects(2.0, 4.0));
-//		}
-//
-//		// Test Case 132: test the method intersects for the boundary condition when input range overlaps on the upper boundary
-//		@Test
-//		public void testIntersects_InputRangeOverlapsUpperBoundary() {
-//		    assertTrue("Input range (4.0, 6.0) should intersect with (3.0, 5.0)",
-//		    		exampleRange17.intersects(4.0, 6.0));
-//		}
+		// Test Case 130: test the method intersects for the boundary condition when input range is entirely within the current range
+		@Test
+		public void testIntersects_InputRangeWithinCurrentRange() {
+		    assertTrue("Input range (2.0, 4.0) should intersect with (1.0, 5.0)",
+		    		exampleRange17.intersects(2.0, 4.0));
+		}
+
+		// Test Case 131: test the method intersects for the boundary condition when input range overlaps on the lower boundary
+		@Test
+		public void testIntersects_InputRangeOverlapsLowerBoundary() {
+		    assertTrue("Input range (2.0, 4.0) should intersect with (3.0, 5.0)",
+		    		exampleRange48.intersects(2.0, 4.0));
+		}
+
+		// Test Case 132: test the method intersects for the boundary condition when input range overlaps on the upper boundary
+		@Test
+		public void testIntersects_InputRangeOverlapsUpperBoundary() {
+		    assertTrue("Input range (4.0, 6.0) should intersect with (3.0, 5.0)",
+		    		exampleRange17.intersects(4.0, 6.0));
+		}
 		
 // ================== Mutation Testing Additional Test Cases ==================
 		
