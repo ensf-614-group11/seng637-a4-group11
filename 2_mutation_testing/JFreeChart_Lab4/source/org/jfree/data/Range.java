@@ -148,24 +148,18 @@ public strictfp class Range implements Serializable {
      * Returns <code>true</code> if the range intersects with the specified
      * range, and <code>false</code> otherwise.
      *
-     * @param b0  the lower bound (should be <= b1).
-     * @param b1  the upper bound (should be >= b0).
+     * @param b0  the lower bound (should be &lt;= b1).
+     * @param b1  the upper bound (should be &gt;= b0).
      *
-     * @return A boolean indicating whether the ranges intersect.
-     *
-     * @throws IllegalArgumentException if the lower bound is greater than the upper bound.
+     * @return A boolean.
      */
     public boolean intersects(double b0, double b1) {
-        // Validate input bounds
-        if (b0 > b1) {
-            throw new IllegalArgumentException("Lower bound must be less than or equal to upper bound.");
+        if (b0 <= this.lower) {
+            return (b1 > this.lower);
         }
-
-        // Check for intersection
-        boolean isDisjoint = b1 < this.lower || b0 > this.upper;
-        boolean isTouchingBoundary = b1 == this.lower || b0 == this.upper;
-
-        return !isDisjoint || isTouchingBoundary;
+        else {
+            return (b0 < this.upper && b1 >= b0);
+        }
     }
 
     /**
