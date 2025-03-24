@@ -342,10 +342,29 @@ The team reviewed the tests together, with each team member running all GUI test
 The report was divided amongst the team members equally, with each member adding their relevant contributions to the appropriate sections.  
 
 # Difficulties encountered, challenges overcome, and lessons learned
-Rhys to fill in 
 
-- difficulties with GUI testing with different machines and browsers and website appears differently sometimes, difficulty with login stuff 
-- mutation testing - identifying why a mutant was killed or not killed 
+### Mutation Testing Challenges  
+
+Mutation testing also presented unique difficulties. One of the primary challenges was identifying why certain mutants were killed while others survived. Understanding whether a surviving mutant indicated a weakness in the test suite or an equivalent mutation (a mutation that does not change program behavior) required detailed analysis, which was time-consuming.  
+
+Additionally, improving the mutation coverage was difficult because our test suite was already quite robust from the previous assignment. For example, the **Data Utilities** mutation test score was already at **87%**, leaving only a small margin for further improvement. Many of the remaining surviving mutants were equivalent mutations, making it nearly impossible to increase coverage further.  
+
+### GUI Testing Challenges  
+
+One of the main challenges faced during GUI testing was the inconsistency of how the Amazon.ca website appeared across different machines and browsers. Variations in screen resolutions, browser versions, and even minor updates to the website's UI sometimes caused tests to fail unexpectedly. Additionally, automating the login process posed difficulties due to dynamic elements, security features, and session handling, which required adjustments to our Selenium scripts.  
+
+Another major challenge was the performance of Selenium when interacting with Amazon.ca. The tool often ran extremely slowly, causing recording sessions to lag or crash, making test execution frustrating and unreliable. This issue required multiple reruns and careful debugging to ensure test stability.  
+
+### Lessons Learned  
+
+From these challenges, several key lessons were learned:  
+
+1. **Handling GUI Test Variability** – Cross-browser and cross-machine inconsistencies are an inherent challenge in GUI testing. Implementing explicit waits, ensuring element locators are as robust as possible, and testing across multiple environments early on can mitigate these issues.  
+2. **Performance Considerations for Automated Testing** – Selenium can be slow on complex websites. Optimizing test execution by reducing unnecessary interactions, using headless browsers, and structuring test cases efficiently can improve reliability.  
+3. **Understanding Mutation Testing Limitations** – While mutation testing is valuable, achieving 100% coverage is often unrealistic due to equivalent mutations. A balance must be struck between improving test coverage and recognizing diminishing returns.  
+4. **Analyzing Surviving Mutants Effectively** – Interpreting mutation test results requires careful analysis. Understanding how different test cases interact with specific code changes is crucial for refining the test suite.  
+
+Overall, these challenges provided valuable insights into automated testing complexities and reinforced the importance of designing robust, maintainable, and efficient test cases.  
 
 # Comments/feedback on the assignment itself
 
