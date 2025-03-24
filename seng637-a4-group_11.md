@@ -345,9 +345,9 @@ The report was divided amongst the team members equally, with each member adding
 
 ### Mutation Testing Challenges  
 
-Mutation testing also presented unique difficulties. One of the primary challenges was identifying why certain mutants were killed while others survived. Understanding whether a surviving mutant indicated a weakness in the test suite or an equivalent mutation (a mutation that does not change program behavior) required detailed analysis, which was time-consuming.  
+One of the primary challenges in the mutation testing was identifying why certain mutants were killed while others survived. Understanding whether a surviving mutant indicated a weakness in the test suite or an equivalent mutation (a mutation that does not change program behavior) required detailed analysis, which was time-consuming.  
 
-Additionally, improving the mutation coverage was difficult because our test suite was already quite robust from the previous assignment. For example, the **Data Utilities** mutation test score was already at **87%**, leaving only a small margin for further improvement. Many of the remaining surviving mutants were equivalent mutations, making it nearly impossible to increase coverage further.  
+Additionally, improving the mutation coverage was difficult because our test suite was already quite robust from the previous assignments. For example, the **Data Utilities** mutation test score was already at **87%**, leaving only a small margin for further improvement. Many of the remaining surviving mutants were equivalent mutations, making it nearly impossible to increase coverage further.  
 
 ### GUI Testing Challenges  
 
