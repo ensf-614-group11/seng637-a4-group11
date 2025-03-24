@@ -172,11 +172,15 @@ An equivalent mutant which survived the mutation test had to be evaluated agains
 
 We also found that equivalent mutants can impact the mutation score accuracy by distorting the mutation score to give the impression that the test suite is less effective than it is in practice. A slow and careful process must be followed in order to review surviving mutants. Identifying equivalent mutants and excluding not only helps your mutation score truly reflect the quality of the test suite, but it also allows you to find the mutants which actually impact your test suite quality. This impact on the accuracy artificially deflates the mutation score, and additionally makes it more cumbersome for developers who are trying to kill the mutants that actually improve the test suite quality. By identifying and excluding equivalent mutants, the mutation score becomes more accurate and reliable, and becomes a better measurement of the true quality of your test suite.
 
-# A discussion of how mutation score was improved in the test suites
+# A discussion of how mutation score was improved in the test suites and our design strategy.
+
+To improve our mutation scores, the general strategy was to look at the surviving mutants. What were the mutations and what lines were they affecting. For each surviving mutant, we would try to come up with a test case that could kill the mutant. After implementing the test case, we would run Pitest to ensure that a mutant was killed. We would repeat this process as many times as we could with as many surviving mutants as we could to increase mutation coverage.
+
+Below outlines examples on how specific mutations were killed.
 
 ## DataUtilities
 
-To improve our mutation scores, we needed to look at the mutations that were surviving and writing test cases to kill them one by one. DataUtilities started with an 87% mutation coverage, which is very high already. Therefore, the surviving mutations were already some of the ones that were harder to kill. Below are some examples of the mutations that were killed.
+To improve our mutation scores, we needed to look at the mutations that were surviving in DataUtilities and write test cases to kill them one by one. DataUtilities started with an 87% mutation coverage, which is very high already. Therefore, the surviving mutations were already some of the ones that were harder to kill. Below are some examples of the mutations that were killed.
 
 ### Removed conditional - replaced equality check with true:
 This was a common mutation that we were unable to detect previously, where a conditional statement is replaced with true.
@@ -555,6 +559,36 @@ This test case adds a product to the cart and deletes it. It verifies that the d
 4. shopping_cart_testSaveForLater  
 This test case adds a product to the cart, navigates to a different search, and then returns to the shopping cart. It ensures that the item remains in the cart even after navigating away and back.
 
+
+### **Test case Design for Product Filter**
+
+1. filter_products_testFilteringLaptopBrand_HP
+This test case searches for laptops. Then verifies that the filter options are present and selects HP for Laptop brand. It then selects the first item and asserts that the brand is HP. This test case is designed to see if the resulting items after selecting a filter match the filter selected. The below test cases seek to test the same functionality with a variety of different inputs, including using different items, filtering for different categories and different options in those categories.
+2. filter_products_testFilteringLaptopBrand_Lenovo
+This test case searches for laptops. Then verifies that the filter options are present and selects Lenovo for the laptop brand. It then selects the first item and asserts that the brand is Lenovo. This test case ensures that the resulting item is in fact Lenovo after selecting the Lenovo brand option.
+3. filter_products_testFilteringLaptopRAM_64GB
+This test case searches for laptops. Then it verifies that the filter options are present and selects 64 GB under the RAM category. It then selects the first item and asserts that the RAM is 64 GB. This test case tests to see if the resulting item has 64 GB of RAM like the selected filter requires.
+4. filter_products_testFilteringLaptopRAM_128GB
+This test case searches for laptops. Then it verifies that the filter options are present and selects 128 GB under the RAM category. It then selects the first item and asserts that the RAM is 128 GB.
+5. filter_products_testFilteringSodaBrand_DrPepper
+This test case searches for soda instead of laptops. I wanted to use different inputs here to verify the functionality works for different items. The test verifies filter options are present and selects Dr. Pepper for the soda brand. It then selects the first item and asserts that the brand is Dr. Pepper.
+6. filter_products_testFilteringSodaBrand_KoolAid
+This test case searches for soda. The test verifies filter options are present and selects Kool-Aid for the soda brand. It then selects the first item and asserts that the brand is Kool-Aid.
+7. filter_products_testGibberish
+This test case searches for a gibberish line ("bghiwejfos"). It then verifies, using an assertion, that the filter options are not present. This test was used to test an "invalid" input for the purposes of filtering.
+
+### **Test case Design for Product Sort**
+
+1. sort_products_by_price_testPencil_low_to_high
+This test case searches for pencils. It then verifies the dropdown menu exists before clicking on it and selecting sort by price - low to high. It then selects the first item, stores its price, then goes back. It then selects the second item, and stores its price. It compares the two prices and asserts the second price must be greater than the first. This test case is to test the functionality for Amazon to sort items by price. The rest of the test cases seek to test the same functionality using different items, sorting by price but high to low, and sorting by rating.
+2. sort_products_by_price_testShampoo_high_to_low
+This test case searches for shampoo. It then verifies the dropdown menu exists before clicking on it and selecting sort by price - high to low. It then selects the first item, stores its price, then goes back. It then selects the second item, and stores its price. It compares the two prices and asserts the second price must be less than than the first.
+3. sort_by_rating_testPencil_high_to_low
+This test case searches for pencils. It then verifies the dropdown menu exists before clicking on it and selecting "avg customer review", which is amazon's way of saying sort by rating - high to low. It then selects the first item, stores its rating out of 5, then goes back. It then selects the second item, stores its rating out of 5. It then compares the two ratings and asserts the second rating must be less than the first.
+4. sort_by_rating_testShampoo_high_to_low
+This test case searches for shampoo. It then verifies the dropdown menu exists before clicking on it and selecting "avg customer review". It then selects the first item, stores its rating out of 5, then goes back. It then selects the second item, stores its rating out of 5. It then compares the two ratings and asserts the second rating must be less than the first.
+
+
 # Explain the use of assertions and checkpoints
 
 For the GUI Testing using Selenium IDE, we used both assertions and verifications in our tests. Our general philosophy regarding this was to use verifications for things we wanted to check, but was not the main/crucial thing being tested. We would use assertions to verify the main functionality being tested. For example, in a filter product test, verifications would be used to verify the search bar was present before using it, and to verify the checkboxes for filters were present before using those. The assertion would come in the very end when checking that the items listed after filtering matched with the filter that was clicked.
@@ -563,7 +597,14 @@ This aligns with the idea that verify allows the test to continue even if it fai
 
 
 # how did you test each functionaity with different test data
-Steven to fill in, Austen to add some 
+
+Steven to fill in
+
+## Product Filter
+To test product filtering with different inputs, I created tests for different search items. One was for Laptops and one was for Sodas. Within laptops, I tried filtering by RAM and filtering by laptop brand. Within RAM I tested filtering so it only showed laptops with 128 GB. I then tested filtering so it only showed laptops with 64 GB of RAM. Within Laptop brand, I tested filtering for all laptops with HP as their brand. I then also tested filtering for all laptops with Lenovo as their brand. For Sodas, I tested filtering by their brand, testing filtering for Dr. Pepper, and then another test for filtering for Kool-Aid. Finally, I included a test where I searched for gibberish, to confirm that no items would appear and no filter options would appear.
+
+## Product Sort
+To test product sorting with different inputs, I created tests to sort by price, and sort by rating. I then also tested sorting by price low to high and sorting by price high to low. Amazon does not allowing sorting by rating from worst to best, so only best to worst was tested. I then also created tests for two different search items: Pencil and Shampoo. In all cases, I used the first two items listed to ensure it was being sorted in the correct order by comparing product prices and product ratings.
 
 # How the team work/effort was divided and managed
 Before starting the assignment, the team met to outline a plan for the required steps. Each team member completed the relevant setup required, such as cloning the github page, importing the Eclipse project, and installing Pitest for mutation testing, and downloading the required browser and installing extensions required for the GUI testing. 
