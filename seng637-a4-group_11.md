@@ -176,7 +176,33 @@ We also found that equivalent mutants can impact the mutation score accuracy by 
 Austen to fill in 
 
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
-Rhys to fill in 
+Mutation testing is a powerful technique used to assess the quality and effectiveness of a test suite. Traditional testing methods, such as unit and integration testing, focus on verifying whether software behaves correctly under expected conditions. However, these tests may not always reveal weaknesses in the test suite itself. Mutation testing helps address this by introducing small, deliberate modifications (mutants) to the code and evaluating whether the test suite detects these changes. If a test suite fails to identify these modifications, it indicates gaps in test coverage and effectiveness.
+
+### Key Reasons for Using Mutation Testing:  
+1. **Evaluates Test Suite Strength** – Mutation testing helps measure the effectiveness of a test suite by determining how well it can detect subtle errors or weaknesses in the code.  
+2. **Identifies Redundant and Weak Tests** – It highlights test cases that are ineffective or redundant, allowing developers to refine or remove them.  
+3. **Enhances Test Coverage** – By analyzing which mutants survive, developers can identify parts of the code that lack proper testing and improve overall coverage.  
+4. **Finds Edge Case Vulnerabilities** – Mutation testing forces tests to validate edge cases that may not be covered by traditional testing methods.  
+5. **Improves Code Quality and Reliability** – By ensuring that the test suite is capable of detecting small but significant changes, mutation testing contributes to higher software reliability.  
+
+## Advantages of Mutation Testing  
+
+- **High Test Effectiveness** – It systematically detects weak test cases and ensures the robustness of the test suite.  
+- **Uncovers Hidden Defects** – Unlike traditional test coverage metrics, it evaluates how well the test suite finds actual faults, rather than just ensuring code execution.  
+- **Encourages Better Test Design** – By exposing weaknesses, mutation testing promotes writing more meaningful and comprehensive test cases.  
+- **Automated and Scalable** – With modern tools, mutation testing can be automated, making it feasible even for large projects.  
+
+## Disadvantages of Mutation Testing  
+
+- **Computationally Expensive** – Generating and testing mutants requires significant processing power, making it time-consuming, especially for large codebases.  
+- **Difficult to Interpret Results** – Some surviving mutants may not indicate test weaknesses but instead suggest equivalent mutants (mutations that do not change program behavior).  
+- **Requires Manual Effort** – While automation helps, analyzing and improving the test suite based on results still requires manual intervention.  
+- **May Introduce False Positives** – Some mutants may not be realistic faults, leading to unnecessary modifications in the test suite.  
+
+### Conclusion  
+
+Despite its computational cost, mutation testing remains one of the most effective ways to assess and improve test quality. By exposing weaknesses in the test suite, it ensures that software remains reliable and resistant to subtle defects. While it should be used in combination with other testing strategies, its ability to measure test effectiveness makes it an essential tool in high-quality software development.  
+
 
 # Explain your SELENUIM test case design process
 Everyone to add a couple lines about your cases 
