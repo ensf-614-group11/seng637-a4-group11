@@ -368,4 +368,11 @@ Overall, these challenges provided valuable insights into automated testing comp
 
 # Comments/feedback on the assignment itself
 
-Rhys to fill in 
+## Comments/Feedback on the Assignment  
+
+Overall, the instructions for this lab were quite clear compared to some of the previous ones, which made it easier to understand the objectives and expected outcomes.  
+
+For the mutation testing portion, our test suite already had high coverage from the previous assignments, making it difficult to improve further. It would be helpful to have a clearer explanation of the maximum achievable mutation coverage for each class so that we could better assess our results.  
+
+Regarding GUI testing, the Selenium extension for Google Chrome no longer seems to work, which forced us to use Firefox. Additionally, Selenium was quite laggy on some computers, and testing on a complex website like Amazon.ca introduced challenges such as slow interactions and test instability. This made executing and recording tests more difficult than expected.  
+
