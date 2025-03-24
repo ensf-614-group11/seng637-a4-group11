@@ -524,7 +524,36 @@ This test case was designed to try changing the age selection after making an in
 5. gift_ideas_testGiftIdeasChangeGenderSelection    
 This test case was designed to try changing the gender selection after making an initial selection on the gifts page. The test data for this test case is women and anyone. This test involves going through the same initial steps to first confirm the customer can navigate to the gift ideas page, the women selection on the page is present, and the text "Gifts for Women" appears on the page. Then this test verifies the presence of the Gender menu, and verifies the presence of Anyone on this menu. After changing the gender to Anyone, the test asserts that the newly loaded page lists "Gifts for Everyone" at the top. 
 
+### **Test Case Design for Product Search Functionality**
+The test cases for product search functionality are designed to verify that the search feature accurately displays relevant results based on user queries.
 
+1. product_search_testLaptop  
+This test case ensures that searching for the product "Laptop" displays multiple relevant results related to laptops.
+
+2. product_search_testShirt  
+Similar to the Laptop test, this case tests the search functionality using the term "Shirt" to confirm that different products return relevant results.
+
+3. product_search_testMisspelled  
+This test case searches for "lapt" (a misspelling of "laptop") and verifies that the search still returns relevant results related to laptops, testing the system’s handling of typos.
+
+4. product_search_testGibberish  
+This test case searches for random letters and checks whether Amazon still returns products, verifying the system’s behavior when given irrelevant or nonsensical input.
+
+
+### **Test Case Design for Shopping Cart Functionality**  
+These test cases focus on validating the functionality of the shopping cart on Amazon, including adding, removing, and saving products.
+
+1. shopping_cart_testAddSingleProduct   
+This test case searches for a laptop and adds it to the shopping cart. It then verifies that the laptop appears in the cart and confirms that you can proceed to checkout.
+
+2. shopping_cart_testAddMultipleProducts   
+This test case searches for three different products and adds one of each to the shopping cart. It ensures that the cart contains three products, then deletes one and verifies that two products remain in the cart.
+
+3. shopping_cart_testDeleteProduct  
+This test case adds a product to the cart and deletes it. It verifies that the deletion confirmation message appears and that the cart is empty afterward.
+
+4. shopping_cart_testSaveForLater  
+This test case adds a product to the cart, navigates to a different search, and then returns to the shopping cart. It ensures that the item remains in the cart even after navigating away and back.
 
 # Explain the use of assertions and checkpoints
 
@@ -558,11 +587,37 @@ The team reviewed the tests together, with each team member running all GUI test
 The report was divided amongst the team members equally, with each member adding their relevant contributions to the appropriate sections.  
 
 # Difficulties encountered, challenges overcome, and lessons learned
-Rhys to fill in 
 
-- difficulties with GUI testing with different machines and browsers and website appears differently sometimes, difficulty with login stuff 
-- mutation testing - identifying why a mutant was killed or not killed 
+### Mutation Testing Challenges  
+
+One of the primary challenges in the mutation testing was identifying why certain mutants were killed while others survived. Understanding whether a surviving mutant indicated a weakness in the test suite or an equivalent mutation (a mutation that does not change program behavior) required detailed analysis, which was time-consuming.  
+
+Additionally, improving the mutation coverage was difficult because our test suite was already quite robust from the previous assignments. For example, the **Data Utilities** mutation test score was already at **87%**, leaving only a small margin for further improvement. Many of the remaining surviving mutants were equivalent mutations, making it nearly impossible to increase coverage further.  
+
+### GUI Testing Challenges  
+
+One of the main challenges faced during GUI testing was the inconsistency of how the Amazon.ca website appeared across different machines and browsers. Variations in screen resolutions, browser versions, and even minor updates to the website's UI sometimes caused tests to fail unexpectedly. Additionally, automating the login process posed difficulties due to dynamic elements, security features, and session handling, which required adjustments to our Selenium scripts.  
+
+Another major challenge was the performance of Selenium when interacting with Amazon.ca. The tool often ran extremely slowly, causing recording sessions to lag or crash, making test execution frustrating and unreliable. This issue required multiple reruns and careful debugging to ensure test stability.  
+
+### Lessons Learned  
+
+From these challenges, several key lessons were learned:  
+
+1. **Handling GUI Test Variability** – Cross-browser and cross-machine inconsistencies are an inherent challenge in GUI testing. Implementing explicit waits, ensuring element locators are as robust as possible, and testing across multiple environments early on can mitigate these issues.  
+2. **Performance Considerations for Automated Testing** – Selenium can be slow on complex websites. Optimizing test execution by reducing unnecessary interactions, using headless browsers, and structuring test cases efficiently can improve reliability.  
+3. **Understanding Mutation Testing Limitations** – While mutation testing is valuable, achieving 100% coverage is often unrealistic due to equivalent mutations. A balance must be struck between improving test coverage and recognizing diminishing returns.  
+4. **Analyzing Surviving Mutants Effectively** – Interpreting mutation test results requires careful analysis. Understanding how different test cases interact with specific code changes is crucial for refining the test suite.  
+
+Overall, these challenges provided valuable insights into automated testing complexities and reinforced the importance of designing robust, maintainable, and efficient test cases.  
 
 # Comments/feedback on the assignment itself
 
-Rhys to fill in 
+## Comments/Feedback on the Assignment  
+
+Overall, the instructions for this lab were quite clear compared to some of the previous ones, which made it easier to understand the objectives and expected outcomes.  
+
+For the mutation testing portion, our test suite already had high coverage from the previous assignments, making it difficult to improve further. It would be helpful to have a clearer explanation of the maximum achievable mutation coverage for each class so that we could better assess our results.  
+
+Regarding GUI testing, the Selenium extension for Google Chrome no longer seems to work, which forced us to use Firefox. Additionally, Selenium was quite laggy on some computers, and testing on a complex website like Amazon.ca introduced challenges such as slow interactions and test instability. This made executing and recording tests more difficult than expected.  
+
