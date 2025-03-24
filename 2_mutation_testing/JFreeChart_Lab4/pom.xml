@@ -206,6 +206,40 @@
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.4</version>
             </plugin>
+
+            <!-- Add this to your <plugins> section in <build> -->
+			<plugin>
+			    <groupId>org.pitest</groupId>
+			    <artifactId>pitest-maven</artifactId>
+			    <version>1.15.0</version> <!-- Matches Pitclipse 2.2.0's expected API -->
+			    <configuration>
+			        <!-- Pitclipse-specific optimizations -->
+			        <exportLineCoverage>true</exportLineCoverage> <!-- Required for Eclipse integration -->
+			        <outputFormats>
+			            <outputFormat>XML</outputFormat> <!-- Needed for Pitclipse -->
+			            <outputFormat>HTML</outputFormat>
+			        </outputFormats>
+			        
+			        <!-- Filtering equivalent mutants -->
+			        <mutators>
+			            <mutator>STRONGER</mutator>
+			        </mutators>
+			        <excludedMutators>
+			            <excludedMutator>MATH</excludedMutator>
+			            <excludedMutator>INCREMENTS</excludedMutator>
+			        </excludedMutators>
+			        
+			        <!-- Focus on relevant packages -->
+			        <targetClasses>
+			            <param>org.jfree.chart.*</param>
+			            <param>org.jfree.data.*</param>
+			        </targetClasses>
+			        <targetTests>
+			            <param>org.jfree.chart.*Test</param>
+			            <param>org.jfree.data.*Test</param>
+			        </targetTests>
+			    </configuration>
+			</plugin>
         </plugins>
     </build>
 
