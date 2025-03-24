@@ -516,10 +516,9 @@ Despite its computational cost, mutation testing remains one of the most effecti
 
 
 # Explain your SELENUIM test case design process
-Everyone to add a couple lines about your cases 
 
 ### **Test Case Design for Account Creation Functionality**
-The test cases for account creation functionality aims to to test the account creation functionality. The main area that this test aims to improve is the validation checks for invalid user input.
+The test cases for account creation functionality aims to to test the account creation functionality. The main area that this test aims to improve is the validation checks for invalid user input. We found some challenges in ensuring that the test environment is consistent between systems, and also in resetting the state of the browser for each test. When executing the below tests, the test cases which trigger a successful account creation response from the webpage would trigger a captcha message. This is a result of using Selenium IDE to automate the tests. The server side system is performing a check to ensure that a human is actually creating the account. For this reason, for tests which successfully create an account, we assert that the captcha is present to confirm that account creation response is working as expected.
 
 1. account_creation_testAllEmptyFields
 This test case was designed to test the validation of required fields during account creation when they are all left empty.
@@ -534,13 +533,13 @@ This test case was designed to test the validation of required fields when the n
 This test case was designed to test the validation of required fields when the name contains only numbers and all other fields are left empty.
 
 5. account_creation_testValidAllFields
-This test case was designed to test when all fields provided are valid.
+This test case was designed to test when all fields provided are valid. This test case triggers a captcha because an account will be created when using these input parameters.
 
 6. account_creation_testValidAllUsingFakePhoneNumber
-This test case was designed to test when all fields are provided and a fake phone number is used for the account email/phone number field.
+This test case was designed to test when all fields are provided and a fake phone number is used for the account email/phone number field. This hits a captcha because an account will be created with these input parameters.
 
 7. account_creation_testValidAllUsingShortPhoneNumber
-This test case was designed to test when all fields are provided but a phone number which does not meet North American phone number character length is provided.
+This test case was designed to test when all fields are provided but a phone number which does not meet North American phone number character length is provided. This test case triggers a captcha because an account will be created with these input parameters.
 
 8. account_creation_testValidNameInvalidEmailEmojiPasswordMeetsLength
 This test case was designed to test when all fields are provided but the email does not contain an "@" character, and the password are emojis.
@@ -567,7 +566,7 @@ This test case was designed to test when all fields are provided but the email i
 This test case was designed to test when all fields are provided but the email is invalid and the password is valid.
 
 ### **Test Case Design for Login Functionality**
-The test cases for account creation functionality aims to to test the login functionality. These test are designed to verify that unauthenticated users do not gain access to the system and that the observed message displayed corresponds to the expected behaviour.
+The test cases for account creation functionality aims to to test the login functionality. These test are designed to verify that unauthenticated users do not gain access to the system and that the observed message displayed corresponds to the expected behaviour. Similar to the test cases designed for the account creation functionality, Amazon.com will trigger a captcha request if the browser is detected as a non-human runner. In this case, the captcha form is triggered when for the `login_testValidAccountValidPassword` for a successful login. Sometimes, the system will trigger a captcha, and other times, the system may not. In the cases that a captcha is triggered, this test case does not successfully capture that behaviour and will fail.
 
 1. login_testEmptyEmailField
 This test case was designed to test the validation of the email field during login when it is left empty.
@@ -582,7 +581,7 @@ This test case was designed to test the validation when an invalid account (emai
 This test case was designed to test the validation when a valid account (email) is provided but the password field is left empty.
 
 5. login_testValidAccountValidPassword
-This test case was designed to test the validation when a valid account (email) and valid password are provided.
+This test case was designed to test the validation when a valid account (email) and valid password are provided. This test case
 
 ### **Test Case Design for Gift Card Functionality**  
 There are several different types of gift cards available on amazon.ca and also several options of actions that can be completed related to gift cards. The following is a summary of the test cases created for this functionality and the design process. All test cases were automated using Selenium with verification and assertion check points added to the scripts. 
@@ -702,7 +701,11 @@ This aligns with the idea that verify allows the test to continue even if it fai
 
 # how did you test each functionaity with different test data
 
-Steven to fill in
+## Account Creation
+Testing the account creation functionality involved identifying the required fields which must have valid input in order to successfully create an account. On the Account Creation page, the required fields are "Your name", "Mobile number or email", "Password" and "Password again" fields. In designing these test cases, different permutations of inputs were provided to the system in order to test the system functionality. A combination of valid inputs, and invalid inputs for each of the different permutations were tested on the Account Creation system. This is done to verify that there are no edge cases where the expected behaviour of the system changes due to the input parameters. In addition, some extreme edge cases to test the behaviour of the system were designed and executed. For example, we tested "emojis" as an input into the password field, and it was found that the system will convert these emojis into their unicode characters, which does not send a validation error.
+
+## Login
+The login test cases were designed to validate the system's behaviour under various input permutation for the Email/Phone and Password fields. The test performed ensure that when no input is provided, the correct validation messages are sent to the end user. Additionally, it tests when one of the two fields are valid, and when they are both valid. These tests shuffle the inputs around in order to ensure that the permutations of inputs are covered by the test cases.
 
 ## Product Filter
 To test product filtering with different inputs, I created tests for different search items. One was for Laptops and one was for Sodas. Within laptops, I tried filtering by RAM and filtering by laptop brand. Within RAM I tested filtering so it only showed laptops with 128 GB. I then tested filtering so it only showed laptops with 64 GB of RAM. Within Laptop brand, I tested filtering for all laptops with HP as their brand. I then also tested filtering for all laptops with Lenovo as their brand. For Sodas, I tested filtering by their brand, testing filtering for Dr. Pepper, and then another test for filtering for Kool-Aid. Finally, I included a test where I searched for gibberish, to confirm that no items would appear and no filter options would appear.
@@ -713,7 +716,7 @@ To test product sorting with different inputs, I created tests to sort by price,
 # How the team work/effort was divided and managed
 Before starting the assignment, the team met to outline a plan for the required steps. Each team member completed the relevant setup required, such as cloning the github page, importing the Eclipse project, and installing Pitest for mutation testing, and downloading the required browser and installing extensions required for the GUI testing. 
 
-For the mutation testing portion of the assignment, the work was divided among the team members based on their previous work with the DataUtilities and Range methods in Assignments 2 and 3. This was done so that addition of test cases to increase mutation scores could be more efficient based on familiarity with the class methods from previous assignments. Steven Au and Laurel Flanagan reviewed the initial mutation testing scores for the Range class, and took turns adding additional test cases to increase the mutation score. Steven and Laurel each completed analysis for 5 mutants for the Range class for the relevant report section. Rhys Wickens and Austen Zhang reviewed the initial mutation testing scores for the DataUtilities class, and took turns adding additional test cases to increase the mutation score. Reviews of the other testers test cases were completed within the pairs for quality checks. 
+For the mutation testing portion of the assignment, the work was divided among the team members based on their previous work with the DataUtilities and Range methods in Assignments 2 and 3. This was done so that addition of test cases to increase mutation scores could be more efficient based on familiarity with the class methods from previous assignments. Steven Au and Laurel Flanagan reviewed the initial mutation testing scores for the Range class, and took turns adding additional test cases to increase the mutation score. Steven and Laurel each completed analysis for 5 mutants for the Range class for the relevant report section. Rhys Wickens and Austen Zhang reviewed the initial mutation testing scores for the DataUtilities class, and took turns adding additional test cases to increase the mutation score. Reviews of the other testers test cases were completed within the pairs for quality checks. Additionally, Steven researched the automated equivalent mutant detection options and reported on these findings.
 
 For the GUI testing, each team member designed test cases for 2 functionalities of the amazon.ca website as per the assignment instructions. The functionalities tested and the tester responsible are listed below. 
 
