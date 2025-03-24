@@ -2932,7 +2932,7 @@
     }]
   }, {
     "id": "0414f67c-fa7b-4d64-85a1-13c314c82873",
-    "name": "account_creation_testValidNameEmailEmojiPasswordMeetsLength",
+    "name": "account_creation_testValidNameInvalidEmailEmojiPasswordMeetsLength",
     "commands": [{
       "id": "29b4586f-0334-42ae-a9ae-cfe506f109bf",
       "comment": "",
@@ -3670,7 +3670,7 @@
     }]
   }, {
     "id": "3e687527-1701-4e1f-8724-a1772a2d4ddb",
-    "name": "account_creation_testValidNameInvalidEmailSpecialCharactersPassword (1)",
+    "name": "account_creation_testValidNameInvalidEmailSpecialCharactersPassword",
     "commands": [{
       "id": "e90bb9b3-c8db-4373-a921-a18f64f7a1bd",
       "comment": "",
@@ -4132,7 +4132,7 @@
     }]
   }, {
     "id": "a6277737-6ef6-4d78-bf3d-2666b74eab16",
-    "name": "account_creation_testValidAllUsingEmailFields",
+    "name": "account_creation_testValidAllFields",
     "commands": [{
       "id": "483313fa-729a-4af2-b3bb-4cb051770459",
       "comment": "",
@@ -4767,7 +4767,7 @@
     }]
   }, {
     "id": "22e31ed8-7efe-4f57-a304-024795755f2f",
-    "name": "account_creation_testValidAllUsingFakePhoneNumber (1)",
+    "name": "account_creation_testValidAllUsingShortPhoneNumber",
     "commands": [{
       "id": "c618fa84-6502-4731-97e0-336cc0f18445",
       "comment": "",

@@ -179,10 +179,73 @@ Rhys to fill in
 # Explain your SELENUIM test case design process
 Everyone to add a couple lines about your cases 
 
+### **Test Case Design for Account Creation Functionality**
+The test cases for account creation functionality aims to to test the account creation functionality. The main area that this test aims to improve is the validation checks for invalid user input.
 
+1. account_creation_testAllEmptyFields
+This test case was designed to test the validation of required fields during account creation when they are all left empty.
 
+2. account_creation_testBlankNameValidEmailValidPassword
+This test case was designed to test the validation of required fields when the name is left blank, and the rest of the fields have a valid input.
 
-**Test Case Design for Gift Card Functionality**  
+3. account_creation_testLetterAndNumbersInNameEmptyPassword
+This test case was designed to test the validation of required fields when the name contains numeric characters and all other fields are left empty.
+
+4. account_creation_testNumbersOnlyNameOtherEmptyFields
+This test case was designed to test the validation of required fields when the name contains only numbers and all other fields are left empty.
+
+5. account_creation_testValidAllFields
+This test case was designed to test when all fields provided are valid.
+
+6. account_creation_testValidAllUsingFakePhoneNumber
+This test case was designed to test when all fields are provided and a fake phone number is used for the account email/phone number field.
+
+7. account_creation_testValidAllUsingShortPhoneNumber
+This test case was designed to test when all fields are provided but a phone number which does not meet North American phone number character length is provided.
+
+8. account_creation_testValidNameInvalidEmailEmojiPasswordMeetsLength
+This test case was designed to test when all fields are provided but the email does not contain an "@" character, and the password are emojis.
+
+9. account_creation_testValidNameInvalidEmailLongPassword
+This test case was designed to test when all fields are provided but the email is invalid and the password is very long.
+
+10. account_creation_testValidNameInvalidEmailMatchingPasswords
+This test case was designed to test when all fields are provided but the email is invalid and the passwords match.
+
+11. account_creation_testValidNameInvalidEmailNoPassword
+This test case was designed to test when all fields are provided but the email is invalid and no password is provided.
+
+12. account_creation_testValidNameInvalidEmailPasswordDoesNotMatch
+This test case was designed to test when all fields are provided but the email is invalid and the passwords do not match.
+
+13. account_creation_testValidNameInvalidEmailSingleCharacterPasswordWithPasswordAgain
+This test case was designed to test when all fields are provided but the email is invalid and the password is a single character.
+
+14. account_creation_testValidNameInvalidEmailSpecialCharactersPassword
+This test case was designed to test when all fields are provided but the email is invalid and the password contains special characters.
+
+15. account_creation_testValidNameInvalidEmailValidPassword
+This test case was designed to test when all fields are provided but the email is invalid and the password is valid.
+
+### **Test Case Design for Login Functionality**
+The test cases for account creation functionality aims to to test the login functionality. These test are designed to verify that unauthenticated users do not gain access to the system and that the observed message displayed corresponds to the expected behaviour.
+
+1. login_testEmptyEmailField
+This test case was designed to test the validation of the email field during login when it is left empty.
+
+2. login_testInvalidAccount
+This test case was designed to test the validation when an invalid account (email) is provided.
+
+3. login_testInvalidAccountEnterKeyInput
+This test case was designed to test the validation when an invalid account (email) is provided and the Enter key is used to submit the form.
+
+4. login_testValidAccountEmptyPassword
+This test case was designed to test the validation when a valid account (email) is provided but the password field is left empty.
+
+5. login_testValidAccountValidPassword
+This test case was designed to test the validation when a valid account (email) and valid password are provided.
+
+### **Test Case Design for Gift Card Functionality**  
 There are several different types of gift cards available on amazon.ca and also several options of actions that can be completed related to gift cards. The following is a summary of the test cases created for this functionality and the design process. All test cases were automated using Selenium with verification and assertion check points added to the scripts. 
 
 1. gift_card_testGiftCardOptions   
@@ -203,7 +266,7 @@ This test case was also designed to try shopping for gift cards based on specifi
 6. gift_card_test_ShopBySpecialtyGiftCardByBrandApple    
 This test case was also designed to try shopping for gift cards based on specific selection criteria. The test data for this test case is a Specialty Gift Card for the Apple brand, therefore it involves going through the same initial steps as first test to confirm the customer can navigate to the gift card page and that the Specialty Gift Card option is present. Then the test verifies that the Top Brands section is present on the page for Specialty Gift Cards. Then within the Top Brands section, this test asserts the presence of the Apple option, which brings the customer to the page showing all Apple cards. 
 
-**Test Case Design for Gift Ideas Functionality**     
+### **Test Case Design for Gift Ideas Functionality**     
 The gift ideas functionality on amazon.ca provides an option to search for gift ideas by filtering based on the characteristics of who the gift is meant to be for. It's possible to search based on gender and age ranges. The following is a summary of the test cases created for this functionality and the design process. All test cases were automated using Selenium with verification and assertion check points added to the scripts. 
 
 1. gift_ideas_testGiftIdeasOptions     
@@ -220,6 +283,7 @@ This test case was designed to try changing the age selection after making an in
 
 5. gift_ideas_testGiftIdeasChangeGenderSelection    
 This test case was designed to try changing the gender selection after making an initial selection on the gifts page. The test data for this test case is women and anyone. This test involves going through the same initial steps to first confirm the customer can navigate to the gift ideas page, the women selection on the page is present, and the text "Gifts for Women" appears on the page. Then this test verifies the presence of the Gender menu, and verifies the presence of Anyone on this menu. After changing the gender to Anyone, the test asserts that the newly loaded page lists "Gifts for Everyone" at the top. 
+
 
 
 # Explain the use of assertions and checkpoints
