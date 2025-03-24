@@ -166,11 +166,37 @@ Laurel to add more comments about final effectiveness
 
 
 # A discussion on the effect of equivalent mutants on mutation score accuracy
+
+## Impact of equivalent mutants on mutation score accuracy
 Equivalent mutants are mutants which are introduced to the original source code that are not detected by the test suite. In these cases, we can usually conclude that the test suite is inadequate to kill the mutants which were introduced. Equivalent mutants SURVIVE the mutation test, and must be manually inspected in order to evaluate the tests. In this exercise, we found that mutation testing helped us evaluate the quality of our test cases. In certain instances, modifying the input values to the test cases was enough to catch the mutation. Doing so required careful inspection of the code. In addition, mutation testing was found to be computationally intensive, taking several minutes before the coverage report was produced by PITest for our test suite. Due to this computational restriction, a careful approach was required of the programmer in order to identify test cases or modifications to test cases in order to kill mutants. However, in the case of equivalent mutants, the test suite would not be able to catch the mutant and must be excluded from the score calculation, otherwise the score can be distorted.
 
 An equivalent mutant which survived the mutation test had to be evaluated against all the test cases which test the method of interest. This is an important step in identifying which tests actually reach the mutated statement. In order to identify solutions to kill surviving mutants, we had to identify the test cases which actually reach the mutated statement. Only then could you perform an analysis on how the mutant survived. It was found that test coverage alone does not mean you have a quality test suite. 
 
 We also found that equivalent mutants can impact the mutation score accuracy by distorting the mutation score to give the impression that the test suite is less effective than it is in practice. A slow and careful process must be followed in order to review surviving mutants. Identifying equivalent mutants and excluding not only helps your mutation score truly reflect the quality of the test suite, but it also allows you to find the mutants which actually impact your test suite quality. This impact on the accuracy artificially deflates the mutation score, and additionally makes it more cumbersome for developers who are trying to kill the mutants that actually improve the test suite quality. By identifying and excluding equivalent mutants, the mutation score becomes more accurate and reliable, and becomes a better measurement of the true quality of your test suite.
+
+## Automated detection of equivalent mutants
+
+### PiTest automated detection
+In our study, we found a few ways to automatically detect some equivalent mutants. As required by the outlined lab guide, the mutation tests were run using "All mutators" which is set in the PiTest preferences window when using Eclipse IDE. This runs a comprehensive set of mutations against the test suite, and provides a mutation coverage score. When setting the preference to "Stronger", PiTest runs a curated set of mutations which exclude mutants that are likely to produce equivalent mutants. In the case of our `Range` test suite, we found that mutation coverage increased from 78% to 92% when applying the "Stronger" configuration in the PiTest preferences. This method does not guarantee that your mutation score excludes equivalent mutants. Instead, it reduces the likelihood that equivalent mutants are generated during mutation coverage tests. Manual inspection of the code is still required in order to identify equivalent mutants. However, using the "Stronger" configuration appears to be a good approach to automate equivalent mutant detection and support developers in catching more critical bugs. 
+
+By applying the "Stronger configuration to our test suite, we found that our coverage scores improved. Specifically, `Range` mutation score improved from 78% to 92%. For `DataUtilities`, the mutation score improved from 91% to 93%.
+
+![Stronger Default Coverage for DataUtilities](2_mutation_testing/pitest_screenshots/stronger_config_93_DataUtilities.png)
+
+![Stronger Default Coverage for DataUtilities](2_mutation_testing/pitest_screenshots/stronger_config_92_Range.png)
+
+We found that there some additional tools which can help with equivalent mutant detection which are discussed below. 
+
+### Research on automated detection
+We performed a gentle study on the techniques proposed by academia to automate the detection of equivalent mutants. From research, we found that there were two approaches. Static Analysis-Based Detection and Dynamic Analysis (Execution-Based Detection). 
+
+#### Static Analysis-Based Detection
+Static Analysis aims to analyze the code structure to predict whether a mutant is equivalent without executing the code. There are a few different approaches to performing static analysis. For example, PITest uses rule-based static analysis. Some papers have proposed deep learning models such as CodeBERT and GraphCodeBERT which are pretrained models for code representation. 
+
+#### Dynamic Analysis (Execution-Based Detection)
+Dynamic Analysis is applied by mutating the source code and then comparing the runtime behaviour between the original code and the mutated version. Unlike Static analysis which does not require code execution, it only operates during or after execution. This makes dynamic analysis more computationally expensive than Static detection methods because it requires execution of the source code. This can be more effective than Static Analysis-Based Detection because the mutated code is run.
+
+In practice, we a hybrid approach could be taken for your project, but your specific approach would change depending on the size, complexity, and requirements of your codebase.
 
 # A discussion of how mutation score was improved in the test suites and our design strategy.
 

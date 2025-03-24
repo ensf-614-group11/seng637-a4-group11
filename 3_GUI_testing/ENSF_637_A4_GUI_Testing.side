@@ -1712,9 +1712,16 @@
     "id": "d9d9cc97-8b2e-43dc-b727-b671c7a60e32",
     "name": "account_creation_testAllEmptyFields",
     "commands": [{
-      "id": "18a510f6-b5ee-4c8a-a5a7-d5bae92e9edf",
+      "id": "f59de648-8fa0-4f2a-bf01-41c49eb4ec37",
       "comment": "",
-      "command": "executeScript",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3403d526-0fed-4916-a7ef-31f4063895f8",
+      "comment": "",
+      "command": "",
       "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
       "targets": [],
       "value": ""
@@ -1722,18 +1729,25 @@
       "id": "56ada445-1809-4a9f-8177-1d37dbcf4b6d",
       "comment": "",
       "command": "executeScript",
-      "target": "localStorage.clear()",
+      "target": "localStorage.clear();",
       "targets": [],
       "value": ""
     }, {
       "id": "e05b45b7-eb8a-40d7-82cd-6dcedb80772e",
       "comment": "",
       "command": "executeScript",
-      "target": "sessionStorage.clear()",
+      "target": "sessionStorage.clear();",
       "targets": [],
       "value": ""
     }, {
-      "id": "f59de648-8fa0-4f2a-bf01-41c49eb4ec37",
+      "id": "914dd62b-d269-4f86-a83d-d7c163397495",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "97c60157-7ab9-46a3-8f59-b69da197f71e",
       "comment": "",
       "command": "open",
       "target": "/",
@@ -1832,14 +1846,14 @@
       "id": "bb08e7b2-a64b-43c0-a130-dd2fa2c642d4",
       "comment": "",
       "command": "executeScript",
-      "target": "localStorage.clear()",
+      "target": "localStorage.clear();",
       "targets": [],
       "value": ""
     }, {
       "id": "5151382a-707b-4cfc-b6b5-ef7d11efa476",
       "comment": "",
       "command": "executeScript",
-      "target": "sessionStorage.clear()",
+      "target": "sessionStorage.clear();",
       "targets": [],
       "value": ""
     }, {
@@ -4654,10 +4668,24 @@
       ],
       "value": ""
     }, {
+      "id": "d3ca5a37-fa65-4d2b-a665-cc2092229d47",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "63162972-a937-4b1e-975b-6837e845bfa5",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=cvf-aamation-challenge-iframe",
+      "targets": [],
+      "value": "10000"
+    }, {
       "id": "3a8357ec-fe70-48c5-bbed-c58b2ffff040",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "id=aacb-captcha-header",
+      "target": "id=cvf-aamation-challenge-iframe",
       "targets": [
         ["id=aacb-captcha-header", "id"],
         ["css=#aacb-captcha-header", "css:finder"],
@@ -4665,31 +4693,6 @@
         ["xpath=//div[@id='aacb-waf-box']/div/div/h1", "xpath:idRelative"],
         ["xpath=//h1", "xpath:position"],
         ["xpath=//h1[contains(.,'Solve this puzzle to protect your account')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "68e627f1-dafe-4ac0-bb87-9ee03f0bc87b",
-      "comment": "",
-      "command": "assertElementPresent",
-      "target": "css=canvas",
-      "targets": [
-        ["css=canvas", "css:finder"],
-        ["xpath=//div[@id='root']/div/form/div[2]/div/canvas", "xpath:idRelative"],
-        ["xpath=//canvas", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "ccedd8d6-3d85-4c60-a619-1e5b2f359b2c",
-      "comment": "",
-      "command": "assertElementPresent",
-      "target": "id=amzn-btn-verify-internal",
-      "targets": [
-        ["id=amzn-btn-verify-internal", "id"],
-        ["css=#amzn-btn-verify-internal", "css:finder"],
-        ["xpath=//button[@id='amzn-btn-verify-internal']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/form/div[6]/div[2]/button", "xpath:idRelative"],
-        ["xpath=//div[6]/div[2]/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Confirm')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
@@ -5289,44 +5292,19 @@
       ],
       "value": ""
     }, {
-      "id": "b8febb1b-a72b-49bd-8877-70c01afb288e",
+      "id": "753c7492-a044-407d-baef-4097d5d7e6a2",
       "comment": "",
-      "command": "assertElementPresent",
-      "target": "id=aacb-captcha-header",
-      "targets": [
-        ["id=aacb-captcha-header", "id"],
-        ["css=#aacb-captcha-header", "css:finder"],
-        ["xpath=//h1[@id='aacb-captcha-header']", "xpath:attributes"],
-        ["xpath=//div[@id='aacb-waf-box']/div/div/h1", "xpath:idRelative"],
-        ["xpath=//h1", "xpath:position"],
-        ["xpath=//h1[contains(.,'Solve this puzzle to protect your account')]", "xpath:innerText"]
-      ],
-      "value": ""
+      "command": "waitForElementPresent",
+      "target": "id=cvf-aamation-challenge-iframe",
+      "targets": [],
+      "value": "10000"
     }, {
-      "id": "12a88bab-6797-454b-8fd0-58435c10c341",
+      "id": "9f8e4c0b-b117-496b-83bc-ea2600ffabd1",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=canvas",
-      "targets": [
-        ["css=canvas", "css:finder"],
-        ["xpath=//div[@id='root']/div/form/div[2]/div/canvas", "xpath:idRelative"],
-        ["xpath=//canvas", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "0c2b04e3-5bef-4fdb-9ebe-f383bb9e63c3",
-      "comment": "",
-      "command": "assertElementPresent",
-      "target": "id=amzn-btn-verify-internal",
-      "targets": [
-        ["id=amzn-btn-verify-internal", "id"],
-        ["css=#amzn-btn-verify-internal", "css:finder"],
-        ["xpath=//button[@id='amzn-btn-verify-internal']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/form/div[6]/div[2]/button", "xpath:idRelative"],
-        ["xpath=//div[6]/div[2]/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Confirm')]", "xpath:innerText"]
-      ],
-      "value": ""
+      "target": "id=cvf-aamation-challenge-iframe",
+      "targets": [],
+      "value": "10000"
     }, {
       "id": "02e2c695-7468-435b-a55c-f6ea68d4717c",
       "comment": "",
@@ -5782,7 +5760,14 @@
     "id": "800f7bbb-6552-420b-ae23-4f84b3c9b20d",
     "name": "login_testValidAccountValidPassword",
     "commands": [{
-      "id": "a7957ec7-5198-40a5-b771-f361b2ff6355",
+      "id": "2e6785b7-5161-4046-af96-73a2b1b2dbe1",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "122895c2-f173-4f67-876a-360e3ed80b31",
       "comment": "",
       "command": "executeScript",
       "target": "document.cookie.split(';').forEach(c => document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/');",
@@ -5792,18 +5777,18 @@
       "id": "4a1a27d2-325c-495d-b275-5eb1ec078a9f",
       "comment": "",
       "command": "executeScript",
-      "target": "localStorage.clear()",
+      "target": "localStorage.clear();",
       "targets": [],
       "value": ""
     }, {
       "id": "5a1dff20-075b-4f6e-bc96-44e66432bd60",
       "comment": "",
       "command": "executeScript",
-      "target": "sessionStorage.clear()",
+      "target": "sessionStorage.clear();",
       "targets": [],
       "value": ""
     }, {
-      "id": "2e6785b7-5161-4046-af96-73a2b1b2dbe1",
+      "id": "8521588e-67c7-4685-a1f0-2cdd25288f8e",
       "comment": "",
       "command": "open",
       "target": "/",
@@ -5817,7 +5802,7 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "e7c1cac3-cf6b-4ebe-80e5-cdf4eef7c012",
+      "id": "53d30347-6044-4472-88a7-ea73c0913fd8",
       "comment": "",
       "command": "verifyElementPresent",
       "target": "css=#nav-signin-tooltip .nav-action-inner",
@@ -5948,6 +5933,30 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "843b52be-9a9e-44e1-a7a9-52f41540b802",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=#nav-orders > .nav-line-1",
+      "targets": [
+        ["css=#nav-orders > .nav-line-1", "css:finder"],
+        ["xpath=//a[@id='nav-orders']/span", "xpath:idRelative"],
+        ["xpath=//a[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Returns')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "193ef374-7b93-4638-839e-f90b8a28cae2",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=#nav-orders > .nav-line-1",
+      "targets": [
+        ["css=#nav-orders > .nav-line-1", "css:finder"],
+        ["xpath=//a[@id='nav-orders']/span", "xpath:idRelative"],
+        ["xpath=//a[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Returns')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
       "id": "1a451b30-e249-43ff-bcef-8642e3899be5",
       "comment": "",
       "command": "executeScript",
@@ -5959,6 +5968,46 @@
       "comment": "",
       "command": "executeScript",
       "target": "sessionStorage.clear()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "85bce306-eff6-4e52-8d9b-8c9d6203c1df",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=#nav-link-accountList > .nav-line-2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b535cbf4-64db-4663-b466-74430fd20c89",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=#nav-link-accountList > .nav-line-2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "130e4574-3d6a-4a8b-8bd5-5c551805bb88",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=#nav-item-signout > .nav-text",
+      "targets": [
+        ["css=#nav-item-signout > .nav-text", "css:finder"],
+        ["xpath=//a[@id='nav-item-signout']/span", "xpath:idRelative"],
+        ["xpath=//li[19]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Sign Out')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "964301e3-c891-443e-b787-045e5f20cbfa",
+      "comment": "",
+      "command": "click",
+      "target": "css=#nav-item-signout > .nav-text",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "64678257-e317-4ed3-884c-6bd9826053c0",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
       "targets": [],
       "value": ""
     }, {
@@ -11042,14 +11091,7 @@
       "value": ""
     }]
   }],
-  "suites": [{
-    "id": "1b7bc798-9dab-42ff-8b7f-da69ca69535d",
-    "name": "Default Suite",
-    "persistSession": false,
-    "parallel": false,
-    "timeout": 300,
-    "tests": []
-  }],
+  "suites": [],
   "urls": ["https://www.amazon.ca/"],
   "plugins": []
 }
