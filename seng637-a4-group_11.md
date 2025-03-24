@@ -11,7 +11,9 @@
 |Austen Zhang    |     |
 
 # Introduction
-Rhys to fill in 
+This lab builds upon the foundation established in Assignment 3 by continuing the development of a comprehensive test suite for JFreeChart, a widely used Java chart library that enables developers to integrate professional-quality charts into their applications. The primary focus of this assignment is on mutation testing, refining and expanding the test suite to enhance its effectiveness in identifying potential faults within the JFreeChart codebase.
+
+In addition to mutation testing, the second part of this lab explores GUI testing using Selenium. Specifically, the assignment involves developing and executing automated tests for the Amazon.ca website, evaluating its user interface and functionality. By leveraging Selenium’s capabilities, this section aims to assess key aspects of web automation testing and its role in ensuring a seamless user experience.
 
 # Analysis of 10 Mutants of the Range class 
 
