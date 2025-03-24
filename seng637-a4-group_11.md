@@ -562,36 +562,39 @@ This test case adds a product to the cart, navigates to a different search, and 
 
 ### **Test case Design for Product Filter**
 
-1. filter_products_testFilteringLaptopBrand_HP
+1. filter_products_testFilteringLaptopBrand_HP  
 This test case searches for laptops. Then verifies that the filter options are present and selects HP for Laptop brand. It then selects the first item and asserts that the brand is HP. This test case is designed to see if the resulting items after selecting a filter match the filter selected. The below test cases seek to test the same functionality with a variety of different inputs, including using different items, filtering for different categories and different options in those categories.
 
-2. filter_products_testFilteringLaptopBrand_Lenovo
+2. filter_products_testFilteringLaptopBrand_Lenovo  
 This test case searches for laptops. Then verifies that the filter options are present and selects Lenovo for the laptop brand. It then selects the first item and asserts that the brand is Lenovo. This test case ensures that the resulting item is in fact Lenovo after selecting the Lenovo brand option.
 
-3. filter_products_testFilteringLaptopRAM_64GB
+3. filter_products_testFilteringLaptopRAM_64GB  
 This test case searches for laptops. Then it verifies that the filter options are present and selects 64 GB under the RAM category. It then selects the first item and asserts that the RAM is 64 GB. This test case tests to see if the resulting item has 64 GB of RAM like the selected filter requires.
 
-4. filter_products_testFilteringLaptopRAM_128GB
+4. filter_products_testFilteringLaptopRAM_128GB 
 This test case searches for laptops. Then it verifies that the filter options are present and selects 128 GB under the RAM category. It then selects the first item and asserts that the RAM is 128 GB.
 
-5. filter_products_testFilteringSodaBrand_DrPepper
+5. filter_products_testFilteringSodaBrand_DrPepper  
 This test case searches for soda instead of laptops. I wanted to use different inputs here to verify the functionality works for different items. The test verifies filter options are present and selects Dr. Pepper for the soda brand. It then selects the first item and asserts that the brand is Dr. Pepper.
 
-6. filter_products_testFilteringSodaBrand_KoolAid
+6. filter_products_testFilteringSodaBrand_KoolAid   
 This test case searches for soda. The test verifies filter options are present and selects Kool-Aid for the soda brand. It then selects the first item and asserts that the brand is Kool-Aid.
 
-7. filter_products_testGibberish
+7. filter_products_testGibberish    
 This test case searches for a gibberish line ("bghiwejfos"). It then verifies, using an assertion, that the filter options are not present. This test was used to test an "invalid" input for the purposes of filtering.
 
 ### **Test case Design for Product Sort**
 
-1. sort_products_by_price_testPencil_low_to_high
+1. sort_products_by_price_testPencil_low_to_high    
 This test case searches for pencils. It then verifies the dropdown menu exists before clicking on it and selecting sort by price - low to high. It then selects the first item, stores its price, then goes back. It then selects the second item, and stores its price. It compares the two prices and asserts the second price must be greater than the first. This test case is to test the functionality for Amazon to sort items by price. The rest of the test cases seek to test the same functionality using different items, sorting by price but high to low, and sorting by rating.
-2. sort_products_by_price_testShampoo_high_to_low
+
+2. sort_products_by_price_testShampoo_high_to_low   
 This test case searches for shampoo. It then verifies the dropdown menu exists before clicking on it and selecting sort by price - high to low. It then selects the first item, stores its price, then goes back. It then selects the second item, and stores its price. It compares the two prices and asserts the second price must be less than than the first.
-3. sort_by_rating_testPencil_high_to_low
+
+3. sort_by_rating_testPencil_high_to_low    
 This test case searches for pencils. It then verifies the dropdown menu exists before clicking on it and selecting "avg customer review", which is amazon's way of saying sort by rating - high to low. It then selects the first item, stores its rating out of 5, then goes back. It then selects the second item, stores its rating out of 5. It then compares the two ratings and asserts the second rating must be less than the first.
-4. sort_by_rating_testShampoo_high_to_low
+
+4. sort_by_rating_testShampoo_high_to_low   
 This test case searches for shampoo. It then verifies the dropdown menu exists before clicking on it and selecting "avg customer review". It then selects the first item, stores its rating out of 5, then goes back. It then selects the second item, stores its rating out of 5. It then compares the two ratings and asserts the second rating must be less than the first.
 
 
