@@ -136,13 +136,7 @@ The following screenshots show the mutation score before adding tests to improve
 As noted in the assignment instructions, the goal is to improve the mutation score by 10%. Therefore, since the Range class has mutation coverage of 70%, we aim to increase the mutation coverage to 80%. Since the DataUtilities class has mutation coverage of 87%, the aim would be to increase to 97%. It is noted that the coverage for DataUtilities is very high initially, and increasing to 97% may not be feasible due to equivalent mutants and other factors. This is discussed further below. 
 
 ## Mutation Tests In Progress (Intermediate Metrics) 
-The following screenshots show the progress of improving the mutation score as more tests were added. 
-
-**Data Utilities**  
-
-Laurel to fill in 
-
-
+The following screenshots show the progress of improving the mutation score for the Range class as more tests were added.  
 **Range** 
 After adding tests to cover methods that were not explicitly tested as part of Assignment 2 or 3, and a few additional tests to target specific mutants, the mutation coverage score was increased to 73%. This included tests to cover the constructor `Range(double lower, double upper)`, and the methods `getCentralValue()`, and `toString()`.  
 
@@ -156,6 +150,12 @@ Additional tests were added to specifically target many of the mutants associate
 ## After Adding Tests to Increase Mutation Score (Final Metrics)
 
 Laurel to fill in 
+
+The following screenshots show the final mutation score for the Data Utilities and Range classes after adding more tests to improve the scores. 
+**Data Utilities** 
+
+
+**Range**
 
 
 # Analysis drawn on the effectiveness of each of the test classes   
@@ -413,8 +413,77 @@ Mutation removes the below line:
 ```
 ParamChecks.nullNotPermitted(data, "data");
 ```
+## Range 
+Below are some specific examples of how we improved the mutation score of the test suite for the Range class. Our design strategy included first adding test cases to cover methods that hadn't explicitly been tested in Assignment 2 or Assignment 3 (they may have been covered in terms of method and statement testing in Assignment 3 because they were used by other methods, but there were not test cases written specifically for them). This included the constructor, `getCentralValue()` and `isNaNRange` methods. Then, we looked at reviewing the mutants that were surviving and designing test cases to specifically address these mutants. In several cases this involved expanding the test cases that address boundary value conditions. 
 
+For some of the mutants analyzed above in the section Analysis of 10 Mutants of the Range Class, these are the specific test cases that were designed to kill those mutants. 
 
+### Removed call to java/lang/StringBuilder::toString 
+This mutant survived in the code for the Range constructor based on the tests included in the original test suite. As described in the analysis above, this is because the original test cases only tested whether an excetion is thrown when an invalid range is attempted to be created (with lower > upper) and the error message itself was not tested to check whether it contains the expected contents. In the code for the Range constructor below, the toString method is called when the construction of the error message is completed if lower is > than upper. 
+```java
+  public Range(double lower, double upper) {
+        if (lower > upper) {
+            String msg = "Range(double, double): require lower (" + lower
+                + ") <= upper (" + upper + ").";
+            throw new IllegalArgumentException(msg);
+        }
+        this.lower = lower;
+        this.upper = upper;
+    }
+    ```
+Therefore, the following test was designed to test that an error message was provided, which would fail if the toString function was no longer called (and the mutant would be killed). 
+
+```java
+@Test 
+        public void testIllegalArgumentExceptionWithMessage_invalidRange() {
+            try {
+                new Range(10.0, 5.0); // lower is greater than upper
+                fail("Expected IllegalArgumentException to be thrown");
+            } catch (IllegalArgumentException e){
+                String message = e.getMessage();
+                assertTrue("Message should contain 'require lower'", message.contains("require lower"));
+                assertTrue("Message should contain 'upper'", message.contains("upper"));
+            
+            }
+        }
+```
+
+### Replaced call to java/lang/StringBuilder::append with receiver 
+This mutant also survived in the code for the Range constructor based on the tests included in the original test suite. As described in the analysis above, this is because there was not a test to assert the message included when the IllegalArgumentException is thrown. The StringBuilder is automatically called in the constructor code when the String msg for the error is concatenated. Therefore when this is replaced, the String msg is not constructed as expected. The following test was designed to check the exact contents of the error message based on the constructor code, which would fail if the call to StringBuilder is replaced (and the mutant would be killed).  
+
+```java
+    @Test 
+        public void testIllegalArgumentExceptionWithExactMessage_invalidRange() {
+            try {
+                new Range(10.0, 5.0); // lower is greater than upper
+                fail("Expected IllegalArgumentException to be thrown");
+            } catch (IllegalArgumentException e){
+                String expectedMessage = "Range(double, double): require lower (10.0) <= upper (5.0).";
+                assertEquals("Exception message does not match expected.", expectedMessage, e.getMessage());
+            
+            }
+        }
+        ```
+        
+### Incremented (++a) double local variable number 1
+This mutant also survived in the code for the Range constructor based on the tests included in the original test suite. This mutant related to the variable lower and a similar mutant for the variable upper survived in several other methods as well, and the general approach to designing the test cases to kill this mutant was the same. This approach was also the same for killing mutants that decremented (--) the lower or upper variable. 
+
+This mutant results in application of the prefix ++ operator to the variable lower so that the value of the variable passed to the constructor is changed. This changes the line 
+```if (lower > upper)``` 
+to 
+```if (++lower > upper)```. 
+
+Therefore depending on the values of lower and upper passed to the constructor, this mutant could change the outcome of the if statement. The following test case was designed to kill this mutant, with values of lower and upper very close together. In this case, the range of (0.0, 0.1) is valid, but with the mutant lower would be incremented to 1.0, therefore the range would change to be invalid and the outcome of the if statement would be changed. This test case ensures that this mutant would be killed. 
+
+```java
+  @Test
+            public void testIncrementedLowerBound() {
+                    Range range = new Range (0.0, 0.1); // range should be valid, but if lower is incremented by mutator it would be invalid
+                    assertNotNull(range);
+                
+            }
+```
+A similar approach for killing this mutant related to other methods was also used, using boundary values that would change an outcome if an increment or a decrement of one of the variables is applied. 
 
 
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
