@@ -312,7 +312,36 @@ This test case was designed to try changing the age selection after making an in
 5. gift_ideas_testGiftIdeasChangeGenderSelection    
 This test case was designed to try changing the gender selection after making an initial selection on the gifts page. The test data for this test case is women and anyone. This test involves going through the same initial steps to first confirm the customer can navigate to the gift ideas page, the women selection on the page is present, and the text "Gifts for Women" appears on the page. Then this test verifies the presence of the Gender menu, and verifies the presence of Anyone on this menu. After changing the gender to Anyone, the test asserts that the newly loaded page lists "Gifts for Everyone" at the top. 
 
+### **Test Case Design for Product Search Functionality**
+The test cases for product search functionality are designed to verify that the search feature accurately displays relevant results based on user queries.
 
+1. product_search_testLaptop  
+This test case ensures that searching for the product "Laptop" displays multiple relevant results related to laptops.
+
+2. product_search_testShirt  
+Similar to the Laptop test, this case tests the search functionality using the term "Shirt" to confirm that different products return relevant results.
+
+3. product_search_testMisspelled  
+This test case searches for "lapt" (a misspelling of "laptop") and verifies that the search still returns relevant results related to laptops, testing the system’s handling of typos.
+
+4. product_search_testGibberish  
+This test case searches for random letters and checks whether Amazon still returns relevant products, verifying the system’s behavior when given irrelevant or nonsensical input.
+
+
+### **Test Case Design for Shopping Cart Functionality**  
+These test cases focus on validating the functionality of the shopping cart on Amazon, including adding, removing, and saving products.
+
+1. shopping_cart_testAddSingleProduct   
+This test case searches for a laptop and adds it to the shopping cart. It then verifies that the laptop appears in the cart and confirms that you can proceed to checkout.
+
+2. shopping_cart_testAddMultipleProducts   
+This test case searches for three different products and adds one of each to the shopping cart. It ensures that the cart contains three products, then deletes one and verifies that two products remain in the cart.
+
+3. shopping_cart_testDeleteProduct  
+This test case adds a product to the cart and deletes it. It verifies that the deletion confirmation message appears and that the cart is empty afterward.
+
+4. shopping_cart_testSaveForLater  
+This test case adds a product to the cart, navigates to a different search, and then returns to the shopping cart. It ensures that the item remains in the cart even after navigating away and back.
 
 # Explain the use of assertions and checkpoints
 Austen to fill in 
