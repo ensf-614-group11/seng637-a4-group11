@@ -172,8 +172,220 @@ An equivalent mutant which survived the mutation test had to be evaluated agains
 
 We also found that equivalent mutants can impact the mutation score accuracy by distorting the mutation score to give the impression that the test suite is less effective than it is in practice. A slow and careful process must be followed in order to review surviving mutants. Identifying equivalent mutants and excluding not only helps your mutation score truly reflect the quality of the test suite, but it also allows you to find the mutants which actually impact your test suite quality. This impact on the accuracy artificially deflates the mutation score, and additionally makes it more cumbersome for developers who are trying to kill the mutants that actually improve the test suite quality. By identifying and excluding equivalent mutants, the mutation score becomes more accurate and reliable, and becomes a better measurement of the true quality of your test suite.
 
-# A discussion of what could have been done to improve the mutation score of the test suites
-Austen to fill in 
+# A discussion of how mutation score was improved in the test suites
+
+## DataUtilities
+
+To improve our mutation scores, we needed to look at the mutations that were surviving and writing test cases to kill them one by one. DataUtilities started with an 87% mutation coverage, which is very high already. Therefore, the surviving mutations were already some of the ones that were harder to kill. Below are some examples of the mutations that were killed.
+
+### Removed conditional - replaced equality check with true:
+This was a common mutation that we were unable to detect previously, where a conditional statement is replaced with true.
+
+As an example of how we killed this type of mutation, I will talk specifically about the mutation in the getCumulativePercentages() method. In that method, the below mutation was made:
+
+```
+if (v != null) {
+    total = total + v.doubleValue();
+}
+```
+
+becomes
+
+```
+if(true){
+    total = total + v.doubleValue();
+}
+```
+
+To kill this mutant, we needed to create a new test case that had a non-null data object with one of its elements being null. The reason this mutation wasn't killed before was because we only had test cases where the data object itself was null, in which case the initial check for data being null would throw an error and skip the rest of the method. Now that we add a test case where the data object is not null and only one of the data elements is null, we are able to catch the mutation and kill it.
+
+Below is the test case we used:
+
+```
+@Test
+public void testGetCumulativePercentages_WithNullValue() {
+    context_keyed.checking(new Expectations() {{
+        allowing(mockData_keyed).getItemCount(); will(returnValue(3));
+        allowing(mockData_keyed).getValue(0); will(returnValue(5.0));
+        allowing(mockData_keyed).getValue(1); will(returnValue(null));
+        allowing(mockData_keyed).getValue(2); will(returnValue(5.0));
+
+        allowing(mockData_keyed).getKey(0); will(returnValue("A"));
+        allowing(mockData_keyed).getKey(1); will(returnValue("B"));
+        allowing(mockData_keyed).getKey(2); will(returnValue("C"));
+    }});
+
+    KeyedValues result = DataUtilities.getCumulativePercentages(mockData_keyed);
+
+    assertNotNull(result);
+    assertEquals(0.5, result.getValue("A").doubleValue(), 0.0001);
+    assertEquals(1.0, result.getValue("C").doubleValue(), 0.0001);
+}
+```
+
+
+### Removed conditional - replaced comparison check with true
+
+Very similar to the last one, this mutation appeared 12 times in the surviving mutants. However, this was specifically replacing a comparison check (i.e. <, >, <=, >=) with true, instead of an equality check.
+
+As an example of how these mutants were killed, I will use the example in the calculateRowTotal() method. In that method, they replaced:
+
+```
+if(col < colCount){
+    Number n = data.getValue(row, col);
+    if(n != null){
+        total += n.doubleValue();
+    }
+}
+```
+
+with
+
+```
+if(true){
+    Number n = data.getValue(row, col);
+    if(n != null){
+        total += n.doubleValue();
+    }
+}
+```
+
+This mutation means that the calculateRowTotal() method no longers checks to see if the column is within the array's dimensions. To kill this mutation, we need a test that uses the overloaded calculateRowTotal method, and passes in a validCols argument that is outside of the dimensions of the Values2D data object. This type of test was missing in the previous test cases developed, so therefore the mutation survived.
+
+Below is the test case used to kill this mutation:
+
+```
+@Test
+public void testCalculateRowTotal_SkipsOutOfBoundsColumn() {
+    context_values2d.checking(new Expectations() {{
+        allowing(mockData_values2d).getColumnCount();
+        will(returnValue(2)); 
+
+        allowing(mockData_values2d).getValue(0, 0);
+        will(returnValue(2.0));
+        allowing(mockData_values2d).getValue(0, 1);
+        will(returnValue(3.0));
+    }});
+
+    int[] validCols = {0, 1, 2}; 
+
+    double result = DataUtilities.calculateRowTotal(mockData_values2d, 0, validCols);
+
+    assertEquals("Only valid indices 0 and 1 should be included", 5.0, result, 0.0001);
+}
+```
+
+### Removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted
+
+While this kind of mutation appeared multiple times in the surviving mutations list, we were only able to kill one of them. This is because the one in the clone method was the only one that was not an equivalent mutant. The rest of these mutations were equivalent mutants, explained later.
+
+For the one that we were able to kill, it was in the clone method:
+
+```
+public static double[][] clone(double[][] source) {
+    ParamChecks.nullNotPermitted(source, "source");
+    double[][] clone = new double[source.length][];
+    for (int i = 0; i < source.length; i++) {
+        if (source[i] != null) {
+            double[] row = new double[source[i].length];
+            System.arraycopy(source[i], 0, row, 0, source[i].length);
+            clone[i] = row;
+        }
+    }
+    return clone;
+}
+```
+
+The mutation removes the line:
+
+```
+ParamChecks.nullNotPermitted(source, "source");
+```
+
+To kill this mutant, we needed to write a test that passes a double[][] array that references null. Our previous test case, test case 65, attempted to clone a null double[][] array; however, that array was not null, it simply had null elements which would not be caught by ParamChecks.nullNotPermitted().
+
+The test case used to kill this mutant is:
+```
+@Test
+public void testClone_NullInput_ThrowsException() {
+    try {
+        DataUtilities.clone(null);
+        fail("Expected IllegalArgumentException to be thrown");
+    } catch (IllegalArgumentException e) {
+        assertTrue(e.getMessage().contains("source"));
+    } catch (Exception e) {
+        fail("Unexpected exception type: " + e.getClass().getName());
+    }
+}
+```
+
+
+### Why were we only able to get to 91% (681/746) mutation coverage?
+
+In DataUtilities, we started at 87% (650/746) mutation coverage, and we were only able to get to 91% mutation coverage in the end, killing 31 mutants with our additional test cases.
+
+The main reason for this were equivalent mutants. Many of the surviving mutants were equivalent mutants, which cannot be killed as they act in the same way as the original code. Examples are shown below:
+
+#### Less than to Not Equal
+
+This mutant showed up many times in for loops, like the example shown below. In a for loop, if the condition for continuing the loop is i != n, instead of i < n, and i is initialized at 0 and incremented up by 1 every loop, then the behaviour is identical. This is because the loop will go from i = 0 to i = n - 1 in both cases.
+
+Regular:
+```
+for (int i = 0; i < a.length; i++) {
+    if (!Arrays.equals(a[i], b[i])) {
+        return false;
+    }
+}
+```
+
+Mutated:
+```
+for (int i = 0; i != a.length; i++) {
+    if (!Arrays.equals(a[i], b[i])) {
+        return false;
+    }
+}
+```
+
+
+### Removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted
+
+This mutant showed up many times as well, however, we were only able to kill it in the clone method. For the rest of the methods (example shown below), there is already a check that the data object is null above it. Therefore, if the data object is null, it will throw an InvalidParameterException regardless whether or not the ParamChecks.nullNotPermitted() is there. Therefore this is an equivalent mutant.
+
+
+Example of mutation in calculateColumnTotal():
+
+```
+public static double calculateColumnTotal(Values2D data, int column) {
+    if (data == null) {
+        throw new InvalidParameterException("Input data cannot be null"); // Ensures correct exception
+    }
+    
+    try {
+        ParamChecks.nullNotPermitted(data, "data");
+        double total = 0.0;
+        int rowCount = data.getRowCount();
+        for (int r = 0; r < rowCount; r++) {
+            Number n = data.getValue(r, column);
+            if (n != null) {
+                total += n.doubleValue();
+            }
+        }
+        return total;
+    }catch(IndexOutOfBoundsException e) {
+        return 0;
+    }
+}
+```
+
+Mutation removes the below line:
+```
+ParamChecks.nullNotPermitted(data, "data");
+```
+
+
+
 
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
 Mutation testing is a powerful technique used to assess the quality and effectiveness of a test suite. Traditional testing methods, such as unit and integration testing, focus on verifying whether software behaves correctly under expected conditions. However, these tests may not always reveal weaknesses in the test suite itself. Mutation testing helps address this by introducing small, deliberate modifications (mutants) to the code and evaluating whether the test suite detects these changes. If a test suite fails to identify these modifications, it indicates gaps in test coverage and effectiveness.
@@ -315,7 +527,11 @@ This test case was designed to try changing the gender selection after making an
 
 
 # Explain the use of assertions and checkpoints
-Austen to fill in 
+
+For the GUI Testing using Selenium IDE, we used both assertions and verifications in our tests. Our general philosophy regarding this was to use verifications for things we wanted to check, but was not the main/crucial thing being tested. We would use assertions to verify the main functionality being tested. For example, in a filter product test, verifications would be used to verify the search bar was present before using it, and to verify the checkboxes for filters were present before using those. The assertion would come in the very end when checking that the items listed after filtering matched with the filter that was clicked.
+
+This aligns with the idea that verify allows the test to continue even if it fails, whereas assert stops the test if it fails, so assertions should be used for verifications in GUI testing that are crucial, and there would be no point in continuing the test if it were to fail.
+
 
 # how did you test each functionaity with different test data
 Steven to fill in, Austen to add some 
