@@ -35,6 +35,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "49861bda-8910-4fbd-8e9a-24970aef4749",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=twotabsearchtextbox",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "e2075b16-fc32-4244-8eb6-1253225a6649",
       "comment": "",
       "command": "click",
@@ -62,6 +69,13 @@
         ["xpath=//div[2]/div/input", "xpath:position"]
       ],
       "value": "shirt"
+    }, {
+      "id": "9447feba-e2da-4816-b4ad-737721876bee",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-search-submit-button",
+      "targets": [],
+      "value": ""
     }, {
       "id": "275cd51c-ff7f-4604-9e16-7b0957a077d0",
       "comment": "",
@@ -113,14 +127,14 @@
     }, {
       "id": "3f91f58b-115c-4996-9e0b-f9a42bd7b099",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=//h2[contains(., 'shirt')]",
       "targets": [],
       "value": ""
     }, {
       "id": "56cfd305-f65d-4b9e-b419-34a93bdc0de7",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=(//div[@data-component-type='s-search-result'])[2]",
       "targets": [],
       "value": ""
@@ -185,10 +199,10 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "fed82ddb-4509-4d8b-8144-afeb01e71650",
+      "id": "a4906927-1545-4647-a621-4f602bf58425",
       "comment": "",
-      "command": "setWindowSize",
-      "target": "1721x1033",
+      "command": "verifyElementPresent",
+      "target": "id=twotabsearchtextbox",
       "targets": [],
       "value": ""
     }, {
@@ -219,6 +233,13 @@
         ["xpath=//div[2]/div/input", "xpath:position"]
       ],
       "value": "laptop"
+    }, {
+      "id": "6fd28443-69ea-43ce-8240-dfc9a0ca7c3f",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-search-submit-button",
+      "targets": [],
+      "value": ""
     }, {
       "id": "1e1b2c05-f39d-40db-99a2-3acaba390a45",
       "comment": "",
@@ -270,14 +291,14 @@
     }, {
       "id": "3374b407-b8aa-4603-bdcd-4b46a633c659",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=//h2[contains(., 'Laptop')]",
       "targets": [],
       "value": ""
     }, {
       "id": "bba5d4c7-de8f-4c73-b09f-04a10e97c8e5",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=(//div[@data-component-type='s-search-result'])[2]",
       "targets": [],
       "value": ""
@@ -342,6 +363,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "a3ecb878-c271-4f59-a8ab-3b10862129eb",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=twotabsearchtextbox",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "5562b691-9c4b-4429-9618-e0083c9010ab",
       "comment": "",
       "command": "click",
@@ -370,6 +398,13 @@
       ],
       "value": "lapt"
     }, {
+      "id": "0906d323-7c81-4844-ad8a-7f05368814b2",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-search-submit-button",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "b9aea7de-446f-4f4b-af89-b35f77ed4f52",
       "comment": "",
       "command": "click",
@@ -379,7 +414,7 @@
     }, {
       "id": "f3e406bf-8102-4ab1-af0b-42acee8824f5",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=//h2[contains(., 'Laptop')]",
       "targets": [],
       "value": ""
@@ -444,6 +479,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "7877c4f9-04d8-4568-8bd5-c85a4fc78e88",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=twotabsearchtextbox",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "d97b16c4-5579-461f-b5fe-db32e79eb0dc",
       "comment": "",
       "command": "click",
@@ -471,6 +513,13 @@
         ["xpath=//div[2]/div/input", "xpath:position"]
       ],
       "value": "jaskdashfjkdash"
+    }, {
+      "id": "5900c322-3158-4ee1-ae3f-d475d667201c",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-search-submit-button",
+      "targets": [],
+      "value": ""
     }, {
       "id": "66fa1cfc-ad0a-4fd5-92f1-29d1b68068ca",
       "comment": "",
@@ -566,6 +615,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "bebb815c-3e28-4ae8-ba22-eb403c922e3d",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=twotabsearchtextbox",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "6481917d-cb9c-4121-9a5c-a2869e353237",
       "comment": "",
       "command": "click",
@@ -594,6 +650,13 @@
       ],
       "value": "laptop"
     }, {
+      "id": "410473c6-6ff4-4898-bc1f-9c8a936a44be",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-search-submit-button",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "15bcdb38-9981-4783-9874-3bc5991fb34f",
       "comment": "",
       "command": "click",
@@ -607,10 +670,24 @@
       ],
       "value": ""
     }, {
+      "id": "1ac516c8-1426-4e11-baf6-a9f5ef210c2d",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": "5000"
+    }, {
+      "id": "ea458f54-6498-4476-826c-fbaeabe61f31",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "0f4229d0-ab4c-405f-8b81-a72b5651dcb4",
       "comment": "",
       "command": "click",
-      "target": "id=a-autoid-1-announce",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
       "targets": [
         ["id=a-autoid-1-announce", "id"],
         ["name=submit.addToCart", "name"],
@@ -620,6 +697,13 @@
         ["xpath=//span/button", "xpath:position"],
         ["xpath=//button[contains(.,'Add to cart')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "6454d713-5fad-481f-afb0-efaeb1dca995",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-cart-count",
+      "targets": [],
       "value": ""
     }, {
       "id": "5891ab99-62e9-4f17-af81-c3d2abd1baa4",
@@ -656,15 +740,22 @@
     }, {
       "id": "417ec9f5-5305-47e0-a68a-4725f2c6c1b8",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=//div[contains(@class, 'sc-list-item')]",
       "targets": [],
       "value": ""
     }, {
       "id": "a651fe6c-878c-42b3-829b-0bc6f8e9d322",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "name=proceedToRetailCheckout",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d8b056bd-1497-44fa-a9ce-b498d3ceaedf",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.a-icon-small-trash",
       "targets": [],
       "value": ""
     }, {
@@ -739,6 +830,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "ea97b84e-8097-45f2-8044-1e259b784a6c",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=twotabsearchtextbox",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "bd9d388a-3030-4334-a06e-024ce647d2be",
       "comment": "",
       "command": "click",
@@ -767,6 +865,13 @@
       ],
       "value": "laptop"
     }, {
+      "id": "29955219-62c3-4278-84a8-dc494956f728",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-search-submit-button",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "fb3707a1-4809-47fc-b760-59f0abb59a6a",
       "comment": "",
       "command": "click",
@@ -780,10 +885,31 @@
       ],
       "value": ""
     }, {
+      "id": "a5b4f216-85a1-401e-b455-55e35086e903",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": "5000"
+    }, {
+      "id": "341fa6e6-e0c3-43a3-9545-f4e85ceebd84",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "d8416a9b-6f4b-4f2a-a18f-938235074b43",
       "comment": "",
       "command": "click",
-      "target": "id=a-autoid-1-announce",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9ca947e2-6057-4b2b-b250-e21369e75074",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-cart-count",
       "targets": [],
       "value": ""
     }, {
@@ -791,6 +917,13 @@
       "comment": "",
       "command": "click",
       "target": "id=nav-cart-count",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2e44de17-a7c6-4845-8ffd-d9c3830d263e",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.a-icon-small-trash",
       "targets": [],
       "value": ""
     }, {
@@ -894,6 +1027,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "5be5f0c4-921a-405c-81d2-d7699010f5c9",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=twotabsearchtextbox",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "fee30d14-876d-4f1e-8d0d-c8190624f81f",
       "comment": "",
       "command": "click",
@@ -922,6 +1062,13 @@
       ],
       "value": "laptop"
     }, {
+      "id": "9817cec4-65cc-45e6-80e3-ca95d6c6162c",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-search-submit-button",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "e4d5d67e-b0ae-4ab9-aaf5-5d6c487f8763",
       "comment": "",
       "command": "click",
@@ -935,10 +1082,24 @@
       ],
       "value": ""
     }, {
+      "id": "b4d79912-ba13-4c41-82f7-06d7b987ecb8",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": "5000"
+    }, {
+      "id": "3d18dee5-7cf0-4b01-b8c6-35b6b12ec0d6",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "7b7df5d1-e189-46ab-8238-3d44a8505535",
       "comment": "",
       "command": "click",
-      "target": "id=a-autoid-1-announce",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
       "targets": [
         ["id=a-autoid-1-announce", "id"],
         ["name=submit.addToCart", "name"],
@@ -948,6 +1109,13 @@
         ["xpath=//span/button", "xpath:position"],
         ["xpath=//button[contains(.,'Add to cart')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "b2b9ec6e-3c8c-4c13-b4f1-79205b3a1c71",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-cart-count",
+      "targets": [],
       "value": ""
     }, {
       "id": "73f30686-3fc0-44fb-ab17-cb4896c195cf",
@@ -964,6 +1132,13 @@
       ],
       "value": ""
     }, {
+      "id": "8fce59d0-e178-4228-adf7-57e1726543fa",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-logo-sprites",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "fd814522-1c61-4008-917b-5c5dad804e8b",
       "comment": "",
       "command": "click",
@@ -978,6 +1153,13 @@
         ["xpath=//div/div/a", "xpath:position"],
         ["xpath=//a[contains(.,'.ca')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "305d0606-4768-4ee1-87e2-22c62006ddce",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=twotabsearchtextbox",
+      "targets": [],
       "value": ""
     }, {
       "id": "dda01572-7676-4377-8825-41814b48c99c",
@@ -1008,6 +1190,13 @@
       ],
       "value": "phone"
     }, {
+      "id": "18abce8a-6789-4f19-b2cc-6a824681212a",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-search-submit-button",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "ad428a1c-d5c9-4180-a69c-9d3af793ce23",
       "comment": "",
       "command": "click",
@@ -1019,6 +1208,13 @@
         ["xpath=//span[@id='nav-search-submit-text']/input", "xpath:idRelative"],
         ["xpath=//span/input", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "58238153-b211-4479-9133-7c49e2205a0a",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=#nav-cart-text-container > .nav-line-2",
+      "targets": [],
       "value": ""
     }, {
       "id": "8fde37c3-2d94-4111-a550-f3ac2789f5e7",
@@ -1045,19 +1241,22 @@
     }, {
       "id": "63646241-9256-4af1-8d42-8552e9c533eb",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=//div[contains(@class, 'sc-list-item')]",
-      "targets": [
-        ["css=.sc-grid-content-tail > li:nth-child(3)", "css:finder"],
-        ["xpath=//div[@id='sc-active-ba44ad7b-b3e3-4e58-b43b-de25a60ed03b']/div[4]/div/div[2]/ul/div[2]/li[3]", "xpath:idRelative"],
-        ["xpath=//div[2]/li[3]", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "c5c874c3-7847-454d-9c05-f520cc73bb81",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "name=proceedToRetailCheckout",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0e184e84-c866-48f0-baa1-f9582b215b76",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.a-icon-small-trash",
       "targets": [],
       "value": ""
     }, {
@@ -1128,6 +1327,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "3bb5a2fa-82a6-4e64-9666-b6a41a57b39e",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=twotabsearchtextbox",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "940167fa-70af-4386-9eda-effa438ba294",
       "comment": "",
       "command": "click",
@@ -1156,6 +1362,13 @@
       ],
       "value": "laptop"
     }, {
+      "id": "48280c4f-8ae5-4c7b-bb52-357f1f77c21a",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-search-submit-button",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "c8f578fc-2e67-4e38-99dc-16a85fa6280b",
       "comment": "",
       "command": "click",
@@ -1163,10 +1376,31 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "efe64e05-adea-438e-9081-db40ce6814f6",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": "5000"
+    }, {
+      "id": "48799bab-2ced-4904-9e05-f04aaf5a7c43",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "3b5284b7-5ac0-4d4f-abc2-bcd9e3c3976f",
       "comment": "",
       "command": "click",
-      "target": "id=a-autoid-1-announce",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d7bf8e3-5ff7-4fd1-bea3-c6aeceee553e",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=twotabsearchtextbox",
       "targets": [],
       "value": ""
     }, {
@@ -1198,6 +1432,13 @@
       ],
       "value": "phone"
     }, {
+      "id": "be492977-739e-442e-815c-66a9ab6625e0",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-search-submit-button",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "83455b5a-6849-4382-923b-c06da5c1d9c9",
       "comment": "",
       "command": "click",
@@ -1211,10 +1452,31 @@
       ],
       "value": ""
     }, {
+      "id": "c7185556-ebad-4408-9813-75572ecdcf1b",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": "5000"
+    }, {
+      "id": "3843527f-95d4-4de3-9544-9da8e09cd6c5",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "95f78505-7bb4-4647-9608-c4a64a002daf",
       "comment": "",
       "command": "click",
-      "target": "id=a-autoid-3-announce",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "496d64ba-0ea1-47fa-8565-156254ff2378",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=twotabsearchtextbox",
       "targets": [],
       "value": ""
     }, {
@@ -1246,6 +1508,13 @@
       ],
       "value": "headphones"
     }, {
+      "id": "74ffdeb9-f1c1-454b-b796-aab2da89656e",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-search-submit-button",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "69e1215e-e4fc-4dac-b0a0-92f222459fca",
       "comment": "",
       "command": "click",
@@ -1259,10 +1528,31 @@
       ],
       "value": ""
     }, {
+      "id": "32d6a7e8-607e-4135-8f81-a4d0f5247a7f",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": "5000"
+    }, {
+      "id": "2a6d4035-ad15-4944-9553-ee167c62e486",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "3cba43e3-cd8a-4a8c-8c54-a038f31be32b",
       "comment": "",
       "command": "click",
-      "target": "id=a-autoid-1-announce",
+      "target": "(//button[contains(@aria-label, 'Add to cart')])[1]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4cfc6ba8-744a-49e8-ae2f-2a69752bc11e",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "id=nav-cart-count",
       "targets": [],
       "value": ""
     }, {
@@ -1296,15 +1586,22 @@
     }, {
       "id": "f8ed9e5d-d7ca-4292-a9f4-ae59fd2bbd3c",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=//div[contains(@class, 'sc-list-item')]",
       "targets": [],
       "value": ""
     }, {
       "id": "dc47c5fd-cdc5-4f15-885a-1f3641cef17b",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "name=proceedToRetailCheckout",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "944e61de-d563-4d5f-a019-f04f704f9358",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.a-icon-small-trash",
       "targets": [],
       "value": ""
     }, {
@@ -1335,15 +1632,22 @@
     }, {
       "id": "e4f49317-57f4-498f-a36f-89a9fc6760ff",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=//div[contains(@class, 'sc-list-item')]",
       "targets": [],
       "value": ""
     }, {
       "id": "3cc0eec7-72b2-4c0f-a7b2-4f5e8fa5cbda",
       "comment": "",
-      "command": "verifyElementPresent",
+      "command": "assertElementPresent",
       "target": "name=proceedToRetailCheckout",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "658d5512-2cba-4d6e-b360-ec6655c19c61",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.a-icon-small-trash",
       "targets": [],
       "value": ""
     }, {
@@ -1356,6 +1660,13 @@
         ["xpath=//div[@id='sc-active-a005b90b-0faf-457b-8f7f-a4c15381b0c7']/div[4]/div/div[2]/div/span/span/div/button/span", "xpath:idRelative"],
         ["xpath=//button/span", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "6429c157-412f-441d-ab94-2b39ee624aeb",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.a-icon-small-trash",
+      "targets": [],
       "value": ""
     }, {
       "id": "f9130759-90c6-40da-b0d0-7b5484c5b297",
