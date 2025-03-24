@@ -7,6 +7,8 @@
 |Rhys Wickens    |     |
 |Austen Zhang    |     |
 
+# Instruction for 2_mutation_testing
+
 ## Test Suites for JFreeChart
 ### - `org.jfree.data.RangeTest`
 ### - `org.jfree.data.DataUtilitiesTest`
