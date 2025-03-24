@@ -5823,7 +5823,7 @@
     }, {
       "id": "9477c2ab-bde6-4a63-8e08-92b23337cee4",
       "comment": "",
-      "command": "verifyText",
+      "command": "assertText",
       "target": "css=.po-ram_memory\\.installed_size > .a-span9 > .a-size-base",
       "targets": [],
       "value": "128 GB"
@@ -6007,7 +6007,7 @@
     }, {
       "id": "1750115f-99f2-4ff0-ba73-89ef39fb5317",
       "comment": "",
-      "command": "verifyText",
+      "command": "assertText",
       "target": "css=.po-ram_memory\\.installed_size > .a-span9 > .a-size-base",
       "targets": [],
       "value": "64 GB"
@@ -6191,13 +6191,9 @@
     }, {
       "id": "f50bf0bd-7768-444c-a684-304edb8a7f4e",
       "comment": "",
-      "command": "verifyText",
+      "command": "assertText",
       "target": "css=.po-brand > .a-span9 > .a-size-base",
-      "targets": [
-        ["css=.po-brand > .a-span9 > .a-size-base", "css:finder"],
-        ["xpath=//div[@id='poExpander']/div/div/table/tbody/tr/td[2]/span", "xpath:idRelative"],
-        ["xpath=//td[2]/span", "xpath:position"]
-      ],
+      "targets": [],
       "value": "HP"
     }, {
       "id": "2f19d728-db67-4170-92c8-cde896bb98d1",
@@ -6379,13 +6375,9 @@
     }, {
       "id": "975a7216-ffc3-40ea-88bd-f3297418587b",
       "comment": "",
-      "command": "verifyText",
+      "command": "assertText",
       "target": "css=.po-brand > .a-span9 > .a-size-base",
-      "targets": [
-        ["css=.po-brand > .a-span9 > .a-size-base", "css:finder"],
-        ["xpath=//div[@id='poExpander']/div/div/table/tbody/tr/td[2]/span", "xpath:idRelative"],
-        ["xpath=//td[2]/span", "xpath:position"]
-      ],
+      "targets": [],
       "value": "Lenovo"
     }, {
       "id": "b6d92672-02cd-4c33-8cb8-2db500843c1f",
@@ -6567,19 +6559,9 @@
     }, {
       "id": "704e73fc-f13f-44f3-b645-a45a5d19e9c0",
       "comment": "",
-      "command": "verifyText",
+      "command": "assertText",
       "target": "id=bylineInfo",
-      "targets": [
-        ["id=bylineInfo", "id"],
-        ["linkText=Brand: Dr Pepper", "linkText"],
-        ["css=#bylineInfo", "css:finder"],
-        ["xpath=//a[contains(text(),'Brand: Dr Pepper')]", "xpath:link"],
-        ["xpath=//a[@id='bylineInfo']", "xpath:attributes"],
-        ["xpath=//div[@id='bylineInfo_feature_div']/div/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/Dr-Pepper/b/ref=bl_dp_s_web_7659822011?ie=UTF8&node=7659822011&field-lbr_brands_browse-bin=Dr+Pepper')]", "xpath:href"],
-        ["xpath=//div[4]/div[2]/div/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Brand: Dr Pepper')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": "Brand: Dr Pepper"
     }, {
       "id": "4804e2b3-354f-45a6-81d7-a95913c6befd",
@@ -6761,19 +6743,9 @@
     }, {
       "id": "8838583f-2afe-4a97-b2de-57fba100405d",
       "comment": "",
-      "command": "verifyText",
+      "command": "assertText",
       "target": "id=bylineInfo",
-      "targets": [
-        ["id=bylineInfo", "id"],
-        ["linkText=Brand: Dr Pepper", "linkText"],
-        ["css=#bylineInfo", "css:finder"],
-        ["xpath=//a[contains(text(),'Brand: Dr Pepper')]", "xpath:link"],
-        ["xpath=//a[@id='bylineInfo']", "xpath:attributes"],
-        ["xpath=//div[@id='bylineInfo_feature_div']/div/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/Dr-Pepper/b/ref=bl_dp_s_web_7659822011?ie=UTF8&node=7659822011&field-lbr_brands_browse-bin=Dr+Pepper')]", "xpath:href"],
-        ["xpath=//div[4]/div[2]/div/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Brand: Dr Pepper')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": "Brand: Kool-Aid"
     }, {
       "id": "9824e401-5ea0-43a1-9c81-a55c0f1d63de",
@@ -6909,13 +6881,9 @@
     }, {
       "id": "b7963234-edd9-46e7-a909-c1804825799f",
       "comment": "",
-      "command": "verifyElementNotPresent",
+      "command": "assertElementNotPresent",
       "target": "css=#brandsRefinements > #filter-p_123 #p_123\\/226994 .a-icon",
-      "targets": [
-        ["css=#brandsRefinements > #filter-p_123 #p_123\\/226994 .a-icon", "css:finder"],
-        ["xpath=(//li[@id='p_123/226994']/span/a/div/label/i)[2]", "xpath:idRelative"],
-        ["xpath=//div[7]/ul/span/span/li/span/a/div/label/i", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "13b5531c-0506-46c7-8aac-48d8efac782d",
@@ -7189,7 +7157,7 @@
     }, {
       "id": "c23dc671-632e-428b-a16b-48a74e241397",
       "comment": "",
-      "command": "verify",
+      "command": "assert",
       "target": "result",
       "targets": [],
       "value": "true"
@@ -7454,7 +7422,7 @@
     }, {
       "id": "5958a642-a077-48e4-841e-f2c40128e26b",
       "comment": "",
-      "command": "verify",
+      "command": "assert",
       "target": "result",
       "targets": [],
       "value": "true"
@@ -7730,7 +7698,7 @@
     }, {
       "id": "704126bd-e1cf-4eeb-bb57-22c8f4d30228",
       "comment": "",
-      "command": "verify",
+      "command": "assert",
       "target": "result",
       "targets": [],
       "value": "true"
@@ -7995,7 +7963,7 @@
     }, {
       "id": "38dc6ab9-ff9f-4f51-9224-8ff9f357f043",
       "comment": "",
-      "command": "verify",
+      "command": "assert",
       "target": "result",
       "targets": [],
       "value": "true"
