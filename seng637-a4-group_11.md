@@ -325,7 +325,7 @@ Similar to the Laptop test, this case tests the search functionality using the t
 This test case searches for "lapt" (a misspelling of "laptop") and verifies that the search still returns relevant results related to laptops, testing the system’s handling of typos.
 
 4. product_search_testGibberish  
-This test case searches for random letters and checks whether Amazon still returns relevant products, verifying the system’s behavior when given irrelevant or nonsensical input.
+This test case searches for random letters and checks whether Amazon still returns products, verifying the system’s behavior when given irrelevant or nonsensical input.
 
 
 ### **Test Case Design for Shopping Cart Functionality**  
