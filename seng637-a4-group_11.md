@@ -122,7 +122,6 @@ if (!(obj instanceof Range)) {
 **Mutant**: replaced boolean return with false for org/jfree/data/Range::equals → KILLED
 **Analysis**: This mutant is killed by Test Case 33 which tests equality of an instance of `Range` with a null range. The `Range` object calls the `equals` method and passes `null` as the argument. `null` is not a Range object so the condition evaluates to `true` and the method returns `false`. The mutant changes this return value to `true`, and the method then returns `true`. Because this changes the return value, the change in behaviour is caught by the test case. This is generally applicable to most mutants in our suite which have the return value changed.
 
-
 # Report all the statistics and the mutation score for each test class
 ## Before Adding Tests to Increase Mutation Score (Metrics with test suite from Assignment 3)
 The following screenshots show the mutation score before adding tests to improve the score for the DataUtilities and Range classes. These metrics reflect the status of the mutation score based on the test suites from Assignment 3. 
@@ -180,7 +179,7 @@ By applying the "Stronger configuration to our test suite, we found that our cov
 
 ![Stronger Default Coverage for DataUtilities](2_mutation_testing/pitest_screenshots/stronger_config_93_DataUtilities.png)
 
-![Stronger Default Coverage for DataUtilities](2_mutation_testing/pitest_screenshots/stronger_config_92_Range.png)
+![Stronger Default Coverage for Range](2_mutation_testing/pitest_screenshots/stronger_config_95_Range.png)
 
 We found that there some additional tools which can help with equivalent mutant detection which are discussed below. 
 
@@ -210,7 +209,7 @@ This was a common mutation that we were unable to detect previously, where a con
 
 As an example of how we killed this type of mutation, I will talk specifically about the mutation in the getCumulativePercentages() method. In that method, the below mutation was made:
 
-```
+```java
 if (v != null) {
     total = total + v.doubleValue();
 }
@@ -218,7 +217,7 @@ if (v != null) {
 
 becomes
 
-```
+```java
 if(true){
     total = total + v.doubleValue();
 }
@@ -228,7 +227,7 @@ To kill this mutant, we needed to create a new test case that had a non-null dat
 
 Below is the test case we used:
 
-```
+```java
 @Test
 public void testGetCumulativePercentages_WithNullValue() {
     context_keyed.checking(new Expectations() {{
@@ -257,7 +256,7 @@ Very similar to the last one, this mutation appeared 12 times in the surviving m
 
 As an example of how these mutants were killed, I will use the example in the calculateRowTotal() method. In that method, they replaced:
 
-```
+```java
 if(col < colCount){
     Number n = data.getValue(row, col);
     if(n != null){
@@ -268,7 +267,7 @@ if(col < colCount){
 
 with
 
-```
+```java
 if(true){
     Number n = data.getValue(row, col);
     if(n != null){
@@ -281,7 +280,7 @@ This mutation means that the calculateRowTotal() method no longers checks to see
 
 Below is the test case used to kill this mutation:
 
-```
+```java
 @Test
 public void testCalculateRowTotal_SkipsOutOfBoundsColumn() {
     context_values2d.checking(new Expectations() {{
@@ -308,7 +307,7 @@ While this kind of mutation appeared multiple times in the surviving mutations l
 
 For the one that we were able to kill, it was in the clone method:
 
-```
+```java
 public static double[][] clone(double[][] source) {
     ParamChecks.nullNotPermitted(source, "source");
     double[][] clone = new double[source.length][];
@@ -325,14 +324,14 @@ public static double[][] clone(double[][] source) {
 
 The mutation removes the line:
 
-```
+```java
 ParamChecks.nullNotPermitted(source, "source");
 ```
 
 To kill this mutant, we needed to write a test that passes a double[][] array that references null. Our previous test case, test case 65, attempted to clone a null double[][] array; however, that array was not null, it simply had null elements which would not be caught by ParamChecks.nullNotPermitted().
 
 The test case used to kill this mutant is:
-```
+```java
 @Test
 public void testClone_NullInput_ThrowsException() {
     try {
@@ -358,7 +357,7 @@ The main reason for this were equivalent mutants. Many of the surviving mutants 
 This mutant showed up many times in for loops, like the example shown below. In a for loop, if the condition for continuing the loop is i != n, instead of i < n, and i is initialized at 0 and incremented up by 1 every loop, then the behaviour is identical. This is because the loop will go from i = 0 to i = n - 1 in both cases.
 
 Regular:
-```
+```java
 for (int i = 0; i < a.length; i++) {
     if (!Arrays.equals(a[i], b[i])) {
         return false;
@@ -367,7 +366,7 @@ for (int i = 0; i < a.length; i++) {
 ```
 
 Mutated:
-```
+```java
 for (int i = 0; i != a.length; i++) {
     if (!Arrays.equals(a[i], b[i])) {
         return false;
@@ -383,7 +382,7 @@ This mutant showed up many times as well, however, we were only able to kill it 
 
 Example of mutation in calculateColumnTotal():
 
-```
+```java
 public static double calculateColumnTotal(Values2D data, int column) {
     if (data == null) {
         throw new InvalidParameterException("Input data cannot be null"); // Ensures correct exception
@@ -407,7 +406,7 @@ public static double calculateColumnTotal(Values2D data, int column) {
 ```
 
 Mutation removes the below line:
-```
+```java
 ParamChecks.nullNotPermitted(data, "data");
 ```
 ## Range 
@@ -488,6 +487,28 @@ Therefore depending on the values of lower and upper passed to the constructor, 
 ```
 A similar approach for killing this mutant related to other methods was also used, using boundary values that would change an outcome if an increment or a decrement of one of the variables is applied. 
 
+### Changed conditional boundary → SURVIVED
+
+This mutant changes the conditonal statement for `Double.compare(this.lower, range.lower) == 0` to `Double.compare(this.lower, range.lower) > 0`. When the mutant is applied and changes the conditional statement, the original test cases are not able to distinguish the difference.
+
+This refers to the line of code in the `public boolean equals(Object obj)` method:
+```java
+return Double.compare(this.lower, range.lower) == 0 &&
+       Double.compare(this.upper, range.upper) == 0;  
+```
+
+In order to kill the mutant, a test case is needed where `b1 != this.lower` evaluates to false. 
+```java
+@Test
+    public void testEquals_DifferentLowerBounds_KillNotEqualToGreaterThanMutant() {
+        assertFalse("Ranges (2.0, 5.0) and (1.0, 5.0) should not be equal",
+                exampleRange70.equals(exampleRange69));
+    }
+		
+```
+
+### not equal to greater than → SURVIVED
+This mutant refers to the line of code
 
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
 Mutation testing is a powerful technique used to assess the quality and effectiveness of a test suite. Traditional testing methods, such as unit and integration testing, focus on verifying whether software behaves correctly under expected conditions. However, these tests may not always reveal weaknesses in the test suite itself. Mutation testing helps address this by introducing small, deliberate modifications (mutants) to the code and evaluating whether the test suite detects these changes. If a test suite fails to identify these modifications, it indicates gaps in test coverage and effectiveness.
