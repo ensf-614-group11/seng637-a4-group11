@@ -462,15 +462,19 @@ This mutant also survived in the code for the Range constructor based on the tes
             
             }
         }
-        ```
+```
         
 ### Incremented (++a) double local variable number 1
 This mutant also survived in the code for the Range constructor based on the tests included in the original test suite. This mutant related to the variable lower and a similar mutant for the variable upper survived in several other methods as well, and the general approach to designing the test cases to kill this mutant was the same. This approach was also the same for killing mutants that decremented (--) the lower or upper variable. 
 
 This mutant results in application of the prefix ++ operator to the variable lower so that the value of the variable passed to the constructor is changed. This changes the line 
-```if (lower > upper)``` 
+```
+if (lower > upper)
+``` 
 to 
-```if (++lower > upper)``` 
+```
+if (++lower > upper)
+``` 
 
 Therefore depending on the values of lower and upper passed to the constructor, this mutant could change the outcome of the if statement. The following test case was designed to kill this mutant, with values of lower and upper very close together. In this case, the range of (0.0, 0.1) is valid, but with the mutant lower would be incremented to 1.0, therefore the range would change to be invalid and the outcome of the if statement would be changed. This test case ensures that this mutant would be killed. 
 
