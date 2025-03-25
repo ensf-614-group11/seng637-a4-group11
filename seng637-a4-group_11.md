@@ -149,10 +149,10 @@ Additional tests were added to specifically target many of the mutants associate
 ## After Adding Tests to Increase Mutation Score (Final Metrics)
 
 The following screenshots show the final mutation score for the Data Utilities and Range classes after adding more tests to improve the scores. 
-**Data Utilities** 
+**Data Utilities**   
 ![Increase DataUtilities to 91](2_mutation_testing/pitest_screenshots/Increase_to_91_DataUtilities.png)
 
-**Range**
+**Range**   
 ![Increase Range to 79](2_mutation_testing/pitest_screenshots/increase_to_79_Range.png)
 
 # Analysis drawn on the effectiveness of each of the test classes   
