@@ -1330,7 +1330,348 @@ public class RangeTest {
 	        assertEquals("Combining (1.7, NaN) and (1.0, 2.0) should return (1.0, 2.0)",
 	                new Range(1.0, 2.0), result);
 	    }
+	    // ================== More Intersects Method Tests ==================
+	    // Test for intersection where the lower bound of the input is equal to the upper bound of the range
+	    @Test
+	    public void testIntersects_WithExactUpperBound() {
+	      
+	        Range range = new Range(1, 5);
+	        
+	        double b0 = 5;
+	        double b1 = 10;
+	        
+	        // The ranges should not intersect because the upper bound of the range is equal to the lower bound of the input range
+	        assertFalse(range.intersects(b0, b1));
+	    }
+	    
+	    // Test for non-intersection where b0 is exactly greater than the upper bound of the current range 
+	   @Test
+	   public void testIntersects_LowerBoundIsGreater() {
+		   Range range = new Range(1, 5);
+		   double b0 = 6;
+		   double b1 = 10;
+		   
+		   assertFalse(range.intersects(b0, b1));
+		   }
+	   
+	   // Test for intersection when the input range fully overlaps with the current range 
+	   @Test
+	    public void testIntersects_FullIntersection() {
+	        Range range = new Range(1, 5);
+	        
+	        double b0 = 2;
+	        double b1 = 4;
+	        
+	        // The ranges should intersect as the input range is fully within the current range
+	        assertTrue(range.intersects(b0, b1));
+	    }
+	   // Test for non-intersection where b1 is less than b0
+	    @Test
+	    public void testIntersects_WhenB1LessThanB0() {
+	        Range range = new Range(1, 5);
+	        
+	        // The input range is [6, 4] (b1 < b0)
+	        double b0 = 6;
+	        double b1 = 4;
+	        
+	        // The ranges should not intersect because the input range is reversed and does not overlap with the current range
+	        assertFalse(range.intersects(b0, b1));
+	    }
+	    
+	 // Test for boundary condition where the input range starts at the current range's lower bound
+	    @Test
+	    public void testIntersects_AtLowerBound() {
+	        Range range = new Range(1, 5);
+	        
+	        // The input range is [1, 3]
+	        double b0 = 1;
+	        double b1 = 3;
+	        
+	        // The ranges should intersect as the input range starts at the current range's lower bound
+	        assertTrue(range.intersects(b0, b1));
+	    }
+	    
+	    // Test for non-intersection when the input range does not meet the condition (b0 >= this.upper)
+	    @Test
+	    public void testIntersects_B0IsGreaterThanUpperBound() {
+	        Range range = new Range(1, 5);
+	        
+	        // The input range is [6, 8] (b0 > this.upper)
+	        double b0 = 6;
+	        double b1 = 8;
+	        
+	        // The ranges should not intersect because the input range is entirely after the current range
+	        assertFalse(range.intersects(b0, b1));
+	    }
+	    
+	    // Test for intersection when b0 is just less than this.upper 
+	    @Test
+	    public void testIntersects_WithB0JustLessThanUpper() {
+	        Range range = new Range(1, 5);
 
+	        // Input range starts just before the current range's upper bound
+	        double b0 = 4.999;
+	        double b1 = 6;
+
+	        // The ranges should intersect since b0 is less than this.upper
+	        assertTrue(range.intersects(b0, b1));
+	    }
+	    
+	    // Test for intersection where b0 = b1
+	    @Test
+	    public void testIntersects_WithB0EqualToB1() {
+	        Range range = new Range(1, 5);
+
+	        // Input range starts at the lower bound and ends at the same point
+	        double b0 = 4;
+	        double b1 = 4;
+
+	        // The ranges should intersect because b1 is equal to b0, which is within the current range
+	        assertTrue(range.intersects(b0, b1));
+	    }
+	    
+	    // Test for intersections with exact upper bound and range with same lower and upper bound 
+	    @Test
+	    public void testIntersects_ExactUpperBoundary() {
+	        Range range = new Range(1, 5);
+
+	        // The input range is exactly aligned with the upper bound of the current range
+	        double b0 = 5;
+	        double b1 = 5;
+
+	        // The ranges should intersect as b0 == this.upper and b1 == b0
+	        assertFalse(range.intersects(b0, b1));
+	    }
+	    
+	    // ================== More constrain Method Tests ==================
+	    
+	    // Test constrain with a value greater than upper bound
+	    @Test
+	    public void testConstrain_AboveUpper() {
+	        Range range = new Range(1, 5);
+
+	        double value = 6;  // value is above the upper bound
+	        double expected = 5;  // constrained value should be the upper bound
+
+	        assertEquals(expected, range.constrain(value), 0.00000000001);
+	    }
+	    
+	    // Test constrain with a value less than the lower bound 
+	    @Test
+	    public void testConstrain_BelowLower() {
+	        Range range = new Range(1, 5);
+
+	        double value = 0;  // value is below the lower bound
+	        double expected = 1;  // constrained value should be the lower bound
+
+	        assertEquals(expected, range.constrain(value), 0.0000000001);
+	    }
+	    
+	    // Test constrain with a value equal to the upper bound 
+	    @Test
+	    public void testConstrain_EqualToUpper() {
+	        Range range = new Range(1, 5);
+
+	        double value = 5;  // value is equal to the upper bound
+	        double expected = 5;  // constrained value should be the upper bound
+
+	        assertEquals(expected, range.constrain(value), 0.0000001);
+	    }
+	    
+	    // Test constrain with a value equal to the lower bound 
+	    @Test
+	    public void testConstrain_EqualToLower() {
+	        Range range = new Range(1, 5);
+
+	        double value = 1;  // value is equal to the lower bound
+	        double expected = 1;  // constrained value should be the lower bound
+
+	        assertEquals(expected, range.constrain(value), 0.0000001);
+	    }
+	    
+	    // Test constrain with a value within the range 
+	    @Test
+	    public void testConstrain_WithinRange() {
+	        Range range = new Range(1, 5);
+
+	        double value = 3;  // value is within the range
+	        double expected = 3;  // constrained value should be the same as the input
+
+	        assertEquals(expected, range.constrain(value), 0.0000001);
+	    }
+	    
+	    //Test constrain with a value slightly above the upper 
+	    @Test
+	    public void testConstrain_SlightlyAboveUpper() {
+	        Range range = new Range(1, 5);
+
+	        double value = 5.0001;  // value is slightly above the upper bound
+	        double expected = 5;    // expected value should be the upper bound
+
+	        assertEquals(expected, range.constrain(value), 0.0000001);
+	    }
+	    // Test constrain with a value slightly below lower bound 
+	    @Test
+	    public void testConstrain_SlightlyBelowLower() {
+	        Range range = new Range(1, 5);
+
+	        double value = 0.9999;  // value is slightly below the lower bound
+	        double expected = 1;    // expected value should be the lower bound
+
+	        assertEquals(expected, range.constrain(value), 0.0000001);
+	    }
+	    
+	    // Test constrain with a value very slightly above upper bound 
+	    @Test
+	    public void testConstrain_VerySmallAboveUpper() {
+	        Range range = new Range(1, 5);
+
+	        double value = 5 + 1E-10;  // value is just above the upper bound by a tiny amount
+	        double expected = 5;  // the constrained value should be the upper bound
+
+	        assertEquals(expected, range.constrain(value), 0.0000000001);
+	    }
+	    
+	    //Test constrain with a value very slghtly below lower bound 
+	    @Test
+	    public void testConstrain_VerySmallBelowLower() {
+	        Range range = new Range(1, 5);
+
+	        double value = 1 - 1E-10;  // value is just below the lower bound by a tiny amount
+	        double expected = 1;  // the constrained value should be the lower bound
+
+	        assertEquals(expected, range.constrain(value), 0.0000000001);
+	    }
+	    
+	    // ================== More expandtoInclude Method Tests ==================
+	    @Test
+	    public void testExpandToInclude_EqualToLowerBound() {
+	        Range range = new Range(5, 10);  // range from 5 to 10
+	        double value = 5;  // value is exactly equal to the lower bound
+
+	        // The range should not change as value is already within the range
+	        Range expandedRange = Range.expandToInclude(range, value);
+
+	        assertEquals(5, expandedRange.getLowerBound(), 0.0001);
+	        assertEquals(10, expandedRange.getUpperBound(), 0.0001);
+	    }
+	    
+	    @Test
+	    public void testExpandToInclude_LessThanLowerBound() {
+	        Range range = new Range(5, 10);  // range from 5 to 10
+	        double value = 4.5;  // value is slightly less than the lower bound
+
+	        // The range should expand to include the new lower bound (4.5)
+	        Range expandedRange = Range.expandToInclude(range, value);
+
+	        assertEquals(4.5, expandedRange.getLowerBound(), 0.0001);  // the lower bound should be 4.5
+	        assertEquals(10, expandedRange.getUpperBound(), 0.0001);   // the upper bound should remain 10
+	    }
+	    
+	    @Test
+	    public void testExpandToInclude_GreaterThanLowerBound() {
+	        Range range = new Range(5, 10);  // range from 5 to 10
+	        double value = 6;  // value is greater than the lower bound but within the range
+
+	        // The range should not change as value is already within the range
+	        Range expandedRange = Range.expandToInclude(range, value);
+
+	        assertEquals(5, expandedRange.getLowerBound(), 0.0001);  // the lower bound should remain 5
+	        assertEquals(10, expandedRange.getUpperBound(), 0.0001); // the upper bound should remain 10
+	    }
+	    
+	    @Test
+	    public void testExpandToInclude_EqualToUpperBound() {
+	        Range range = new Range(5, 10);  // range from 5 to 10
+	        double value = 10;  // value is exactly equal to the upper bound
+
+	        // The range should not change as value is already within the range
+	        Range expandedRange = Range.expandToInclude(range, value);
+
+	        assertEquals(5, expandedRange.getLowerBound(), 0.0001);  // the lower bound should remain 5
+	        assertEquals(10, expandedRange.getUpperBound(), 0.0001); // the upper bound should remain 10
+	    }
+	    
+	    @Test
+	    public void testExpandToInclude_GreaterThanUpperBound() {
+	        Range range = new Range(5, 10);  // range from 5 to 10
+	        double value = 11;  // value is greater than the upper bound
+
+	        // The range should expand to include the new upper bound (11)
+	        Range expandedRange = Range.expandToInclude(range, value);
+
+	        assertEquals(5, expandedRange.getLowerBound(), 0.0001);  // the lower bound should remain 5
+	        assertEquals(11, expandedRange.getUpperBound(), 0.0001); // the upper bound should be 11
+	    }
+	    
+	    @Test
+	    public void testExpandToInclude_LessThanUpperBound() {
+	        Range range = new Range(5, 10);  // range from 5 to 10
+	        double value = 7;  // value is less than the upper bound but within the range
+
+	        // The range should not change, as value is already within the range
+	        Range expandedRange = Range.expandToInclude(range, value);
+
+	        assertEquals(5, expandedRange.getLowerBound(), 0.0001);  // the lower bound should remain 5
+	        assertEquals(10, expandedRange.getUpperBound(), 0.0001); // the upper bound should remain 10
+	    }
+	    
+	    @Test
+	    public void testExpandToInclude_SlightlyAboveUpper() {
+	        Range range = new Range(5, 10);  // range from 5 to 10
+	        double value = 10.0001;  // value is slightly above the upper bound
+
+	        // The range should expand to include the new upper bound (10.0001)
+	        Range expandedRange = Range.expandToInclude(range, value);
+
+	        assertEquals(5, expandedRange.getLowerBound(), 0.000001);  // the lower bound should remain 5
+	        assertEquals(10.0001, expandedRange.getUpperBound(), 0.000001); // the upper bound should be 10.0001
+	    }
+
+	    @Test
+	    public void testExpandToInclude_SlightlyBelowLower() {
+	        Range range = new Range(5, 10);  // range from 5 to 10
+	        double value = 4.9999;  // value is slightly below the lower bound
+
+	        // The range should expand to include the new lower bound (4.9999)
+	        Range expandedRange = Range.expandToInclude(range, value);
+
+	        assertEquals(4.9999, expandedRange.getLowerBound(), 0.000001);  // the lower bound should be 4.9999
+	        assertEquals(10, expandedRange.getUpperBound(), 0.000001); // the upper bound should remain 10
+	    }
+
+	    // ================== More expand (Range range, double lowerMargin, double upperMargin) Method Tests ==================
+
+	    @Test(expected = IllegalArgumentException.class)
+	    public void testExpand_NullRange() {
+	        Range range = null;  // range is null
+	        double lowerMargin = 0.1;
+	        double upperMargin = 0.1;
+
+	        // This should throw an IllegalArgumentException because the range is null
+	        Range expandedRange = Range.expand(range, lowerMargin, upperMargin);
+	    }
+	    
+	    // ================== More shift(Range based, double delta, boolean allowZeroCrossing) Method Tests ==================
+	    @Test(expected = IllegalArgumentException.class)
+	    public void testShift_NullBase() {
+	        Range base = null;  // base is null
+	        double delta = 5.0;
+	        boolean allowZeroCrossing = true;
+
+	        // This should throw an IllegalArgumentException because the base is null
+	        Range shiftedRange = Range.shift(base, delta, allowZeroCrossing);
+	    }
+
+
+
+
+
+
+
+
+
+	    
 	
 	@After
 	public void tearDown() throws Exception {
