@@ -173,7 +173,7 @@ We also found that equivalent mutants can impact the mutation score accuracy by 
 ## Automated detection of equivalent mutants
 
 ### PiTest automated detection
-In our study, we found a few ways to automatically detect some equivalent mutants. As required by the outlined lab guide, the mutation tests were run using "All mutators" which is set in the PiTest preferences window when using Eclipse IDE. This runs a comprehensive set of mutations against the test suite, and provides a mutation coverage score. When setting the preference to "Stronger", PiTest runs a curated set of mutations which exclude mutants that are likely to produce equivalent mutants. In the case of our `Range` test suite, we found that mutation coverage increased from 79% to 95% when applying the "Stronger" configuration in the PiTest preferences. This method does not guarantee that your mutation score excludes equivalent mutants. Instead, it reduces the likelihood that equivalent mutants are generated during mutation coverage tests. Manual inspection of the code is still required in order to identify equivalent mutants. However, using the "Stronger" configuration appears to be a good approach to automate equivalent mutant detection and support developers in catching more critical bugs. 
+In our study, we found a few ways to automatically detect some equivalent mutants. As required by the outlined lab guide, the mutation tests were run using "All mutators" which is set in the PiTest preferences window when using Eclipse IDE. This executes a comprehensive set of mutations against the test suite, and provides a mutation coverage score. When setting the preference to "Stronger", PiTest runs a curated set of mutations which exclude mutants that are likely to produce equivalent mutants. In the case of our `Range` test suite, we found that mutation coverage increased from 79% to 95% when applying the "Stronger" configuration in the PiTest preferences. This method does not guarantee that your mutation score excludes equivalent mutants. Instead, it reduces the likelihood that equivalent mutants are generated during mutation coverage tests. Manual inspection of the code is still required in order to identify equivalent mutants. However, using the "Stronger" configuration appears to be a good approach to automate equivalent mutant detection and support developers in catching more critical bugs. 
 
 By applying the "Stronger configuration to our test suite, we found that our coverage scores improved. Specifically, `Range` mutation score improved from 79% to 95%. For `DataUtilities`, the mutation score improved from 91% to 93%.
 
@@ -184,7 +184,7 @@ By applying the "Stronger configuration to our test suite, we found that our cov
 We found that there some additional tools which can help with equivalent mutant detection which are discussed below. 
 
 ### Research on automated detection
-We performed a gentle study on the techniques proposed by academia to automate the detection of equivalent mutants. From research, we found that there were two approaches. Static Analysis-Based Detection and Dynamic Analysis (Execution-Based Detection). 
+We performed a gentle study on the techniques proposed by academia to automate the detection of equivalent mutants. From research, we found that there were two approaches: Static Analysis-Based Detection and Dynamic Analysis (Execution-Based Detection). 
 
 #### Static Analysis-Based Detection
 Static Analysis aims to analyze the code structure to predict whether a mutant is equivalent without executing the code. There are a few different approaches to performing static analysis. For example, PITest uses rule-based static analysis. Some papers have proposed deep learning models such as CodeBERT and GraphCodeBERT which are pretrained models for code representation. 
@@ -192,7 +192,7 @@ Static Analysis aims to analyze the code structure to predict whether a mutant i
 #### Dynamic Analysis (Execution-Based Detection)
 Dynamic Analysis is applied by mutating the source code and then comparing the runtime behaviour between the original code and the mutated version. Unlike Static analysis which does not require code execution, it only operates during or after execution. This makes dynamic analysis more computationally expensive than Static detection methods because it requires execution of the source code. This can be more effective than Static Analysis-Based Detection because the mutated code is run.
 
-In practice, we a hybrid approach could be taken for your project, but your specific approach would change depending on the size, complexity, and requirements of your codebase.
+In practice, a hybrid approach could be taken for your project, but your specific approach would change depending on the size, complexity, and requirements of your codebase.
 
 # A discussion of how mutation score was improved in the test suites and our design strategy.
 
@@ -537,6 +537,10 @@ Despite its computational cost, mutation testing remains one of the most effecti
 
 
 # Explain your SELENUIM test case design process
+
+### GUI Test Results
+![GUI Test Results](3_GUI_testing\GUI_test_results.png)
+
 
 ### **Test Case Design for Account Creation Functionality**
 The test cases for account creation functionality aims to to test the account creation functionality. The main area that this test aims to improve is the validation checks for invalid user input. We found some challenges in ensuring that the test environment is consistent between systems, and also in resetting the state of the browser for each test. When executing the below tests, the test cases which trigger a successful account creation response from the webpage would trigger a captcha message. This is a result of using Selenium IDE to automate the tests. The server side system is performing a check to ensure that a human is actually creating the account. For this reason, for tests which successfully create an account, we assert that the captcha is present to confirm that account creation response is working as expected.
