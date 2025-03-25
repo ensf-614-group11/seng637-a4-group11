@@ -507,9 +507,6 @@ In order to kill the mutant, a test case is needed where `b1 != this.lower` eval
 		
 ```
 
-### not equal to greater than → SURVIVED
-This mutant refers to the line of code
-
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
 Mutation testing is a powerful technique used to assess the quality and effectiveness of a test suite. Traditional testing methods, such as unit and integration testing, focus on verifying whether software behaves correctly under expected conditions. However, these tests may not always reveal weaknesses in the test suite itself. Mutation testing helps address this by introducing small, deliberate modifications (mutants) to the code and evaluating whether the test suite detects these changes. If a test suite fails to identify these modifications, it indicates gaps in test coverage and effectiveness.
 
@@ -723,7 +720,7 @@ For the GUI Testing using Selenium IDE, we used both assertions and verification
 This aligns with the idea that verify allows the test to continue even if it fails, whereas assert stops the test if it fails, so assertions should be used for verifications in GUI testing that are crucial, and there would be no point in continuing the test if it were to fail.
 
 
-# how did you test each functionaity with different test data
+# How did you test each functionaity with different test data
 
 ## Account Creation
 Testing the account creation functionality involved identifying the required fields which must have valid input in order to successfully create an account. On the Account Creation page, the required fields are "Your name", "Mobile number or email", "Password" and "Password again" fields. In designing these test cases, different permutations of inputs were provided to the system in order to test the system functionality. A combination of valid inputs, and invalid inputs for each of the different permutations were tested on the Account Creation system. This is done to verify that there are no edge cases where the expected behaviour of the system changes due to the input parameters. In addition, some extreme edge cases to test the behaviour of the system were designed and executed. For example, we tested "emojis" as an input into the password field, and it was found that the system will convert these emojis into their unicode characters, which does not send a validation error.
@@ -736,6 +733,12 @@ To test product filtering with different inputs, I created tests for different s
 
 ## Product Sort
 To test product sorting with different inputs, I created tests to sort by price, and sort by rating. I then also tested sorting by price low to high and sorting by price high to low. Amazon does not allowing sorting by rating from worst to best, so only best to worst was tested. I then also created tests for two different search items: Pencil and Shampoo. In all cases, I used the first two items listed to ensure it was being sorted in the correct order by comparing product prices and product ratings.
+
+## Product Search
+To thoroughly test the search feature, I used different types of test data to evaluate how the system handles various inputs. I tested with two distinct product categories, "Laptop" and "Shirt," to confirm that different searches yield relevant results. Additionally, I introduced a misspelled term, "lapt," to check if the search engine could handle typos and still return meaningful results. Finally, I tested with completely random gibberish to verify how the system responds to irrelevant input, ensuring that the search function remains robust under different conditions.
+
+## Shopping Cart
+For the shopping cart, I used a variety of test data to validate its core functionality. I began by adding a single product to ensure basic cart functionality. Then, I tested with multiple products, adding three distinct items to confirm that the cart could handle multiple entries and accurately update when an item was removed. Lastly, I tested the "Save for Later" functionality by navigating away from the shopping cart and returning to verify that previously added items remained, simulating real-world user behavior. This approach ensured comprehensive coverage of different cart interactions.
 
 # How the team work/effort was divided and managed
 Before starting the assignment, the team met to outline a plan for the required steps. Each team member completed the relevant setup required, such as cloning the github page, importing the Eclipse project, and installing Pitest for mutation testing, and downloading the required browser and installing extensions required for the GUI testing. 
