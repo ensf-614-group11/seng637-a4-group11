@@ -151,7 +151,7 @@ Additional tests were added to specifically target many of the mutants associate
 
 The following screenshots show the final mutation score for the Data Utilities and Range classes after adding more tests to improve the scores. 
 **Data Utilities** 
-![Increase DataUtilities to 91](2_mutation_testing/pitest_screenshots/Increase to 91 DataUtilities.png)
+![Increase DataUtilities to 91](2_mutation_testing/pitest_screenshots/Increase_to_91_DataUtilities.png)
 
 **Range**
 ![Increase Range to 79](2_mutation_testing/pitest_screenshots/increase_to_79_Range.png)
@@ -417,7 +417,7 @@ For some of the mutants analyzed above in the section Analysis of 10 Mutants of 
 
 ### Removed call to java/lang/StringBuilder::toString 
 This mutant survived in the code for the Range constructor based on the tests included in the original test suite. As described in the analysis above, this is because the original test cases only tested whether an excetion is thrown when an invalid range is attempted to be created (with lower > upper) and the error message itself was not tested to check whether it contains the expected contents. In the code for the Range constructor below, the toString method is called when the construction of the error message is completed if lower is > than upper. 
-```java
+```
   public Range(double lower, double upper) {
         if (lower > upper) {
             String msg = "Range(double, double): require lower (" + lower
@@ -427,12 +427,12 @@ This mutant survived in the code for the Range constructor based on the tests in
         this.lower = lower;
         this.upper = upper;
     }
-    ```
+```
 
 Therefore, the following test was designed to test that an error message was provided, which would fail if the toString function was no longer called (and the mutant would be killed). 
 
 
-```java
+```
 @Test 
         public void testIllegalArgumentExceptionWithMessage_invalidRange() {
             try {
@@ -450,7 +450,7 @@ Therefore, the following test was designed to test that an error message was pro
 ### Replaced call to java/lang/StringBuilder::append with receiver 
 This mutant also survived in the code for the Range constructor based on the tests included in the original test suite. As described in the analysis above, this is because there was not a test to assert the message included when the IllegalArgumentException is thrown. The StringBuilder is automatically called in the constructor code when the String msg for the error is concatenated. Therefore when this is replaced, the String msg is not constructed as expected. The following test was designed to check the exact contents of the error message based on the constructor code, which would fail if the call to StringBuilder is replaced (and the mutant would be killed).  
 
-```java
+```
     @Test 
         public void testIllegalArgumentExceptionWithExactMessage_invalidRange() {
             try {
@@ -474,7 +474,7 @@ to
 
 Therefore depending on the values of lower and upper passed to the constructor, this mutant could change the outcome of the if statement. The following test case was designed to kill this mutant, with values of lower and upper very close together. In this case, the range of (0.0, 0.1) is valid, but with the mutant lower would be incremented to 1.0, therefore the range would change to be invalid and the outcome of the if statement would be changed. This test case ensures that this mutant would be killed. 
 
-```java
+```
   @Test
             public void testIncrementedLowerBound() {
                     Range range = new Range (0.0, 0.1); // range should be valid, but if lower is incremented by mutator it would be invalid
