@@ -539,7 +539,7 @@ Despite its computational cost, mutation testing remains one of the most effecti
 # Explain your SELENUIM test case design process
 
 ### GUI Test Results
-![GUI Test Results](3_GUI_testing\GUI_test_results.png)
+![GUI Test Results](3_GUI_testing/GUI_test_results.png)
 
 
 ### **Test Case Design for Account Creation Functionality**
