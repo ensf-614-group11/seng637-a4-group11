@@ -149,20 +149,17 @@ Additional tests were added to specifically target many of the mutants associate
 
 ## After Adding Tests to Increase Mutation Score (Final Metrics)
 
-Laurel to fill in 
-
 The following screenshots show the final mutation score for the Data Utilities and Range classes after adding more tests to improve the scores. 
 **Data Utilities** 
-
+![Increase DataUtilities to 91](2_mutation_testing/pitest_screenshots/Increase to 91 DataUtilities.png)
 
 **Range**
-
+![Increase Range to 79](2_mutation_testing/pitest_screenshots/increase_to_79_Range.png)
 
 # Analysis drawn on the effectiveness of each of the test classes   
 Based on the information provided in the previous section, the test suite for DataUtilities from Assignment 3 without additional test was already quite effective for killing mutants with a mutation coverage score of 87%. The test suite for Range was also relatively effective with a mutation coverage score of 70%. In Assignment 2, unit test cases were designed to be quite comprehensive based on equivalence class partitioning and boundary value conditions. Then in Assignment 3, the statement, branch and condition coverage were increased by adding additional test cases. Therefore, the test suite coming out of Assignment 3 was pretty robust, which is what lead to these initial scores for mutation coverage. 
  
- 
-Laurel to add more comments about final effectiveness 
+After spending a significant amount of time adding more tests to increase mutation coverage including analyzing mutants and designing test cases, the final effectiveness of the test classes for mutation coverage was 91% for DataUtilities and 79% for Range. These percentages do not account for possible equivalent mutants, which is discussed further in the section below. 
 
 
 # A discussion on the effect of equivalent mutants on mutation score accuracy
@@ -431,7 +428,9 @@ This mutant survived in the code for the Range constructor based on the tests in
         this.upper = upper;
     }
     ```
+
 Therefore, the following test was designed to test that an error message was provided, which would fail if the toString function was no longer called (and the mutant would be killed). 
+
 
 ```java
 @Test 
@@ -471,7 +470,7 @@ This mutant also survived in the code for the Range constructor based on the tes
 This mutant results in application of the prefix ++ operator to the variable lower so that the value of the variable passed to the constructor is changed. This changes the line 
 ```if (lower > upper)``` 
 to 
-```if (++lower > upper)```. 
+```if (++lower > upper)``` 
 
 Therefore depending on the values of lower and upper passed to the constructor, this mutant could change the outcome of the if statement. The following test case was designed to kill this mutant, with values of lower and upper very close together. In this case, the range of (0.0, 0.1) is valid, but with the mutant lower would be incremented to 1.0, therefore the range would change to be invalid and the outcome of the if statement would be changed. This test case ensures that this mutant would be killed. 
 
